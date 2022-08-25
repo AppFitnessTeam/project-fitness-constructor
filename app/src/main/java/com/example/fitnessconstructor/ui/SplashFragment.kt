@@ -1,4 +1,4 @@
-package com.example.fitnessconstructor
+package com.example.fitnessconstructor.ui
 
 import android.os.Bundle
 import android.os.Handler
@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.postDelayed
 import androidx.navigation.fragment.findNavController
+import com.example.fitnessconstructor.R
 
 
 class SplashFragment : Fragment() {
