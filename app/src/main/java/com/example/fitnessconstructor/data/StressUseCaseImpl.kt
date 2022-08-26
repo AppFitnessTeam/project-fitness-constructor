@@ -30,6 +30,12 @@ class StressUseCaseImpl @Inject constructor() : StressUseCase {
         return checkResult(stressTestResult)
     }
 
+    /**
+     * This fun is checking user's stress test results
+     * @param stressTestResult Array<Int> of 3 elements
+     * @return text message of user's power
+     * @throws IllegalArgumentException when sum of array's elements is more than 300
+     */
     private fun checkResult(stressTestResult: Array<Int>): String {
         return when (stressTestResult.sum()) {
             in StressResult.LOW.intRange -> StressResult.LOW.message
