@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.example.fitnessconstructor.SplashFragment"
+        android:name="com.example.fitnessconstructor.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -16,27 +16,27 @@
     </fragment>
     <fragment
         android:id="@+id/workoutListFragment"
-        android:name="com.example.fitnessconstructor.WorkoutListFragment"
+        android:name="com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment"
         android:label="fragment_workout_list"
         tools:layout="@layout/fragment_workout_list" />
     <fragment
         android:id="@+id/workoutFragment"
-        android:name="com.example.fitnessconstructor.WorkoutFragment"
+        android:name="com.example.fitnessconstructor.ui.workout.WorkoutFragment"
         android:label="fragment_workout"
         tools:layout="@layout/fragment_workout" />
     <fragment
         android:id="@+id/exerciseFragment"
-        android:name="com.example.fitnessconstructor.ExerciseFragment"
+        android:name="com.example.fitnessconstructor.ui.exercise.ExerciseFragment"
         android:label="fragment_exercise"
         tools:layout="@layout/fragment_exercise" />
     <fragment
         android:id="@+id/statisticFragment"
-        android:name="com.example.fitnessconstructor.StatisticFragment"
+        android:name="com.example.fitnessconstructor.ui.statistic.StatisticFragment"
         android:label="fragment_statistic"
         tools:layout="@layout/fragment_statistic" />
     <fragment
         android:id="@+id/appSettingsFragment"
-        android:name="com.example.fitnessconstructor.AppSettingsFragment"
+        android:name="com.example.fitnessconstructor.ui.settings.AppSettingsFragment"
         android:label="fragment_app_settings"
         tools:layout="@layout/fragment_app_settings" />
 </navigation>

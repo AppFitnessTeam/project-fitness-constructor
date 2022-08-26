@@ -3,7 +3,7 @@ package com.example.fitnessconstructor.domain
 data class Workout(
     val id: Int,
     val name: String,
-    val stepsWorkout: List<StepWorkout>
+    val stepsWorkout: MutableList<StepWorkout>
 )
 
 abstract class StepWorkout {
@@ -20,18 +20,18 @@ data class Exercise(
     val id: Int,
     override val name: String,
     val type: ExerciseType,
-    override val count: Int
+    override var count: Int = 0 //TODO("change var to val when working with real database")
 ) : StepWorkout()
 
 enum class ExerciseType {
-    STEP, TIME
+    STEP, TIME, STRESS
 }
 
 /**
  * Class for rest timer between exercises
  */
 data class Rest(
-    val id: Int,
+    val id: Int = 0,
     override val name: String = "Rest time",
-    override val count: Int
+    override val count: Int = 0
 ) : StepWorkout()

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fitnessconstructor.*
 import com.example.fitnessconstructor.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -22,10 +22,3 @@ class WorkoutFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_workout, container, false)
     }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = WorkoutFragment()
-    }
-}
