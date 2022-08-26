@@ -18,20 +18,12 @@
         android:id="@+id/workoutListFragment"
         android:name="com.example.fitnessconstructor.WorkoutListFragment"
         android:label="fragment_workout_list"
-        tools:layout="@layout/fragment_workout_list" >
-        <action
-            android:id="@+id/action_workoutListFragment_to_workoutFragment"
-            app:destination="@id/workoutFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_workout_list" />
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.example.fitnessconstructor.WorkoutFragment"
         android:label="fragment_workout"
-        tools:layout="@layout/fragment_workout" >
-        <action
-            android:id="@+id/action_workoutFragment_to_exerciseFragment"
-            app:destination="@id/exerciseFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_workout" />
     <fragment
         android:id="@+id/exerciseFragment"
         android:name="com.example.fitnessconstructor.ExerciseFragment"
