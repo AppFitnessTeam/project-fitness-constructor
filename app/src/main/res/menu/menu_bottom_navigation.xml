@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/bottom_navigation_lable_one"
+        android:id="@+id/workoutFragment"
         android:icon="@drawable/ic_bottom_menu_any"
         android:title="@string/lable"
         app:tooltipText="Description" />
     <item
-        android:id="@+id/bottom_navigation_lable_two"
+        android:id="@+id/statisticFragment"
         android:icon="@drawable/ic_bottom_menu_statistic"
         android:title="@string/lable"
         app:tooltipText="Description" />
     <item
-        android:id="@+id/bottom_navigation_lable_three"
+        android:id="@+id/appSettingsFragment"
         android:icon="@drawable/ic_bottom_menu_settings"
         android:title="@string/lable"
         app:tooltipText="Description" />

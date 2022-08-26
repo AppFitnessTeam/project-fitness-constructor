@@ -9,11 +9,7 @@
         android:id="@+id/workoutListFragment"
         android:name="com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment"
         android:label="fragment_workout_list"
-        tools:layout="@layout/fragment_workout_list" >
-        <action
-            android:id="@+id/action_workoutListFragment_to_splashFragment"
-            app:destination="@id/splashFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_workout_list" />
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.example.fitnessconstructor.ui.workout.WorkoutFragment"

@@ -7,6 +7,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class WorkoutFragment : BaseFragment<FragmentWorkoutBinding>(FragmentWorkoutBinding::inflate) {
 
+
     companion object {
 
         @JvmStatic
