@@ -11,7 +11,8 @@ import androidx.room.RoomDatabase
         ExerciseEntity::class,
         GroupEntity::class,
         M3545::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 
 //  будет  давать доступ к ней
