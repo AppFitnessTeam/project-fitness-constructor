@@ -46,6 +46,6 @@ class StressUseCaseImpl @Inject constructor() : StressUseCase {
         LOW(0..80, "Your POWER is below average. We will help you"),
         NORMAL(81..100, "Good POWER"),
         HIGH(101..150, "High POWER"),
-        MONSTER(151..1500, "Excellent POWER"),
+        MONSTER(151..300, "Excellent POWER"),
     }
 }

@@ -48,14 +48,21 @@ class StressUseCaseUnitTest {
     fun stressUseCase_excellentResult() = runBlocking {
         assertEquals(
             "Excellent POWER",
-            stressUseCase.getResult(arrayOf(150, 150, 150))
+            stressUseCase.getResult(arrayOf(30, 50, 80))
         )
     }
 
     @Test
-    fun stressUseCase_exception() {
+    fun stressUseCase_exceptionIncorrect() {
         assertThrows(IllegalArgumentException::class.java) {
             runBlocking { stressUseCase.getResult(arrayOf(0, 0, -150)) }
+        }
+    }
+
+    @Test
+    fun stressUseCase_exceptionMaxResult() {
+        assertThrows(IllegalArgumentException::class.java) {
+            runBlocking { stressUseCase.getResult(arrayOf(0, 0, 450)) }
         }
     }
 }
