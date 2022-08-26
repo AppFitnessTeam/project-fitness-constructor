@@ -4,9 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fitnessconstructor.*
 import com.example.fitnessconstructor.databinding.ActivityMainBinding
+import com.example.fitnessconstructor.ui.settings.AppSettingsFragment
+import com.example.fitnessconstructor.ui.workout.WorkoutFragment
+import com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment
 import dagger.hilt.android.AndroidEntryPoint
 
-import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -19,9 +21,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //bottom navigation
-        if (savedInstanceState == null) {
+        if(savedInstanceState ==null){
             initBottomNavigation()
         }
+
+
         //remove action bar while launch app
         supportActionBar?.hide()
 

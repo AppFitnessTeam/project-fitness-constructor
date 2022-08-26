@@ -6,12 +6,13 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.fitnessconstructor.R
+import com.example.fitnessconstructor.databinding.FragmentSplashBinding
+import com.example.fitnessconstructor.ui.BaseFragment
 
 
-class SplashFragment : Fragment() {
+class SplashFragment:
+BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate){
 
 
     override fun onCreateView(
