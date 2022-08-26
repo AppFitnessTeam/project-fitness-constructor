@@ -1,17 +1,18 @@
-package com.example.fitnessconstructor.ui
+package com.example.fitnessconstructor
 
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.fitnessconstructor.R
+import com.example.fitnessconstructor.databinding.FragmentSplashBinding
+import com.example.fitnessconstructor.ui.BaseFragment
 
 
-class SplashFragment : Fragment() {
+class SplashFragment:
+BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate){
 
 
     override fun onCreateView(
