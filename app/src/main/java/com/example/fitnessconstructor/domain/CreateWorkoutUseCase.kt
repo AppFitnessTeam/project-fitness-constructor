@@ -17,7 +17,7 @@ interface CreateWorkoutUseCase {
     /**
      * Asynch fun to get exercises of workout for viewModel (transformation to LiveData)
      */
-    fun getWorkoutExercises(): Flow<StepWorkout>
+    fun getWorkoutExercises(workout: Workout): Flow<StepWorkout>
 
-    suspend fun deleteWorkout()
+    suspend fun deleteWorkout(workout: Workout)
 }
