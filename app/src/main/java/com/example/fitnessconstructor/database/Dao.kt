@@ -29,14 +29,14 @@ interface Dao {
     fun getTypeExercise(id: Int?): Flow<TypeExercisesEntity>
 
     // получаем время отдыха в зависимости от программы
-    @Query("SELECT * FROM workout_rest WHERE id IS :id")
-    fun getWorkoutRest(id: Int?): Flow<WorkoutRestEntity>
+    @Query("SELECT * FROM workout_rest WHERE workout_id IS :workoutId")
+    fun getWorkoutRest(workoutId: Int?): Flow<WorkoutRestEntity>
 
     // получаем программу стресс теста
     @Query("SELECT * FROM stress_workout_exercises")
     fun getStressWorkoutExercises(): Flow<List<StressWorkoutExercisesEntity>>
 
     // получаем программу программу тренировки в зависимости от её номера и дня
-    @Query("SELECT * FROM workout_exercises WHERE id IS :id AND day IS :day")
-    fun getWorkoutExercises(id: Int?, day: Int?): Flow<WorkoutExercises>
+    @Query("SELECT * FROM workout_exercises WHERE workout_id IS :workoutId AND day IS :day")
+    fun getWorkoutExercises(workoutId: Int?, day: Int?): Flow<WorkoutExercises>
 }
