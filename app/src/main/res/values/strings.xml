@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">Fitness Constructor</string>
-    <string name="start">Start</string>
-    <string name="hello_blank_fragment">"Workout list fragment "</string>
     <string name="workout_fragment">"Workout fragment "</string>
     <string name="workout_list_fragment">"Workout list fragment "</string>
     <string name="statistic_fragment">"Statistic fragment "</string>
     <string name="settings_fragment">"Settings fragment "</string>
     <string name="lable">Lable</string>
+
 </resources>
