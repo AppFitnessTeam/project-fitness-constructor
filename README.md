@@ -11,3 +11,7 @@ This app is for people who wants to do fitness at home. User can make his workou
 ![need screenshot here]()
 5. Finish workout and see your statistic
 ![need screenshot here]()
+
+#### Working block for contributors
+##### Design
+[preliminary design](https://www.figma.com/file/7VEYLosL5SmMJgIWlvdgs7/Untitled?node-id=0%3A1)
