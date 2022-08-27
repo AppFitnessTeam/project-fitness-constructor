@@ -6,32 +6,15 @@
     app:startDestination="@id/splashFragment">
 
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.fitnessconstructor.ui.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_workoutListFragment"
-            app:destination="@id/workoutListFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/workoutListFragment"
         android:name="com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment"
         android:label="fragment_workout_list"
-        tools:layout="@layout/fragment_workout_list" >
-        <action
-            android:id="@+id/action_workoutListFragment_to_workoutFragment"
-            app:destination="@id/workoutFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_workout_list" />
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.example.fitnessconstructor.ui.workout.WorkoutFragment"
         android:label="fragment_workout"
-        tools:layout="@layout/fragment_workout" >
-        <action
-            android:id="@+id/action_workoutFragment_to_exerciseFragment"
-            app:destination="@id/exerciseFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_workout" />
     <fragment
         android:id="@+id/exerciseFragment"
         android:name="com.example.fitnessconstructor.ui.exercise.ExerciseFragment"
@@ -47,4 +30,13 @@
         android:name="com.example.fitnessconstructor.ui.settings.AppSettingsFragment"
         android:label="fragment_app_settings"
         tools:layout="@layout/fragment_app_settings" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.fitnessconstructor.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_workoutListFragment"
+            app:destination="@id/workoutListFragment" />
+    </fragment>
 </navigation>

@@ -38,6 +38,9 @@ android {
 
 dependencies {
 
+    //View binding
+    implementation 'androidx.databinding:viewbinding:7.2.1'
+
     //hilt
     implementation 'com.google.dagger:hilt-android:2.42'
     kapt 'com.google.dagger:hilt-compiler:2.42'

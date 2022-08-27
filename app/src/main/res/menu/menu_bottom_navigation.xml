@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/workoutFragment"
+        android:icon="@drawable/ic_bottom_menu_any"
+        android:title="@string/lable"
+        app:tooltipText="Description" />
+    <item
+        android:id="@+id/statisticFragment"
+        android:icon="@drawable/ic_bottom_menu_statistic"
+        android:title="@string/lable"
+        app:tooltipText="Description" />
+    <item
+        android:id="@+id/appSettingsFragment"
+        android:icon="@drawable/ic_bottom_menu_settings"
+        android:title="@string/lable"
+        app:tooltipText="Description" />
+
+
+</menu>
