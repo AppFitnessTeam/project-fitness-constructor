@@ -26,10 +26,17 @@ class StressUseCaseImpl @Inject constructor() : StressUseCase {
         return repository.getStressWorkout().stepsWorkout.asFlow().flowOn(Dispatchers.IO)
     }
 
-    override suspend fun getResult(stressTestResult: Array<Int>): String {
-        return checkResult(stressTestResult)
-    }
+    override suspend fun getResult(stressTestResult: Array<Int>): String =
+        withContext(Dispatchers.Default) {
+            return@withContext checkResult(stressTestResult)
+        }
 
+    /**
+     * This fun is checking user's stress test results
+     * @param stressTestResult Array<Int> of 3 elements
+     * @return text message of user's power
+     * @throws IllegalArgumentException when sum of array's elements is more than 300
+     */
     private fun checkResult(stressTestResult: Array<Int>): String {
         return when (stressTestResult.sum()) {
             in StressResult.LOW.intRange -> StressResult.LOW.message
@@ -46,6 +53,6 @@ class StressUseCaseImpl @Inject constructor() : StressUseCase {
         LOW(0..80, "Your POWER is below average. We will help you"),
         NORMAL(81..100, "Good POWER"),
         HIGH(101..150, "High POWER"),
-        MONSTER(151..1500, "Excellent POWER"),
+        MONSTER(151..300, "Excellent POWER"),
     }
 }
