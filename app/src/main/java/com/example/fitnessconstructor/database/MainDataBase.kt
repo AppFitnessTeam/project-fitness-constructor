@@ -4,13 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.fitnessconstructor.database.entities.*
 
 //аннотация что это база данных которая включает в себя следующие entity
 @Database(
     entities = [
-        ExerciseEntity::class,
-        GroupEntity::class,
-        M3545::class],
+        AllExercisesEntity::class,
+        StressExercisesEntity::class,
+        StressWorkoutExercisesEntity::class,
+        TypeExercisesEntity::class,
+        WorkoutRestEntity::class,
+        WorkoutEntity::class,
+        WorkoutExercises::class],
     version = 1,
     exportSchema = false
 )
