@@ -26,9 +26,10 @@ class StressUseCaseImpl @Inject constructor() : StressUseCase {
         return repository.getStressWorkout().stepsWorkout.asFlow().flowOn(Dispatchers.IO)
     }
 
-    override suspend fun getResult(stressTestResult: Array<Int>): String {
-        return checkResult(stressTestResult)
-    }
+    override suspend fun getResult(stressTestResult: Array<Int>): String =
+        withContext(Dispatchers.Default) {
+            return@withContext checkResult(stressTestResult)
+        }
 
     /**
      * This fun is checking user's stress test results
