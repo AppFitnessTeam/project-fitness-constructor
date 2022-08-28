@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graphs"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/workoutListFragment">
 
     <fragment
         android:id="@+id/workoutListFragment"
@@ -30,13 +30,4 @@
         android:name="com.example.fitnessconstructor.ui.settings.AppSettingsFragment"
         android:label="fragment_app_settings"
         tools:layout="@layout/fragment_app_settings" />
-    <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.fitnessconstructor.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
-        <action
-            android:id="@+id/action_splashFragment_to_workoutListFragment"
-            app:destination="@id/workoutListFragment" />
-    </fragment>
 </navigation>

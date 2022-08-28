@@ -37,9 +37,11 @@ android {
 }
 
 dependencies {
+    //Splash Screen
+    implementation 'androidx.core:core-splashscreen:1.0.0'
 
     //View binding
-    implementation 'androidx.databinding:viewbinding:7.2.1'
+    implementation 'androidx.databinding:viewbinding:7.2.2'
 
     //hilt
     implementation 'com.google.dagger:hilt-android:2.42'
