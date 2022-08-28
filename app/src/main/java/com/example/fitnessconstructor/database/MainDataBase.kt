@@ -1,8 +1,6 @@
 package com.example.fitnessconstructor.database
 
-import android.content.Context
 import androidx.room.Database
-import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.fitnessconstructor.database.entities.*
 
@@ -23,19 +21,6 @@ import com.example.fitnessconstructor.database.entities.*
 //  будет  давать доступ к ней
 abstract class MainDataBase : RoomDatabase() {
 
-    abstract fun getDao(): Dao // получаем доступ к интерфейсу  Dao
-
-    companion object {
-
-        fun getDataBase(context: Context): MainDataBase {
-            val instanse = Room.databaseBuilder(
-                context.applicationContext,   //context.applicationContext - контекст всего приложения
-                MainDataBase::class.java,
-                "exercise.db"
-            ).createFromAsset("databases/exercise.db").build()
-            return instanse
-
-
-        }
-    }
+    abstract fun getWorkoutDao(): WorkoutDao
+    abstract fun getStressDao(): StressDao
 }
