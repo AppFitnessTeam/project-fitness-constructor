@@ -5,5 +5,6 @@
     <string name="statistic_fragment">"Statistic fragment "</string>
     <string name="settings_fragment">"Settings fragment "</string>
     <string name="lable">Lable</string>
+    <string name="workout_list_top_text">Product</string>
 
 </resources>
