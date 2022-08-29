@@ -3,5 +3,14 @@
     <dimen name="top_bar_height">64dp</dimen>
     <dimen name="ic_image_size">24dp</dimen>
     <dimen name="top_bar_text_size">22sp</dimen>
+    <dimen name="exercise_big_text_size">32sp</dimen>
     <dimen name="fab_bottom_margin">600dp</dimen>
+    <dimen name="exercise_image_width">158dp</dimen>
+    <dimen name="exercise_image_height">155dp</dimen>
+    <dimen name="edit_text_width">184dp</dimen>
+    <dimen name="edit_test_height">56dp</dimen>
+    <dimen name="exercise_small_text_size">12sp</dimen>
+    <dimen name="radius_button_h">131dp</dimen>
+    <dimen name="radius_button_w">40dp</dimen>
+    <dimen name="text_size_roboto_med">14sp</dimen>
 </resources>

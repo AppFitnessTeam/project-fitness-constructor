@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fab_color">#EADDFF</color>
+    <color name="workout_list_empty_button_line">#79747E</color>
     <color name="workout_list_top_text">#1C1B1F</color>
+    <color name="workout_list_step_small_text">#49454F</color>
+    <color name="workout_list_next_exercise_button">#6750A4</color>
 
 </resources>
