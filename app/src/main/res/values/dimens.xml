@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="top_bar_height">64dp</dimen>
+    <dimen name="ic_image_size">24dp</dimen>
+    <dimen name="top_bar_text_size">22sp</dimen>
+</resources>

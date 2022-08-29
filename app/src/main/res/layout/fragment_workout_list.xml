@@ -14,8 +14,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="600dp">
+        android:layout_height="@dimen/top_bar_height">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/leading_image"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="@dimen/ic_image_size"
+                android:layout_height="@dimen/ic_image_size"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/ic_leading_icon"
@@ -42,7 +41,7 @@
                 android:fontFamily="@font/roboto"
                 android:text="@string/workout_list_top_text"
                 android:textColor="@color/workout_list_top_text"
-                android:textSize="22sp"
+                android:textSize="@dimen/top_bar_text_size"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
