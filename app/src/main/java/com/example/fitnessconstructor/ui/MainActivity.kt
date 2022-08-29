@@ -41,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         //bottom action bar
         bottomActionBarLaunch()
 
+        //remove action bar while launch app
+        supportActionBar?.hide()
+
     }
 
     private fun bottomActionBarLaunch() {
