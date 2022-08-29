@@ -30,7 +30,7 @@ class CreateWorkoutUseCaseImpl @Inject constructor() : CreateWorkoutUseCase {
         TODO("Not yet implemented")
     }
 
-    override fun getWorkoutExercises(workout: Workout): Flow<StepWorkout> {
+    override fun getWorkoutExercises(workoutId: Int): Flow<List<StepWorkout>> {
         TODO("Not yet implemented")
     }
 

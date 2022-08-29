@@ -9,12 +9,21 @@
         android:id="@+id/workoutListFragment"
         android:name="com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment"
         android:label="fragment_workout_list"
-        tools:layout="@layout/fragment_workout_list" />
+        tools:layout="@layout/fragment_workout_list" >
+        <action
+            android:id="@+id/action_workoutListFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+    </fragment>
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.example.fitnessconstructor.ui.workout.WorkoutFragment"
         android:label="fragment_workout"
-        tools:layout="@layout/fragment_workout" />
+        tools:layout="@layout/fragment_workout" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
     <fragment
         android:id="@+id/exerciseFragment"
         android:name="com.example.fitnessconstructor.ui.exercise.ExerciseFragment"
