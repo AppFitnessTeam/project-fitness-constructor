@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/epicRoot"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
     <FrameLayout
-        android:id="@+id/transparent_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0"
         android:animateLayoutChanges="true"
         android:background="@android:color/white"
         android:clickable="false" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="600dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <ImageView
+                android:id="@+id/leading_image"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_leading_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/roboto"
+                android:text="@string/workout_list_top_text"
+                android:textColor="@color/workout_list_top_text"
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/trailing_image"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_trailing_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -28,9 +74,9 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:elevation="5dp"
             app:backgroundTint="@color/fab_color"
-            app:shapeAppearanceOverlay="@style/fab_square"
-            android:elevation="5dp" />
+            app:shapeAppearanceOverlay="@style/fab_square" />
 
         <ImageView
             android:id="@+id/plusImageview"
