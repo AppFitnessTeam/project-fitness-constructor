@@ -3,4 +3,5 @@
     <dimen name="top_bar_height">64dp</dimen>
     <dimen name="ic_image_size">24dp</dimen>
     <dimen name="top_bar_text_size">22sp</dimen>
+    <dimen name="fab_bottom_margin">600dp</dimen>
 </resources>
