@@ -18,9 +18,9 @@ class WorkoutListViewModel @Inject constructor(
 
     val workoutList = workoutUseCase.getWorkoutsList().asLiveData()
 
-    fun addWorkout(workout: Workout) {
+    fun createWorkout(workout: Workout) {
         viewModelScope.launch {
-            createWorkoutUseCase.createWorkout(workout)
+            createWorkoutUseCase.createWorkout()
         }
     }
 }
