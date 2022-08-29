@@ -6,5 +6,6 @@
     <string name="settings_fragment">"Settings fragment "</string>
     <string name="lable">Lable</string>
     <string name="workout_list_top_text">Product</string>
+    <string name="workout_name">Workout_name</string>
 
 </resources>
