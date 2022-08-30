@@ -6,7 +6,7 @@ interface WorkoutUseCase {
     /**
      * Asynch fun to get user's workouts from data for viewModel (transformation to LiveData)
      */
-    fun getWorkoutsList(): Flow<Workout>
+    fun getWorkoutsList(): Flow<List<Workout>>
 
     fun getStepsWorkout(workout: Workout): Flow<StepWorkout>
 }

@@ -14,7 +14,11 @@ class CreateWorkoutUseCaseImpl @Inject constructor() : CreateWorkoutUseCase {
     @Inject
     lateinit var repository: FakeRepository //TODO ("change when working with real database")
 
-    override suspend fun createWorkout(workout: Workout) {
+    override suspend fun createWorkout() {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun editWorkout(workout: Workout) {
         TODO("Not yet implemented")
     }
 
@@ -30,7 +34,7 @@ class CreateWorkoutUseCaseImpl @Inject constructor() : CreateWorkoutUseCase {
         TODO("Not yet implemented")
     }
 
-    override fun getWorkoutExercises(workout: Workout): Flow<StepWorkout> {
+    override fun getWorkoutExercises(workoutId: Int): Flow<List<StepWorkout>> {
         TODO("Not yet implemented")
     }
 

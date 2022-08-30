@@ -9,17 +9,33 @@
         android:id="@+id/workoutListFragment"
         android:name="com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment"
         android:label="fragment_workout_list"
-        tools:layout="@layout/fragment_workout_list" />
+        tools:layout="@layout/fragment_workout_list" >
+        <action
+            android:id="@+id/action_workoutListFragment_to_workoutFragment"
+            app:destination="@id/workoutFragment" />
+    </fragment>
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.example.fitnessconstructor.ui.workout.WorkoutFragment"
         android:label="fragment_workout"
-        tools:layout="@layout/fragment_workout" />
+        tools:layout="@layout/fragment_workout" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_workoutFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/exerciseFragment"
         android:name="com.example.fitnessconstructor.ui.exercise.ExerciseFragment"
         android:label="fragment_exercise"
-        tools:layout="@layout/fragment_exercise" />
+        tools:layout="@layout/fragment_exercise" >
+        <argument
+            android:name="workout"
+            app:argType="com.example.fitnessconstructor.domain.Workout" />
+    </fragment>
     <fragment
         android:id="@+id/statisticFragment"
         android:name="com.example.fitnessconstructor.ui.statistic.StatisticFragment"

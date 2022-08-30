@@ -4,8 +4,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface CreateWorkoutUseCase {
 
-    suspend fun createWorkout(workout: Workout)
-
+    suspend fun createWorkout()
+    suspend fun editWorkout(workout: Workout)
     /**
      * Asynch fun to get exercises from data for create workout
      */
@@ -17,7 +17,7 @@ interface CreateWorkoutUseCase {
     /**
      * Asynch fun to get exercises of workout for viewModel (transformation to LiveData)
      */
-    fun getWorkoutExercises(workout: Workout): Flow<StepWorkout>
+    fun getWorkoutExercises(workoutId: Int): Flow<List<StepWorkout>>
 
     suspend fun deleteWorkout(workout: Workout)
 }
