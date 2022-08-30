@@ -37,6 +37,10 @@ android {
 }
 
 dependencies {
+
+    //App top bar
+    implementation 'com.google.android.material:material:<version>'
+
     //Splash Screen
     implementation 'androidx.core:core-splashscreen:1.0.0'
 

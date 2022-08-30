@@ -16,5 +16,6 @@
     <string name="ems">10</string>
     <string name="fab_content_description">fab_content_description</string>
     <string name="hint_for_steps">25</string>
+    <string name="content_description_search">any_description</string>
 
 </resources>
