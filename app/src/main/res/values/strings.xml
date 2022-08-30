@@ -5,5 +5,17 @@
     <string name="statistic_fragment">"Statistic fragment "</string>
     <string name="settings_fragment">"Settings fragment "</string>
     <string name="lable">Lable</string>
+    <string name="workout_list_top_text">Product</string>
+    <string name="workout_name">Workout_name</string>
+    <string name="exercise_name">Exercise name</string>
+    <string name="excercise_name">Exercise name</string>
+    <string name="steps">STEPS</string>
+    <string name="enter_steps_you_ve_done">Enter steps you’ve done</string>
+    <string name="skip_workout">Skip workout</string>
+    <string name="next_exercise">Next exercise</string>
+    <string name="ems">10</string>
+    <string name="fab_content_description">fab_content_description</string>
+    <string name="hint_for_steps">25</string>
+    <string name="content_description_search">any_description</string>
 
 </resources>
