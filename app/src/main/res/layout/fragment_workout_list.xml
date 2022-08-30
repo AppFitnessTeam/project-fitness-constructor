@@ -4,13 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0"
-        android:animateLayoutChanges="true"
-        android:background="@android:color/white"
-        android:clickable="false" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -26,7 +19,7 @@
                 android:layout_height="@dimen/ic_image_size"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/ic_leading_icon"
+                android:src="@drawable/ic_baseline_menu_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -75,7 +68,8 @@
             android:layout_marginBottom="16dp"
             android:elevation="5dp"
             app:backgroundTint="@color/fab_color"
-            app:shapeAppearanceOverlay="@style/fab_square" />
+            app:shapeAppearanceOverlay="@style/fab_square"
+            android:contentDescription="@string/fab_content_description" />
 
         <ImageView
             android:id="@+id/plusImageview"

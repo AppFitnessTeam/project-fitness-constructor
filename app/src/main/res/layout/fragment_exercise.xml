@@ -4,16 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0"
-        android:animateLayoutChanges="true"
-        android:background="@android:color/white"
-        android:clickable="false">
 
-
-    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -29,7 +20,7 @@
                 android:layout_height="@dimen/ic_image_size"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/ic_arrow_back"
+                android:src="@drawable/ic_baseline_arrow_back_24"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -66,7 +57,7 @@
             android:layout_width="@dimen/exercise_image_width"
             android:layout_height="@dimen/exercise_image_height"
             android:layout_marginTop="45dp"
-            android:src="@drawable/ic_exercise_image"
+            android:src="@drawable/ic_exercise_image_new"
             app:layout_constraintBottom_toTopOf="@+id/text_view_quantity_steps"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +69,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="219dp"
             android:fontFamily="@font/roboto"
-            android:text="25"
+            android:hint="@string/hint_for_steps"
             android:textColor="@color/workout_list_top_text"
             android:textSize="@dimen/exercise_big_text_size"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,11 +95,11 @@
             android:layout_height="@dimen/edit_test_height"
             android:layout_marginTop="14dp"
             android:background="@xml/rounded_border_edittext"
-            android:ems="10"
+            android:ems="@string/ems"
             android:inputType="textPersonName|numberDecimal"
-            android:text="25"
+            android:hint="@string/hint_for_steps"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="@dimen/edit_text_size"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_view_steps" />

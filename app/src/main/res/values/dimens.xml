@@ -13,4 +13,5 @@
     <dimen name="radius_button_h">131dp</dimen>
     <dimen name="radius_button_w">40dp</dimen>
     <dimen name="text_size_roboto_med">14sp</dimen>
+    <dimen name="edit_text_size">20sp</dimen>
 </resources>
