@@ -14,7 +14,7 @@ class WorkoutListAdapter(
     context: Context
 ) : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHolder>() {
 
-    private val sectorItemList = todo
+    private val workoutList = todo
     private val contextAdapter = context
 
     class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
@@ -35,11 +35,11 @@ class WorkoutListAdapter(
     }
 
     override fun onBindViewHolder(holder: WorkoutListHolder, position: Int) {
-        holder.bind(sectorItemList[position])
+        holder.bind(workoutList[position])
     }
 
     override fun getItemCount(): Int {
-        return sectorItemList.size
+        return workoutList.size
     }
 
 }
