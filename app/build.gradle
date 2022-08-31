@@ -40,7 +40,7 @@ android {
 
 dependencies {
 
-    //App top bar
+    //App top bar (Material Components for Android)
     implementation 'com.google.android.material:material:<version>'
 
     //Splash Screen
