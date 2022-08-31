@@ -3,6 +3,7 @@ package com.example.fitnessconstructor.database.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.example.fitnessconstructor.domain.Workout
 import java.io.Serializable
 
 @Entity(tableName = "workout")
@@ -10,7 +11,7 @@ import java.io.Serializable
 //список показываем на главном экране
 data class WorkoutEntity(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
-    val id: Int?,
+    val id: Int = 0,
 
     @ColumnInfo(name = "name") // колонка с именем программы
     val name: String,
@@ -19,3 +20,7 @@ data class WorkoutEntity(
     val isInList: Int?
 
 ) : Serializable
+
+fun WorkoutEntity.toWorkout(): Workout {
+    return Workout(id = this.id, name = this.name, stepsWorkout = mutableListOf())
+}
