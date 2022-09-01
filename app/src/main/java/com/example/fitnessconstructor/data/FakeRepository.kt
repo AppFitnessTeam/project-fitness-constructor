@@ -1,6 +1,6 @@
 package com.example.fitnessconstructor.data
 
-import com.example.fitnessconstructor.domain.*
+import com.example.fitnessconstructor.domain.entities.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow

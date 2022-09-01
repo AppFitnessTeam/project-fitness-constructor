@@ -1,9 +1,9 @@
 package com.example.fitnessconstructor.data
 
 import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
-import com.example.fitnessconstructor.domain.Exercise
-import com.example.fitnessconstructor.domain.StepWorkout
-import com.example.fitnessconstructor.domain.Workout
+import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
