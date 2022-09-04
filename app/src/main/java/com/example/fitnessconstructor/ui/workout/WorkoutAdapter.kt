@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.ItemWorkoutBinding
-import com.example.fitnessconstructor.domain.Exercise
+import com.example.fitnessconstructor.domain.entities.Exercise
 
 
 class WorkoutAdapter(

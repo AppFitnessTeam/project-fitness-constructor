@@ -12,6 +12,8 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
     private val viewModel: ExerciseViewModel by viewModels()
     private val navArgs: ExerciseFragmentArgs by navArgs()
 
+    //TODO("add two types of fragment")
+
     companion object {
 
         @JvmStatic
