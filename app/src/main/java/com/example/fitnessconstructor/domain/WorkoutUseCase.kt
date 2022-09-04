@@ -1,5 +1,6 @@
 package com.example.fitnessconstructor.domain
 
+import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.flow.Flow
@@ -10,5 +11,5 @@ interface WorkoutUseCase {
      */
     fun getWorkoutsList(): Flow<List<Workout>>
 
-    fun getStepsWorkout(workout: Workout): Flow<StepWorkout>
+    fun getExercisesWorkout(workout: Workout): Flow<List<Exercise>>
 }

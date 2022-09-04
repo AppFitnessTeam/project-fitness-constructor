@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.ItemWorkoutListBinding
-import com.example.fitnessconstructor.domain.Workout
+import com.example.fitnessconstructor.domain.entities.Workout
 
 class WorkoutListAdapter(
     todo: List<Workout>, // Workout!??
