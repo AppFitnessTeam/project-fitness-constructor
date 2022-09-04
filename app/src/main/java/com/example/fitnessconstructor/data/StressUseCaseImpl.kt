@@ -1,8 +1,8 @@
 package com.example.fitnessconstructor.data
 
-import com.example.fitnessconstructor.domain.StepWorkout
 import com.example.fitnessconstructor.domain.StressUseCase
-import com.example.fitnessconstructor.domain.Workout
+import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow

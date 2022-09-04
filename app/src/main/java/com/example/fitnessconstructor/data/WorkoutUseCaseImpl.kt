@@ -1,7 +1,11 @@
 package com.example.fitnessconstructor.data
 
 import androidx.annotation.VisibleForTesting
-import com.example.fitnessconstructor.domain.*
+import com.example.fitnessconstructor.domain.WorkoutUseCase
+import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.Rest
+import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import javax.inject.Inject
@@ -31,7 +35,8 @@ class WorkoutUseCaseImpl @Inject constructor() : WorkoutUseCase {
             try {
                 val isApproach = exercises[i].id == exercises[i + 1].id
                 if (isApproach) result.add(rest[0]) else result.add(rest[1])
-            } catch (andArray: IndexOutOfBoundsException){}
+            } catch (andArray: IndexOutOfBoundsException) {
+            }
         }
         return result
     }

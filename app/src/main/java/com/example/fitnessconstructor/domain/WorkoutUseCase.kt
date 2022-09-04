@@ -1,5 +1,7 @@
 package com.example.fitnessconstructor.domain
 
+import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.flow.Flow
 
 interface WorkoutUseCase {

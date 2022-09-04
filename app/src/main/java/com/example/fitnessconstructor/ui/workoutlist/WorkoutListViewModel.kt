@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
-import com.example.fitnessconstructor.domain.Workout
 import com.example.fitnessconstructor.domain.WorkoutUseCase
+import com.example.fitnessconstructor.domain.entities.Workout
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
