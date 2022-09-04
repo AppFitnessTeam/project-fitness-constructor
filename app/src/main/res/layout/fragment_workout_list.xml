@@ -16,7 +16,15 @@
         app:srcCompat="@drawable/ic_plus_fab"
         app:shapeAppearanceOverlay="@style/fab_square"/>
 
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_workout_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 
 
