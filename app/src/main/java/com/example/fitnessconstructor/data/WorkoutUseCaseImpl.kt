@@ -7,7 +7,6 @@ import com.example.fitnessconstructor.domain.entities.Rest
 import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -21,10 +20,14 @@ class WorkoutUseCaseImpl @Inject constructor() : WorkoutUseCase {
         TODO("Not yet implemented")
     }
 
-    override fun getStepsWorkout(workout: Workout): Flow<StepWorkout> {
-        val exercises = getWorkoutExercises(workout)
+    override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getWorkoutSteps(workout: Workout, day: Int): List<StepWorkout> {
+        val exercises = getWorkoutExercises(workout.id, day)
         val rest = getWorkoutRest(workout)
-        return createStepsWorkout(exercises, rest).asFlow()
+        return createStepsWorkout(exercises, rest)
     }
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
@@ -41,11 +44,7 @@ class WorkoutUseCaseImpl @Inject constructor() : WorkoutUseCase {
         return result
     }
 
-    private fun getWorkoutRest(workout: Workout): List<Rest> {
-        TODO("Not yet implemented")
-    }
-
-    private fun getWorkoutExercises(workout: Workout): List<Exercise> {
+    private suspend fun getWorkoutRest(workout: Workout): List<Rest> {
         TODO("Not yet implemented")
     }
 }
