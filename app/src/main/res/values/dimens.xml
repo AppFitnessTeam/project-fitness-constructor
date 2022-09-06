@@ -14,4 +14,7 @@
     <dimen name="radius_button_w">40dp</dimen>
     <dimen name="text_size_roboto_med">14sp</dimen>
     <dimen name="edit_text_size">20sp</dimen>
+    <dimen name="Item_card_size_between_name_step">200dp</dimen>
+    <dimen name="Item_card_side_margin">8dp</dimen>
+    <dimen name="Item_card_height">16dp</dimen>
 </resources>
