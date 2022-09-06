@@ -31,10 +31,6 @@ class WorkoutUseCaseImpl @Inject constructor(
         }
     }
 
-    override fun getWorkoutExercises(workoutId: Int): Flow<List<StepWorkout>> {
-        workoutDao.getWorkoutExercises(workoutId)
-    }
-
     override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> {
         TODO("Not yet implemented")
     }
@@ -66,5 +62,5 @@ class WorkoutUseCaseImpl @Inject constructor(
 
     private fun getWorkoutExercises(workout: Workout): List<Exercise> =
         TODO("Not yet implemented")
-    }
+
 }

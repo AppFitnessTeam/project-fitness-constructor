@@ -3,7 +3,7 @@ package com.example.fitnessconstructor.database.entities
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.fitnessconstructor.domain.Rest
+import com.example.fitnessconstructor.domain.entities.Rest
 import java.io.Serializable
 
 
