@@ -2,12 +2,24 @@ package com.example.fitnessconstructor.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.example.fitnessconstructor.domain.entities.Rest
 import java.io.Serializable
 
 
-@Entity(tableName = "workout_rest")//таблица времени отдыха
+@Entity(
+    tableName = "workout_rest",
+    foreignKeys = [
+        ForeignKey(
+            entity = WorkoutEntity::class,
+            parentColumns = ["id"],
+            childColumns = ["workout_id"],
+            onDelete = ForeignKey.CASCADE,
+            onUpdate = ForeignKey.CASCADE
+        )
+    ]
+)
 data class WorkoutRestEntity(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
     val id: Int = 0,
