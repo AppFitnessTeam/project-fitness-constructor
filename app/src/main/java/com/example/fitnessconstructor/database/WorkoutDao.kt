@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Update
 import com.example.fitnessconstructor.database.entities.*
+import com.example.fitnessconstructor.domain.entities.Exercise
 import kotlinx.coroutines.flow.Flow
 
 
@@ -12,6 +13,7 @@ interface WorkoutDao {
     // Получаем список всех программ тренировок
     @Query("SELECT * FROM workout")
     fun getWorkout(): Flow<List<WorkoutEntity>>
+
 
     @Update // обновление по PrimaryKey
     suspend fun updateWorkout(workout: WorkoutEntity)// функция обновления программы, например нужно обновить значение isInList
@@ -30,5 +32,17 @@ interface WorkoutDao {
 
     // получаем программу программу тренировки в зависимости от её номера и дня
     @Query("SELECT * FROM workout_exercises WHERE workout_id IS :workoutId AND day IS :day")
-    suspend fun getWorkoutExercises(workoutId: Int?, day: Int?): List<WorkoutExercises>
+    suspend fun getWorkoutExercises(workoutId: Int?, day: Int?): List<ExercisesEntity>
+
+//    @Query(
+//        "SELECT *" +
+//                " FROM  all_exercises " +
+//                "LEFT JOIN workout_exercises " +
+//                "ON all_exercises.id=workout_exercises.exercise_id " +
+//                "AND workout_exercises.day IS :day"
+//    )
+//    fun getExercisesForDay(day: Int?): Flow<List<Exercise>>
+
+
 }
+
