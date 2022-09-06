@@ -22,8 +22,8 @@ class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() 
 
         fun bind(item: Exercise) = with(binding) {
             apply {
-                nameTextView.text = item.name
-                stepsTextView.text = item.count.toString()
+                exerciseListItemTvName.text = item.name
+                exerciseListItemTvReps.text = item.count.toString()
             }
         }
     }
