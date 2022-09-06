@@ -19,5 +19,7 @@
     <string name="content_description_search">any_description</string>
     <string name="fab_content_desc">fab content</string>
     <string name="content_desc_steps">"Image shows exercise "</string>
+    <string name="waiting_message"> get ready </string>
+    <string name="start_button"> start </string>
 
 </resources>
