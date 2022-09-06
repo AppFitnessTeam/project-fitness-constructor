@@ -4,6 +4,7 @@ import androidx.lifecycle.*
 import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
 import com.example.fitnessconstructor.domain.WorkoutUseCase
 import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.StepWorkout
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -21,9 +22,12 @@ class WorkoutViewModel @Inject constructor(
     private val _exerciseList = MutableLiveData<List<Exercise>>()
     val exerciseList: LiveData<List<Exercise>> = _exerciseList
 
+    lateinit var stepsWorkout: Array<StepWorkout>
+
     init {
         viewModelScope.launch {
             _exerciseList.postValue(workoutUseCase.getWorkoutExercises(7, 2))
+            stepsWorkout = workoutUseCase.getWorkoutSteps(7, 2).toTypedArray()
         }
     }
 }

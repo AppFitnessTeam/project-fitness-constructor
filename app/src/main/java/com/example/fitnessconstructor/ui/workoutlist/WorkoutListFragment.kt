@@ -21,9 +21,9 @@ class WorkoutListFragment :
 
     }
 
-    fun initRecyclerView(){
+    fun initRecyclerView() {
         var todoList = TODO("Add list of items for recycler")
-        val adapter = WorkoutListAdapter(todoList,requireContext())
+        val adapter = WorkoutListAdapter(todoList, requireContext())
         binding.apply {
             recyclerWorkoutList.adapter = adapter
             recyclerWorkoutList.layoutManager = LinearLayoutManager(requireContext())

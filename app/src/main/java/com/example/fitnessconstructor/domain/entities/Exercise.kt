@@ -12,10 +12,6 @@ import kotlinx.android.parcel.Parcelize
 data class Exercise(
     val id: Int,
     override val name: String,
-    val type: ExerciseType,
+    override val type: ExerciseType,
     override var count: Int = 0 //TODO("change var to val when working with real database")
 ) : StepWorkout, Parcelable
-
-enum class ExerciseType {
-    STEP, TIME, STRESS
-}

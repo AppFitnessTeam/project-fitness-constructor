@@ -33,8 +33,8 @@
         android:label="fragment_exercise"
         tools:layout="@layout/fragment_exercise">
         <argument
-            android:name="workout"
-            app:argType="com.example.fitnessconstructor.domain.entities.Workout" />
+            android:name="stepsWorkout"
+            app:argType="com.example.fitnessconstructor.domain.entities.StepWorkout[]" />
     </fragment>
     <fragment
         android:id="@+id/statisticFragment"
