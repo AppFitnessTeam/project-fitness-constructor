@@ -1,7 +1,5 @@
 package com.example.fitnessconstructor.ui.workout
 
-
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,38 +8,37 @@ import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.ItemWorkoutBinding
 import com.example.fitnessconstructor.domain.entities.Exercise
 
+class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() {
 
-class WorkoutAdapter(
-    todo: List<Exercise>, // Exercise!??
-    context: Context
-) : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() {
+    private var data = emptyList<Exercise>()
 
-    private val workoutItemList = todo
-    private val contextAdapter = context
+    fun setData(listExercises: List<Exercise>) {
+        data = listExercises
+        notifyDataSetChanged()
+    }
 
     class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = ItemWorkoutBinding.bind(item)
 
         fun bind(item: Exercise) = with(binding) {
-            //TODO bind elements with item
-
+            apply {
+                nameTextView.text = item.name
+                stepsTextView.text = item.count.toString()
+            }
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutListHolder {
         val view =
-            LayoutInflater.from(contextAdapter).inflate(R.layout.item_workout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_workout, parent, false)
         return WorkoutListHolder(view)
-
     }
 
     override fun onBindViewHolder(holder: WorkoutListHolder, position: Int) {
-        holder.bind(workoutItemList[position])
+        holder.bind(data[position])
     }
 
     override fun getItemCount(): Int {
-        return workoutItemList.size
+        return data.size
     }
-
 }
