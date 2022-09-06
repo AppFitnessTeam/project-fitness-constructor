@@ -15,7 +15,7 @@ import com.example.fitnessconstructor.database.entities.*
         WorkoutEntity::class,
         WorkoutExercises::class],
     version = 1,
-    exportSchema = false
+    exportSchema = true
 )
 
 //  будет  давать доступ к ней

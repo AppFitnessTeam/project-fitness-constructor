@@ -23,7 +23,7 @@ class WorkoutViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            _exerciseList.postValue(workoutUseCase.getWorkoutExercises(2, 2))
+            _exerciseList.postValue(workoutUseCase.getWorkoutExercises(7, 2))
         }
     }
 }
