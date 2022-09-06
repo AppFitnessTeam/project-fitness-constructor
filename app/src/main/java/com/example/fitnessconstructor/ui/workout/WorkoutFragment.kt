@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fitnessconstructor.databinding.FragmentWorkoutBinding
+import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -15,28 +15,21 @@ class WorkoutFragment : BaseFragment<FragmentWorkoutBinding>(FragmentWorkoutBind
     private val viewModel: WorkoutViewModel by viewModels()
     private val args: WorkoutFragmentArgs by navArgs()
 
+    private val adapter = WorkoutAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        //initRecyclerView()
-
+        initRecyclerView()
+        viewModel.exerciseList.observe(viewLifecycleOwner) { renderData(it) }
     }
 
-    fun initRecyclerView(){
-        var todoList = TODO("Add list of items for recycler")
-        val adapter = WorkoutAdapter(todoList,requireContext())
+    private fun renderData(exerciseList: List<Exercise>) {
+        adapter.setData(exerciseList)
+    }
+
+    private fun initRecyclerView() {
         binding.apply {
             recyclerWorkout.adapter = adapter
-            recyclerWorkout.layoutManager = LinearLayoutManager(requireContext())
-
         }
-    }
-
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance() = WorkoutFragment()
     }
 }
