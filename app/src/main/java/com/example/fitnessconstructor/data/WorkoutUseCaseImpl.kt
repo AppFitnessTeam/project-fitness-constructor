@@ -1,6 +1,11 @@
 package com.example.fitnessconstructor.data
 
 import androidx.annotation.VisibleForTesting
+import com.example.fitnessconstructor.domain.WorkoutUseCase
+import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.Rest
+import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.database.WorkoutDao
 import com.example.fitnessconstructor.database.entities.toListRest
 import com.example.fitnessconstructor.database.entities.toWorkout
@@ -30,10 +35,14 @@ class WorkoutUseCaseImpl @Inject constructor(
         workoutDao.getWorkoutExercises(workoutId)
     }
 
-    override fun getStepsWorkout(workout: Workout): Flow<StepWorkout> {
-        val exercises = getWorkoutExercises(workout)
+    override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getWorkoutSteps(workout: Workout, day: Int): List<StepWorkout> {
+        val exercises = getWorkoutExercises(workout.id, day)
         val rest = getWorkoutRest(workout)
-        return createStepsWorkout(exercises, rest).asFlow()
+        return createStepsWorkout(exercises, rest)
     }
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
@@ -57,4 +66,5 @@ class WorkoutUseCaseImpl @Inject constructor(
 
     private fun getWorkoutExercises(workout: Workout): List<Exercise> =
         TODO("Not yet implemented")
+    }
 }

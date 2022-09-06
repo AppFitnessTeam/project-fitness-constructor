@@ -8,7 +8,7 @@
         android:title="@string/lable"
         app:tooltipText="Description" />
     <item
-        android:id="@+id/statisticFragment"
+        android:id="@+id/exerciseFragment"
         android:icon="@drawable/ic_bottom_menu_statistic"
         android:title="@string/lable"
         app:tooltipText="Description" />

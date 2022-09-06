@@ -1,5 +1,8 @@
 package com.example.fitnessconstructor.domain
 
+import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.flow.Flow
 
 interface WorkoutUseCase {
@@ -8,10 +11,6 @@ interface WorkoutUseCase {
      */
     fun getWorkoutsList(): Flow<List<Workout>>
 
-    /**
-     * Asynch fun to get exercises of workout for viewModel (transformation to LiveData)
-     */
-    fun getWorkoutExercises(workoutId: Int): Flow<List<StepWorkout>>
-
-    fun getStepsWorkout(workout: Workout): Flow<StepWorkout>
+    suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise>
+    suspend fun getWorkoutSteps(workout: Workout, day: Int): List<StepWorkout>
 }

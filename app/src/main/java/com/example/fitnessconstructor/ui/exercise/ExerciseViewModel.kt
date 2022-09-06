@@ -16,5 +16,5 @@ class ExerciseViewModel @Inject constructor(
 
     private val navArgs = ExerciseFragmentArgs.fromSavedStateHandle(savedStateHandle)
     private val workout = navArgs.workout
-    val stepsWorkout = workoutUseCase.getStepsWorkout(workout).asLiveData()
+    //TODO("get exercise")
 }

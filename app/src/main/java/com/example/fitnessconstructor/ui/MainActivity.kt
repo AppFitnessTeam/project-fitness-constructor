@@ -3,6 +3,8 @@ package com.example.fitnessconstructor.ui
 import android.animation.ObjectAnimator
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +26,7 @@ import java.util.concurrent.Executors
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -41,6 +44,14 @@ class MainActivity : AppCompatActivity() {
         //bottom action bar
         bottomActionBarLaunch()
 
+        //remove action bar while launch app
+        supportActionBar?.hide()
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_top_bar,menu)
+        return true
     }
 
     private fun bottomActionBarLaunch() {
@@ -55,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
         // Setup the ActionBar with navController and 3 top level destinations
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.workoutFragment, R.id.statisticFragment, R.id.appSettingsFragment)
+            setOf(R.id.workoutFragment, R.id.exerciseFragment, R.id.appSettingsFragment)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
     }

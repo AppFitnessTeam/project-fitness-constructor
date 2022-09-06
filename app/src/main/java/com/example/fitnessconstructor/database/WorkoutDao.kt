@@ -1,7 +1,8 @@
 package com.example.fitnessconstructor.database
 
-import androidx.room.*
 import androidx.room.Dao
+import androidx.room.Query
+import androidx.room.Update
 import com.example.fitnessconstructor.database.entities.*
 import kotlinx.coroutines.flow.Flow
 

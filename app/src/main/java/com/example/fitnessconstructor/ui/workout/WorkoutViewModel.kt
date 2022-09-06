@@ -11,10 +11,12 @@ import javax.inject.Inject
 @HiltViewModel
 class WorkoutViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
-    private val createWorkoutUseCase: CreateWorkoutUseCase
+    private val createWorkoutUseCase: CreateWorkoutUseCase,
+    private val workoutUseCase: WorkoutUseCase
 ) : ViewModel() {
 
     private val navArgs = WorkoutFragmentArgs.fromSavedStateHandle(savedStateHandle)
-    private val workoutId = navArgs.workoutId
-    val workoutExercises = createWorkoutUseCase.getWorkoutExercises(workoutId).asLiveData()
+    private val workoutId = navArgs.workoutId //TODO("get workout")
+//    val workoutExercises = workoutUseCase.getExercisesWorkout(//TODO("workout")).asLiveData()
+
 }
