@@ -19,8 +19,10 @@ data class WorkoutEntity(
     @ColumnInfo(name = "is_in_list") //  указывает какие тренировки на главном экране, может принимать значение 0 или 1
     val isInList: Int?
 
-) : Serializable
+) : Serializable {
 
-fun WorkoutEntity.toWorkout(): Workout {
-    return Workout(id = this.id, name = this.name, stepsWorkout = mutableListOf())
+    fun toWorkout(): Workout {
+        return Workout(id = this.id, name = this.name, stepsWorkout = mutableListOf())
+    }
 }
+

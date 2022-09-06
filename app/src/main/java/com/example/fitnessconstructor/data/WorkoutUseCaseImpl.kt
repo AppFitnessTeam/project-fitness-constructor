@@ -1,18 +1,14 @@
 package com.example.fitnessconstructor.data
 
 import androidx.annotation.VisibleForTesting
+import com.example.fitnessconstructor.database.WorkoutDao
 import com.example.fitnessconstructor.domain.WorkoutUseCase
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.Rest
 import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
-import com.example.fitnessconstructor.database.WorkoutDao
-import com.example.fitnessconstructor.database.entities.toListRest
-import com.example.fitnessconstructor.database.entities.toWorkout
-import com.example.fitnessconstructor.domain.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
@@ -31,13 +27,16 @@ class WorkoutUseCaseImpl @Inject constructor(
         }
     }
 
-    override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> {
-        TODO("Not yet implemented")
-    }
+    override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> =
+        withContext(Dispatchers.IO) {
+            return@withContext workoutDao.getWorkoutExercises(workoutId, day).map {
+                it.toExercise()
+            }
+        }
 
-    override suspend fun getWorkoutSteps(workout: Workout, day: Int): List<StepWorkout> {
-        val exercises = getWorkoutExercises(workout.id, day)
-        val rest = getWorkoutRest(workout)
+    override suspend fun getWorkoutSteps(workoutId: Int, day: Int): List<StepWorkout> {
+        val exercises = getWorkoutExercises(workoutId, day)
+        val rest = getWorkoutRest(workoutId)
         return createStepsWorkout(exercises, rest)
     }
 
@@ -55,12 +54,8 @@ class WorkoutUseCaseImpl @Inject constructor(
         return result
     }
 
-    private suspend fun getWorkoutRest(workout: Workout): List<Rest> =
+    private suspend fun getWorkoutRest(workoutId: Int): List<Rest> =
         withContext(Dispatchers.IO) {
-            return@withContext workoutDao.getWorkoutRest(workout.id).toListRest()
+            return@withContext workoutDao.getWorkoutRest(workoutId).toListRest()
         }
-
-    private fun getWorkoutExercises(workout: Workout): List<Exercise> =
-        TODO("Not yet implemented")
-
 }

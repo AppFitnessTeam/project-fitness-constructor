@@ -7,5 +7,5 @@ import kotlinx.android.parcel.Parcelize
 data class Workout(
     val id: Int,
     val name: String,
-    val stepsWorkout: MutableList<StepWorkout>
+    val stepsWorkout: MutableList<StepWorkout> //TODO("not need, remove later")
 ) : Parcelable

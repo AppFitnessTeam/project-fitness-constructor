@@ -21,11 +21,12 @@ data class WorkoutRestEntity(
     @ColumnInfo(name = "exercise_rest")// время отдыха между упражнениями
     val exerciseRest: Int
 
-) : Serializable
+) : Serializable {
 
-fun WorkoutRestEntity.toListRest():List<Rest>{
-    return listOf(
-        Rest(id = this.id, count = exerciseRest),
-        Rest(id = this.id, count = exerciseRest),
-    )
+    fun toListRest(): List<Rest> {
+        return listOf(
+            Rest(id = this.id, count = apprRest),
+            Rest(id = this.id, count = exerciseRest)
+        )
+    }
 }

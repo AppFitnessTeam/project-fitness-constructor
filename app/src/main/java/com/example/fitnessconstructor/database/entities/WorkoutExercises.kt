@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.ExerciseType
 import java.io.Serializable
 
 
@@ -45,4 +47,12 @@ data class WorkoutExercises(
     @ColumnInfo(name = "count") // количество , секунды или до отказа (-1)
     val count: Int,
 
-    ) : Serializable
+    ) : Serializable {
+
+    fun toExercise(): Exercise = Exercise(
+        id = id,
+        name = "some name", //TODO("get name from another table")
+        type = ExerciseType.STEP, //TODO("get type from another table")
+        count = count
+    )
+}
