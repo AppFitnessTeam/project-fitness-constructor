@@ -9,7 +9,7 @@ interface CreateWorkoutDao {
 
     //create workout
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun createWorkout(workout: Int?)
+    fun createWorkout(workout_id: Int?)
 
     //editWorkout
     @Update
