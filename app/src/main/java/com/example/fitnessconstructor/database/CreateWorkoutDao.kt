@@ -1,35 +1,32 @@
 package com.example.fitnessconstructor.database
 
 import androidx.room.*
-import com.example.fitnessconstructor.domain.entities.Exercise
-import kotlinx.coroutines.flow.Flow
+import com.example.fitnessconstructor.database.entities.WorkoutEntity
+import com.example.fitnessconstructor.database.entities.WorkoutExercises
+
 
 @Dao
 interface CreateWorkoutDao {
 
     //create workout
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun createWorkout(workout_id: Int?)
+    suspend fun createWorkout(workout: WorkoutEntity)
 
     //editWorkout
     @Update
-    suspend fun editWorkout(workout_id: Int?)
-
-    //getAllExercises
-    @Query("SELECT * FROM all_exercises")
-    fun getExercise(): Flow<List<Exercise>>
+    suspend fun editWorkout(workout: WorkoutEntity)
 
     //addExerciseToWorkout
     @Insert(onConflict = OnConflictStrategy.REPLACE )
-    fun addExercise(exercise_id: Int?)
+    suspend fun addExercise(exercise: WorkoutExercises)
 
     //removeExerciseFromWorkout
     @Delete
-    fun deleteExerciseFromWorkout(exercise_id: Int?)
+    fun deleteExerciseFromWorkout(exercise: WorkoutExercises)
 
-    //deleteWorkout
+    //cleanUpAllWorkouts
     @Query("DELETE FROM workout")
-    fun deleteWorkout()
+    fun deleteAllWorkouts()
 
 }
 
