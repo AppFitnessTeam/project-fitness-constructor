@@ -1,113 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_marginTop="@dimen/top_bar_height">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/top_bar_height">
+    <include
+        android:id="@+id/step_layout"
+        layout="@layout/step_layout" />
 
-        <ImageView
-            android:id="@+id/exercise_image"
-            android:layout_width="@dimen/exercise_image_width"
-            android:layout_height="@dimen/exercise_image_height"
-            android:layout_marginTop="45dp"
-            android:src="@drawable/ic_exercise_image_new"
-            android:contentDescription="@string/content_desc_steps"
-            app:layout_constraintBottom_toTopOf="@+id/text_view_quantity_steps"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <include
+        android:id="@+id/time_layout"
+        layout="@layout/time_layout" />
 
-        <TextView
-            android:id="@+id/text_view_quantity_steps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="219dp"
-            android:fontFamily="@font/roboto"
-            android:hint="@string/hint_for_steps"
-            android:textSize="@dimen/exercise_big_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/button_skip"
+        android:layout_width="@dimen/radius_button_h"
+        android:layout_height="@dimen/radius_button_w"
+        android:layout_margin="21dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/skip_workout"
+        android:textSize="@dimen/text_size_roboto_med"
+        app:layout_constraintEnd_toStartOf="@+id/button_next"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/step_layout" />
 
-        <TextView
-            android:id="@+id/text_view_steps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="262dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/steps"
-            android:textSize="@dimen/exercise_big_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/edit_text_qty_steps"
-            android:layout_width="@dimen/edit_text_width"
-            android:layout_height="@dimen/edit_test_height"
-            android:layout_marginTop="14dp"
-            android:background="@xml/rounded_border_edittext"
-            android:ems="@string/ems"
-            android:hint="@string/hint_for_steps"
-            android:inputType="textPersonName|numberDecimal"
-            android:textAlignment="center"
-            android:textSize="@dimen/edit_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_steps" />
-
-        <TextView
-            android:id="@+id/text_view_enter_steps"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/enter_steps_you_ve_done"
-            android:textSize="@dimen/exercise_small_text_size"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_qty_steps" />
-
-
-        <Button
-            android:id="@+id/button_skip"
-            android:layout_width="@dimen/radius_button_h"
-            android:layout_height="@dimen/radius_button_w"
-            android:layout_margin="21dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/skip_workout"
-            android:textSize="@dimen/text_size_roboto_med"
-            app:layout_constraintEnd_toStartOf="@+id/button_next"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_enter_steps" />
-
-        <Button
-            android:id="@+id/button_next"
-            android:layout_width="@dimen/radius_button_h"
-            android:layout_height="@dimen/radius_button_w"
-            android:layout_margin="21dp"
-            android:fontFamily="@font/roboto"
-            android:text="@string/next_exercise"
-            android:textSize="@dimen/text_size_roboto_med"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button_skip"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_enter_steps" />
-
-
-<!--        change radius corner for buttons-->
-<!--        android:background="@xml/button_corner_radius"-->
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="@dimen/radius_button_h"
+        android:layout_height="@dimen/radius_button_w"
+        android:layout_margin="21dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/next_exercise"
+        android:textSize="@dimen/text_size_roboto_med"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_skip"
+        app:layout_constraintTop_toBottomOf="@+id/step_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

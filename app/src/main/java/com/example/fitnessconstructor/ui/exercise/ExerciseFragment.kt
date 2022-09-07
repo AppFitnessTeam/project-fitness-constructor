@@ -46,12 +46,18 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
 
     private fun setViewTime(stepWorkout: StepWorkout) {
         toast(stepWorkout)
-        // TODO("Not yet implemented")
+        with(binding){
+            stepLayout.root.visibility = View.INVISIBLE
+            timeLayout.root.visibility = View.VISIBLE
+        }
     }
 
     private fun setViewStep(stepWorkout: StepWorkout) {
         toast(stepWorkout)
-        // TODO("Not yet implemented")
+        with(binding){
+            stepLayout.root.visibility = View.VISIBLE
+            timeLayout.root.visibility = View.INVISIBLE
+        }
     }
 
     private fun toast(stepWorkout: StepWorkout) {

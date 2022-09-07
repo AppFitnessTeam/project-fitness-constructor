@@ -10,6 +10,7 @@
     <string name="exercise_name">Exercise name</string>
     <string name="excercise_name">Exercise name</string>
     <string name="steps">STEPS</string>
+    <string name="time">SEC</string>
     <string name="enter_steps_you_ve_done">Enter steps you’ve done</string>
     <string name="skip_workout">Skip workout</string>
     <string name="next_exercise">Next exercise</string>

@@ -5,8 +5,8 @@
     <dimen name="top_bar_text_size">22sp</dimen>
     <dimen name="exercise_big_text_size">32sp</dimen>
     <dimen name="fab_bottom_margin">600dp</dimen>
-    <dimen name="exercise_image_width">158dp</dimen>
-    <dimen name="exercise_image_height">155dp</dimen>
+    <dimen name="exercise_image_width">160dp</dimen>
+    <dimen name="exercise_image_height">160dp</dimen>
     <dimen name="edit_text_width">184dp</dimen>
     <dimen name="edit_test_height">56dp</dimen>
     <dimen name="exercise_small_text_size">12sp</dimen>
