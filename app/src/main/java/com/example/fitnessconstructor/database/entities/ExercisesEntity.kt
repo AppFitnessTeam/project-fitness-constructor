@@ -1,13 +1,9 @@
 package com.example.fitnessconstructor.database.entities
 
-import android.os.Parcelable
 import androidx.room.Embedded
 import androidx.room.Relation
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.ExerciseType
-import kotlinx.android.parcel.Parcelize
-
-
 
 data class ExercisesEntity(
     @Embedded val workoutExercises: WorkoutExercises,
@@ -17,13 +13,11 @@ data class ExercisesEntity(
     )
 
     val exercise: AllExercisesEntity
-)  {
+) {
 
     fun toExercise(): Exercise = Exercise(
-        id = workoutExercises.id.toInt(),
-
+        id = workoutExercises.id,
         name = exercise.nameEng.toString(),
-//        type = ExerciseType.STEP,
         type = when (exercise.typeId?.toInt()) {
             1 -> ExerciseType.STRESS
             2 -> ExerciseType.STEP
@@ -31,6 +25,6 @@ data class ExercisesEntity(
                 ExerciseType.TIME
             }
         },
-        count = workoutExercises.id.toInt()
+        count = workoutExercises.count
     )
 }
