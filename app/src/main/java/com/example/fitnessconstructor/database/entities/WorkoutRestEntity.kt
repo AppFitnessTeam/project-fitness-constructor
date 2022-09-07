@@ -1,5 +1,6 @@
 package com.example.fitnessconstructor.database.entities
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
@@ -33,7 +34,7 @@ data class WorkoutRestEntity(
     @ColumnInfo(name = "exercise_rest")// время отдыха между упражнениями
     val exerciseRest: Int
 
-) : Serializable {
+)  {
 
     fun toListRest(): List<Rest> {
         return listOf(

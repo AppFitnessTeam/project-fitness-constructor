@@ -33,4 +33,4 @@ data class StressExercisesEntity(
     @ColumnInfo(name = "type_id")
     val typeId: Int     //здесь всегда будет 1
 
-) : Serializable
+)

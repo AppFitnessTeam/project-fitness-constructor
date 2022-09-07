@@ -14,4 +14,4 @@ data class TypeExercisesEntity(
     @ColumnInfo(name = "type") // колонка с типом упражнения( стресс, количественный или на время)
     val type: String?
 
-) : Serializable
+)

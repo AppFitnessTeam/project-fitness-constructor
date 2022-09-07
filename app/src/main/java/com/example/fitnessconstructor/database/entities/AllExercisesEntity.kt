@@ -1,10 +1,13 @@
 package com.example.fitnessconstructor.database.entities
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 import java.io.Serializable
+
 
 
 @Entity(
@@ -19,6 +22,7 @@ import java.io.Serializable
         )
     ]
 )
+
 data class AllExercisesEntity(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
     val id: Int?,
@@ -32,4 +36,4 @@ data class AllExercisesEntity(
     @ColumnInfo(name = "type_id") // колонка с типом упражнения( стресс, количественный или на время)
     val typeId: Int?
 
-) : Serializable
+)

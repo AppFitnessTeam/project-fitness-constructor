@@ -1,11 +1,10 @@
 package com.example.fitnessconstructor.database.entities
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.ForeignKey
-import androidx.room.PrimaryKey
+import android.os.Parcelable
+import androidx.room.*
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.ExerciseType
+import kotlinx.android.parcel.Parcelize
 import java.io.Serializable
 
 
@@ -31,6 +30,7 @@ import java.io.Serializable
         )
     ]
 )
+
 data class WorkoutExercises(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
     val id: Int = 0,
@@ -47,12 +47,7 @@ data class WorkoutExercises(
     @ColumnInfo(name = "count") // количество , секунды или до отказа (-1)
     val count: Int,
 
-    ) : Serializable {
 
-    fun toExercise(): Exercise = Exercise(
-        id = id,
-        name = "some name", //TODO("get name from another table")
-        type = ExerciseType.STEP, //TODO("get type from another table")
-        count = count
-    )
+    ) {
+
 }
