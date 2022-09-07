@@ -50,6 +50,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
             stepLayout.root.visibility = View.INVISIBLE
             timeLayout.root.visibility = View.VISIBLE
         }
+        //TODO("binding views, add timer")
     }
 
     private fun setViewStep(stepWorkout: StepWorkout) {
@@ -58,6 +59,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
             stepLayout.root.visibility = View.VISIBLE
             timeLayout.root.visibility = View.INVISIBLE
         }
+        //TODO("binding views")
     }
 
     private fun toast(stepWorkout: StepWorkout) {

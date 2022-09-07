@@ -4,8 +4,6 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
-import java.io.Serializable
-
 
 @Entity(
     tableName = "stress_workout_exercises",
@@ -38,5 +36,4 @@ data class StressWorkoutExercisesEntity(
 
     @ColumnInfo(name = "count")// количество секунд
     val count: Int?     //здесь всегда будет 1
-
 )

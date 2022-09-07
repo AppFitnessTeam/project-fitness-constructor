@@ -1,15 +1,9 @@
 package com.example.fitnessconstructor.database.entities
 
-import android.os.Parcelable
-import androidx.room.*
-import com.example.fitnessconstructor.domain.entities.Exercise
-import com.example.fitnessconstructor.domain.entities.ExerciseType
-import kotlinx.android.parcel.Parcelize
-import java.io.Serializable
-
-
-//при первоначальном запуске можно будет выбрать на более 3 дней в неделю!!
-// хотябы на первое время...
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "workout_exercises",
@@ -30,7 +24,6 @@ import java.io.Serializable
         )
     ]
 )
-
 data class WorkoutExercises(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
     val id: Int = 0,
@@ -46,8 +39,4 @@ data class WorkoutExercises(
 
     @ColumnInfo(name = "count") // количество , секунды или до отказа (-1)
     val count: Int,
-
-
-    ) {
-
-}
+)
