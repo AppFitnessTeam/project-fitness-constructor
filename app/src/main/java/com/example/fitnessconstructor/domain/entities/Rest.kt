@@ -10,5 +10,6 @@ import kotlinx.android.parcel.Parcelize
 data class Rest(
     val id: Int = 0,
     override val name: String = "Rest time",
+    override val type: ExerciseType = ExerciseType.TIME,
     override val count: Int = 0
 ) : StepWorkout, Parcelable
