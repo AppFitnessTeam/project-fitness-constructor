@@ -22,7 +22,7 @@ import java.io.Serializable
         )
     ]
 )
-@Parcelize
+
 data class AllExercisesEntity(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
     val id: Int?,
@@ -36,4 +36,4 @@ data class AllExercisesEntity(
     @ColumnInfo(name = "type_id") // колонка с типом упражнения( стресс, количественный или на время)
     val typeId: Int?
 
-) : Parcelable
+)

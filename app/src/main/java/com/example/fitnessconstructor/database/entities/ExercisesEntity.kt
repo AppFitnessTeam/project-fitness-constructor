@@ -8,7 +8,7 @@ import com.example.fitnessconstructor.domain.entities.ExerciseType
 import kotlinx.android.parcel.Parcelize
 
 
-@Parcelize
+
 data class ExercisesEntity(
     @Embedded val workoutExercises: WorkoutExercises,
     @Relation(
@@ -17,7 +17,7 @@ data class ExercisesEntity(
     )
 
     val exercise: AllExercisesEntity
-) : Parcelable {
+)  {
 
     fun toExercise(): Exercise = Exercise(
         id = workoutExercises.id.toInt(),

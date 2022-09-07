@@ -39,4 +39,4 @@ data class StressWorkoutExercisesEntity(
     @ColumnInfo(name = "count")// количество секунд
     val count: Int?     //здесь всегда будет 1
 
-) : Serializable
+)

@@ -30,7 +30,7 @@ import java.io.Serializable
         )
     ]
 )
-@Parcelize
+
 data class WorkoutExercises(
     @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
     val id: Int = 0,
@@ -48,4 +48,6 @@ data class WorkoutExercises(
     val count: Int,
 
 
-    ) : Parcelable
+    ) {
+
+}
