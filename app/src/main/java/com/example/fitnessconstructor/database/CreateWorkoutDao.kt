@@ -22,7 +22,11 @@ interface CreateWorkoutDao {
 
     //removeExerciseFromWorkout
     @Delete
-    fun deleteExerciseFromWorkout(exercise: WorkoutExercises)
+    fun deleteExercise(exercise: WorkoutExercises)
+
+    //removeWorkoutEntity
+    @Delete
+    fun deleteWorkout(workout: WorkoutEntity)
 
     //cleanUpAllWorkouts
     @Query("DELETE FROM workout")
