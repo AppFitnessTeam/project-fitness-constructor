@@ -10,7 +10,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ExerciseViewModel @Inject constructor(
-    //TODO("add timer")
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -21,17 +20,18 @@ class ExerciseViewModel @Inject constructor(
     private val _stepWorkout = MutableLiveData<StepWorkout>()
     val stepWorkout: LiveData<StepWorkout> = _stepWorkout
 
+    private val _isSteps = MutableLiveData<Boolean>()
+    val isSteps: LiveData<Boolean> = _isSteps
+
     init {
         nextStep()
     }
 
     fun nextStep() {
-        if (iteratorSteps.hasNext()) _stepWorkout.postValue(iteratorSteps.next())
-        //TODO("add logic when last")
-    }
-
-    fun startRest() {
-        //TODO("add timer")
-        nextStep()
+        if (iteratorSteps.hasNext()) {
+            _stepWorkout.postValue(iteratorSteps.next())
+        } else {
+            _isSteps.postValue(false)
+        }
     }
 }

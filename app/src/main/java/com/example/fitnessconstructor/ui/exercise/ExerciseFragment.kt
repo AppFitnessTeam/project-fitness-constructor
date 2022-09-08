@@ -3,7 +3,6 @@ package com.example.fitnessconstructor.ui.exercise
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -25,6 +24,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        viewModel.isSteps.observe(viewLifecycleOwner) { skipWorkout() }
         viewModel.stepWorkout.observe(viewLifecycleOwner) { renderData(it) }
     }
 
@@ -35,10 +35,14 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
                 viewModel.nextStep()
             }
             buttonSkip.setOnClickListener {
-                timer?.cancel()
-                findNavController().navigateUp()
+                skipWorkout()
             }
         }
+    }
+
+    private fun skipWorkout() {
+        timer?.cancel()
+        findNavController().navigateUp()
     }
 
     private fun renderData(stepWorkout: StepWorkout) {
