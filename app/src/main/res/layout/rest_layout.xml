@@ -13,13 +13,13 @@
         android:layout_marginTop="45dp"
         android:src="@drawable/ic_timer_160"
         android:contentDescription="@string/content_desc_steps"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_quantity_steps"
+        app:layout_constraintBottom_toTopOf="@+id/rest_count_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_quantity_steps"
+        android:id="@+id/rest_count_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="219dp"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_steps"
+        android:id="@+id/rest_type_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="262dp"

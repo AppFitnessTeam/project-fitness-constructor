@@ -1,25 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/exercise_name_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="@string/exercise_name"
+        android:textSize="@dimen/exercise_big_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/exercise_image"
         android:layout_width="@dimen/exercise_image_width"
         android:layout_height="@dimen/exercise_image_height"
         android:layout_marginTop="45dp"
-        android:src="@drawable/ic_exercise_image_new"
         android:contentDescription="@string/content_desc_steps"
-        app:layout_constraintBottom_toTopOf="@+id/text_view_quantity_steps"
+        android:src="@drawable/ic_exercise_image_new"
+        app:layout_constraintBottom_toTopOf="@+id/exercise_count_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_quantity_steps"
+        android:id="@+id/exercise_count_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="219dp"
@@ -31,7 +40,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/text_view_steps"
+        android:id="@+id/exercise_type_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="262dp"
@@ -43,7 +52,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edit_text_qty_steps"
+        android:id="@+id/steps_edit_text"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="@dimen/edit_test_height"
         android:layout_marginTop="14dp"
@@ -55,10 +64,10 @@
         android:textSize="@dimen/edit_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_steps" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise_type_text_view" />
 
     <TextView
-        android:id="@+id/text_view_enter_steps"
+        android:id="@+id/text_enter_steps_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
@@ -67,6 +76,6 @@
         android:textSize="@dimen/exercise_small_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_qty_steps" />
+        app:layout_constraintTop_toBottomOf="@+id/steps_edit_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
