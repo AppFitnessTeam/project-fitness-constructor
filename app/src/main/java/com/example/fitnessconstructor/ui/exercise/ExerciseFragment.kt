@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.FragmentExerciseBinding
 import com.example.fitnessconstructor.domain.entities.ExerciseType
 import com.example.fitnessconstructor.domain.entities.Rest
@@ -95,6 +96,14 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
         with(binding.exerciseLayout) {
             stepsEditText.visibility = View.VISIBLE
             textEnterStepsTextView.visibility = View.VISIBLE
+            if (stepWorkout.count < 0) {
+                exerciseCountTextView.text = resources.getText(R.string.count_1)
+                exerciseTypeTextView.visibility = View.INVISIBLE
+            } else {
+                exerciseTypeTextView.visibility = View.VISIBLE
+                exerciseCountTextView.text = stepWorkout.count.toString()
+                stepsEditText.setText(stepWorkout.count.toString())
+            }
         }
     }
 
