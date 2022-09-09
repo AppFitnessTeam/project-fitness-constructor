@@ -20,5 +20,6 @@
     <string name="content_description_search">any_description</string>
     <string name="fab_content_desc">fab content</string>
     <string name="content_desc_steps">"Image shows exercise "</string>
+    <string name="count_1">While you can</string>
 
 </resources>

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/top_bar_height">
 
+    <include
+        android:id="@+id/exercise_layout"
+        layout="@layout/exercise_layout" />
 
     <include
-        android:id="@+id/step_layout"
-        layout="@layout/step_layout" />
-
-    <include
-        android:id="@+id/time_layout"
-        layout="@layout/time_layout" />
+        android:id="@+id/rest_layout"
+        layout="@layout/rest_layout"
+        tools:visibility="invisible" />
 
     <Button
         android:id="@+id/button_skip"
@@ -26,7 +27,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/step_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise_layout" />
 
     <Button
         android:id="@+id/button_next"
@@ -39,7 +40,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_skip"
-        app:layout_constraintTop_toBottomOf="@+id/step_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/exercise_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
