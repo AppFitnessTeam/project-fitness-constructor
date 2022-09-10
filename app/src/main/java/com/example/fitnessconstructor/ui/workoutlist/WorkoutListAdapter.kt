@@ -8,7 +8,9 @@ import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.ItemWorkoutListBinding
 import com.example.fitnessconstructor.domain.entities.Workout
 
-class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHolder>() {
+class WorkoutListAdapter(
+    val listener: ItemClickListener
+) : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHolder>() {
 
     private var data = emptyList<Workout>()
 
@@ -17,11 +19,12 @@ class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHo
         notifyDataSetChanged()
     }
 
-    class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
+    inner class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val binding = ItemWorkoutListBinding.bind(item)
 
-        fun bind(item: Workout) = with(binding) {
-            workoutNameTextView.text = item.name
+        fun bind(workout: Workout) = with(binding) {
+            workoutNameTextView.text = workout.name
+            itemView.setOnClickListener { listener.onItemClick(workout) }
         }
     }
 
@@ -38,5 +41,4 @@ class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHo
     override fun getItemCount(): Int {
         return data.size
     }
-
 }
