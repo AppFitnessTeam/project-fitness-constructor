@@ -21,5 +21,45 @@
     <string name="fab_content_desc">fab content</string>
     <string name="content_desc_steps">"Image shows exercise "</string>
     <string name="count_1">While you can</string>
+    <string name="skip_test">Skip Test</string>
+    <string name="start_test">Start test</string>
+    <string name="fitness_level">Excellent</string>
+    <string name="individual_training_program">individual training program</string>
+    <string name="male">male</string>
+    <string name="female">female</string>
+    <string name="hello">Thank you for choosing our app</string>
+    <string name="hello_description">We will help you to choose \n individual training program \n for you.</string>
+    <string name="hello_description_two">To accurately know your level \nof physical fitness, please take the special stress test.</string>
+    <string name="stress_test">STRESS TEST</string>
+    <string name="what_is_stress_test">The stress test is a special test \n that will determine the level of \n your physical fitness.</string>
+    <string name="stress_test_description">You will need to do three exercises in sequence with no rest in between.
+        \n These exercises will be: \nPush-ups, squats and running in place. \n \nEach exercise should be done \n for 30 seconds.
+        \n \nAfter each exercise, sew on the number of times that you managed …</string>
+    <string name="individual_training_program_description">We will help you to choose an individual training program for you.
+        \nTo do this, fill in your details.\n (We don\'t save your personal information).</string>
+    <string name="your_fitness_level_text">You have done a stress test. It was COOL! \n Your fitness level:</string>
+    <string name="sex">\n \nSex Gender</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+    <string name="age">Age</string>
+    <string name="age_19_25">19-25</string>
+    <string name="age_25_35">25-35</string>
+    <string name="age_35_45">35-45</string>
+    <string name="age_45_55">45-55</string>
+    <string name="age_55">more 55</string>
+    <string name="level">Fitness Level</string>
+    <string name="level_low">low</string>
+    <string name="level_midle">midle</string>
+    <string name="level_high">high</string>
+    <string name="age_exelent">exelent</string>
+    <string name="day">Day</string>
+    <string name="day_description">(Please select no more than 3 days per week for training)</string>
+    <string name="day_su">Su</string>
+    <string name="day_mo">Mo</string>
+    <string name="day_to">To</string>
+    <string name="day_we">We</string>
+    <string name="day_th">Th</string>
+    <string name="day_fr">Fr</string>
+    <string name="chip_day_sa">Sa</string>
 
 </resources>
