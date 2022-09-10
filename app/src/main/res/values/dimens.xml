@@ -17,4 +17,5 @@
     <dimen name="Item_card_size_between_name_step">200dp</dimen>
     <dimen name="Item_card_side_margin">8dp</dimen>
     <dimen name="Item_card_height">16dp</dimen>
+    <dimen name="margin_text">16dp</dimen>
 </resources>
