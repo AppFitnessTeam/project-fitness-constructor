@@ -11,6 +11,14 @@
     <dimen name="Item_card_size_between_name_step">200dp</dimen>
     <dimen name="Item_card_side_margin">8dp</dimen>
     <dimen name="Item_card_height">16dp</dimen>
+    
+    <!--    Item exercise dimens-->
+    <dimen name="layout_height">56dp</dimen>
+    <dimen name="padding_top_bottom_layout">8dp</dimen>
+    <dimen name="padding_start_end_layout">16dp</dimen>
+    <dimen name="exercise_icon_width">40dp</dimen>
+    <dimen name="exercise_icon_height">40dp</dimen>
+    <dimen name="text_margin_start">16dp</dimen>
 
     <!--    Margins size-->
     <dimen name="margin_8">8dp</dimen>
@@ -21,7 +29,8 @@
     <dimen name="exercise_image_height">160dp</dimen>
 
     <!--    Text size-->
-    <dimen name="button_text_size">14sp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
     <dimen name="exercise_big_text_size">32sp</dimen>
-    <dimen name="edit_text_size">20sp</dimen>
+    <dimen name="edit_text_size">24sp</dimen>
+    <dimen name="list_item_text_size">16sp</dimen>
 </resources>

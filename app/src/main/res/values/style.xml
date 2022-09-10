@@ -6,20 +6,32 @@
         <item name="cornerSize">8dp</item>
     </style>
 
-    <!--    ExerciseFragment styles-->
     <style name="text_style">
         <item name="fontFamily">@font/roboto</item>
-        <item name="android:textSize">@dimen/exercise_big_text_size</item>
     </style>
 
+    <!--    WorkoutFragment styles-->
+    <style name="exercise_icon_style">
+        <item name="android:layout_width">@dimen/exercise_icon_width</item>
+        <item name="android:layout_height">@dimen/exercise_icon_height</item>
+    </style>
+
+    <style name="item_title_text_style" parent="text_style">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:alpha">1.0</item>
+    </style>
+
+    <!--    ExerciseFragment styles-->
     <style name="title_text_view_style" parent="text_style">
+        <item name="android:textSize">@dimen/exercise_big_text_size</item>
         <item name="android:layout_marginTop">@dimen/margin_8</item>
         <item name="android:layout_marginBottom">@dimen/margin_8</item>
-        <item name="alpha">1.0</item>
+        <item name="android:alpha">1.0</item>
     </style>
 
     <style name="text_view_style" parent="text_style">
-        <item name="alpha">0.8</item>
+        <item name="android:textSize">@dimen/exercise_big_text_size</item>
+        <item name="android:alpha">0.8</item>
     </style>
 
     <style name="edit_text_style">

@@ -22,8 +22,10 @@ class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() 
 
         fun bind(item: Exercise) = with(binding) {
             apply {
-                exerciseListItemTvName.text = item.name
-                exerciseListItemTvReps.text = item.count.toString()
+                exerciseNameTextView.text = item.name
+                exerciseCountTextView.text =
+                    if (item.count > 0) item.count.toString() else itemView.resources.getText(R.string.count_1)
+                //TODO("add exercise icon")
             }
         }
     }
