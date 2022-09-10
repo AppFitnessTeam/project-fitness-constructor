@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/top_bar_height">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/your_fitness_level_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:gravity="center"
         android:text="@string/your_fitness_level_text"
         android:textSize="@dimen/edit_text_size"
@@ -25,20 +22,16 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_one" />
 
-
     <TextView
         android:id="@+id/your_fitness_level"
         android:layout_width="@dimen/edit_text_width"
         android:layout_height="wrap_content"
-        android:background="@xml/rounded_border_edittext"
-        android:ems="@string/ems"
         android:gravity="center"
         android:hint="@string/fitness_level"
         android:textSize="@dimen/edit_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_one" />
-
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_two"
@@ -77,19 +70,17 @@
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_three" />
 
     <Button
-        android:id="@+id/button_programm"
+        android:id="@+id/button_program"
+        style="@style/positive_button_style"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/radius_button_w"
         android:layout_margin="@dimen/margin_text"
-        android:fontFamily="@font/roboto"
         android:text="@string/individual_training_program"
-        android:textSize="@dimen/text_size_roboto_med"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline_three" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

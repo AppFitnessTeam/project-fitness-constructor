@@ -1,81 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/exercise_name_text_view"
+        style="@style/title_text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:text="@string/exercise_name"
-        android:textSize="@dimen/exercise_big_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/exercise_name_text" />
 
     <ImageView
         android:id="@+id/exercise_image"
-        android:layout_width="@dimen/exercise_image_width"
-        android:layout_height="@dimen/exercise_image_height"
-        android:layout_marginTop="45dp"
-        android:contentDescription="@string/content_desc_steps"
-        android:src="@drawable/ic_exercise_image_new"
-        app:layout_constraintBottom_toTopOf="@+id/exercise_count_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        style="@style/exercise_image_view_style"
+        android:src="@drawable/ic_no_image_block_24"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/exercise_count_text_view"
+        style="@style/text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="219dp"
-        android:fontFamily="@font/roboto"
-        android:hint="@string/hint_for_steps"
-        android:textSize="@dimen/exercise_big_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:text="25" />
 
     <TextView
         android:id="@+id/exercise_type_text_view"
+        style="@style/text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="262dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/steps"
-        android:textSize="@dimen/exercise_big_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="@string/steps" />
 
-    <EditText
-        android:id="@+id/steps_edit_text"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/edit_test_height"
-        android:layout_marginTop="14dp"
-        android:background="@xml/rounded_border_edittext"
-        android:ems="@string/ems"
-        android:hint="@string/hint_for_steps"
-        android:inputType="textPersonName|numberDecimal"
-        android:textAlignment="center"
-        android:textSize="@dimen/edit_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/exercise_type_text_view" />
-
-    <TextView
-        android:id="@+id/text_enter_steps_text_view"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_layout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/roboto"
-        android:text="@string/enter_steps_you_ve_done"
-        android:textSize="@dimen/exercise_small_text_size"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/steps_edit_text" />
+        app:helperText="@string/enter_steps_you_ve_done"
+        app:helperTextEnabled="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/steps_edit_text"
+            style="@style/edit_text_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            tools:text="25" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</LinearLayout>

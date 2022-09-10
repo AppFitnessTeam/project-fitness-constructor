@@ -1,28 +1,25 @@
 <resources>
     <string name="app_name">Fitness Constructor</string>
-    <string name="workout_fragment">"Workout fragment "</string>
-    <string name="workout_list_fragment">"Workout list fragment "</string>
+    <string name="workout_description_text">Level: %1$d, Day: %2$d</string>
+
+    <!--TODO("change when the layouts be ready")-->
     <string name="statistic_fragment">"Statistic fragment "</string>
     <string name="settings_fragment">"Settings fragment "</string>
     <string name="lable">Lable</string>
-    <string name="workout_list_top_text">Product</string>
-    <string name="workout_name">Workout_name</string>
-    <string name="exercise_name">Exercise name</string>
-    <string name="excercise_name">Exercise name</string>
+
+    <!--    ExerciseFragment text-->
+    <string name="exercise_name_text">Exercise name</string>
+    <string name="rest_name_text">Rest</string>
     <string name="steps">STEPS</string>
     <string name="time">SEC</string>
     <string name="enter_steps_you_ve_done">Enter steps you’ve done</string>
-    <string name="skip_workout">Skip workout</string>
-    <string name="next_exercise">Next exercise</string>
-    <string name="ems">10</string>
-    <string name="fab_content_description">fab_content_description</string>
-    <string name="hint_for_steps">25</string>
-    <string name="content_description_search">any_description</string>
-    <string name="fab_content_desc">fab content</string>
-    <string name="content_desc_steps">"Image shows exercise "</string>
+    <string name="skip_workout_button_text">Skip workout</string>
+    <string name="next_exercise_button_text">Next exercise</string>
     <string name="count_1">While you can</string>
     <string name="skip_test">Skip Test</string>
     <string name="start_test">Start test</string>
+
+<!--    AppSettingsFragment text-->
     <string name="fitness_level">Excellent</string>
     <string name="individual_training_program">individual training program</string>
     <string name="male">male</string>
@@ -49,9 +46,9 @@
     <string name="age_55">more 55</string>
     <string name="level">Fitness Level</string>
     <string name="level_low">low</string>
-    <string name="level_midle">midle</string>
+    <string name="level_middle">middle</string>
     <string name="level_high">high</string>
-    <string name="age_exelent">exelent</string>
+    <string name="level_excellent">excellent</string>
     <string name="day">Day</string>
     <string name="day_description">(Please select no more than 3 days per week for training)</string>
     <string name="day_su">Su</string>

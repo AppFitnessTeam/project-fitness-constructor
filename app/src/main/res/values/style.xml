@@ -1,11 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    //unique style for FAB
     <style name="fab_square" parent="">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">16dp</item>
+        <item name="cornerSize">8dp</item>
     </style>
 
+    <style name="text_style">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    WorkoutListFragment styles-->
+    <style name="item_title_workout_text_style" parent="text_style">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:alpha">1.0</item>
+    </style>
+
+    <style name="item_description_workout_text_style" parent="text_style">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:alpha">0.8</item>
+    </style>
+
+    <!--    WorkoutFragment styles-->
+    <style name="exercise_icon_style">
+        <item name="android:layout_width">@dimen/exercise_icon_width</item>
+        <item name="android:layout_height">@dimen/exercise_icon_height</item>
+    </style>
+
+    <style name="item_title_text_style" parent="text_style">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:alpha">1.0</item>
+    </style>
+
+    <!--    ExerciseFragment styles-->
+    <style name="title_text_view_style" parent="text_style">
+        <item name="android:textSize">@dimen/exercise_big_text_size</item>
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8</item>
+        <item name="android:alpha">1.0</item>
+    </style>
+
+    <style name="text_view_style" parent="text_style">
+        <item name="android:textSize">@dimen/exercise_big_text_size</item>
+        <item name="android:alpha">0.8</item>
+    </style>
+
+    <style name="edit_text_style">
+        <item name="android:textSize">@dimen/edit_text_size</item>
+    </style>
+
+    <style name="exercise_image_view_style">
+        <item name="android:layout_width">@dimen/exercise_image_width</item>
+        <item name="android:layout_height">@dimen/exercise_image_height</item>
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginBottom">@dimen/margin_16</item>
+    </style>
+
+    <style name="positive_button_style" parent="Widget.Material3.Button">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="negative_button_style" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
 
 </resources>
