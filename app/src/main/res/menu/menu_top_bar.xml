@@ -4,20 +4,17 @@
     <item
         android:id="@+id/edit"
         android:title="@string/lable"
-        android:contentDescription="@string/content_description_search"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/favorite"
         android:icon="@drawable/ic_trailing_icon"
         android:title="@string/lable"
-        android:contentDescription="@string/content_description_search"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/more"
         android:title="@string/lable"
-        android:contentDescription="@string/content_description_search"
         app:showAsAction="never" />
 
 </menu>
