@@ -21,7 +21,7 @@
     <dimen name="margin_text">16dp</dimen>
     <dimen name="layout_constraintGuide_percent_one">0.10</dimen>
     <dimen name="layout_constraintGuide_percent_two">0.12</dimen>
-    <dimen name="layout_constraintGuide_percent_three">0.8</dimen>
+    <dimen name="layout_constraintGuide_percent_three">0.85</dimen>
     <dimen name="text_size_description">18sp</dimen>
     <dimen name="text_size_user">18sp</dimen>
     <dimen name="text_size_description_large">25sp</dimen>
