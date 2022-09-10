@@ -24,14 +24,13 @@
         style="@style/text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/hint_for_steps" />
+        tools:text="120" />
 
     <TextView
         android:id="@+id/rest_type_text_view"
         style="@style/text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/time"
-        android:textSize="@dimen/exercise_big_text_size" />
+        android:text="@string/time" />
 
 </LinearLayout>

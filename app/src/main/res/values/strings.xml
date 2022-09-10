@@ -1,13 +1,11 @@
 <resources>
     <string name="app_name">Fitness Constructor</string>
-    <string name="workout_fragment">"Workout fragment "</string>
-    <string name="workout_list_fragment">"Workout list fragment "</string>
+    <string name="workout_description_text">Level: %1$d, Day: %2$d</string>
+
+    <!--TODO("change when the layouts be ready")-->
     <string name="statistic_fragment">"Statistic fragment "</string>
     <string name="settings_fragment">"Settings fragment "</string>
     <string name="lable">Lable</string>
-    <string name="workout_list_top_text">Product</string>
-    <string name="workout_name">Workout_name</string>
-    <string name="hint_for_steps">25</string>
 
     <!--    ExerciseFragment text-->
     <string name="exercise_name_text">Exercise name</string>

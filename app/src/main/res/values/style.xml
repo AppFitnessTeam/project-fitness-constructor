@@ -8,6 +8,18 @@
 
     <style name="text_style">
         <item name="fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--    WorkoutListFragment styles-->
+    <style name="item_title_workout_text_style" parent="text_style">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:alpha">1.0</item>
+    </style>
+
+    <style name="item_description_workout_text_style" parent="text_style">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:alpha">0.8</item>
     </style>
 
     <!--    WorkoutFragment styles-->

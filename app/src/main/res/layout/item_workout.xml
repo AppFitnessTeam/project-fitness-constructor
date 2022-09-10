@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/layout_height"
-    android:paddingStart="@dimen/padding_start_end_layout"
+    android:layout_height="@dimen/layout_exercise_height"
+    android:paddingStart="@dimen/padding_start_end_exercise_layout"
     android:paddingTop="@dimen/padding_top_bottom_layout"
-    android:paddingEnd="@dimen/padding_start_end_layout"
+    android:paddingEnd="@dimen/padding_start_end_exercise_layout"
     android:paddingBottom="@dimen/padding_top_bottom_layout">
 
     <ImageView
