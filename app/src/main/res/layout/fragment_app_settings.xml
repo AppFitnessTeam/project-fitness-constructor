@@ -10,7 +10,7 @@
         android:id="@+id/your_fitness_level_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text"
+
         android:gravity="center"
         android:text="@string/your_fitness_level_text"
         android:textSize="@dimen/edit_text_size"
@@ -29,7 +29,7 @@
     <TextView
         android:id="@+id/your_fitness_level"
         android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/edit_test_height"
+        android:layout_height="wrap_content"
         android:background="@xml/rounded_border_edittext"
         android:ems="@string/ems"
         android:gravity="center"

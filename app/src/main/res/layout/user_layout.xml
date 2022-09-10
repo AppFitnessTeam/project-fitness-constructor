@@ -11,10 +11,9 @@
         android:id="@+id/sex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Sex Gender"
-        android:textSize="18sp" />
+        android:text="@string/sex"
+        android:textSize="@dimen/text_size_user" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_gender_group"
@@ -27,14 +26,14 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="male" />
+            android:text="@string/gender_male" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_gender_female"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="female" />
+            android:text="@string/gender_female" />
     </com.google.android.material.chip.ChipGroup>
 
 
@@ -42,10 +41,9 @@
         android:id="@+id/age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Age"
-        android:textSize="18sp" />
+        android:text="@string/age"
+        android:textSize="@dimen/text_size_user" />
 
 
     <com.google.android.material.chip.ChipGroup
@@ -59,45 +57,44 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="19-25" />
+            android:text="@string/age_19_25" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_age_25_35"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25-35" />
+            android:text="@string/age_25_35" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_age_35_45"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="35-45" />
+            android:text="@string/age_35_45" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_age_45_55"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="45-55" />
+            android:text="@string/age_45_55" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_age_55"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="more 55" />
+            android:text="@string/age_55" />
     </com.google.android.material.chip.ChipGroup>
 
     <TextView
         android:id="@+id/level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Fitness Level"
-        android:textSize="18sp" />
+        android:text="@string/level"
+        android:textSize="@dimen/text_size_user" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_level_group"
@@ -110,28 +107,28 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="low" />
+            android:text="@string/level_low" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_level_midle"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="midle" />
+            android:text="@string/level_midle" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_level_high"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="high" />
+            android:text="@string/level_high" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_age_exelent"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="exelent" />
+            android:text="@string/age_exelent" />
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -139,23 +136,23 @@
         android:id="@+id/day"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:gravity="center"
-        android:text="Day"
-        android:textSize="18sp" />
+        android:text="@string/day"
+        android:textSize="@dimen/text_size_user" />
 
     <TextView
         android:id="@+id/day_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="(Please select no more than 3 days per week for training)"
-        android:textSize="12sp" />
+        android:text="@string/day_description"
+        android:textSize="15sp" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_day_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
@@ -163,48 +160,48 @@
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Su" />
+            android:text="@string/day_su" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_day_mo"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mo" />
+            android:text="@string/day_mo" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_day_to"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="To" />
+            android:text="@string/day_to" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_day_we"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="We" />
+            android:text="@string/day_we" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_day_th"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Th" />
+            android:text="@string/day_th" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_day_fr"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fr" />
+            android:text="@string/day_fr" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_day_sa"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sa" />
+            android:text="@string/chip_day_sa" />
     </com.google.android.material.chip.ChipGroup>
 </LinearLayout>

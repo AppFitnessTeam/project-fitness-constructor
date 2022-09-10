@@ -5,6 +5,7 @@
     <dimen name="top_bar_text_size">22sp</dimen>
     <dimen name="exercise_big_text_size">32sp</dimen>
     <dimen name="fab_bottom_margin">600dp</dimen>
+    <dimen name="layout_marginTop">8dp</dimen>
     <dimen name="exercise_image_width">160dp</dimen>
     <dimen name="exercise_image_height">160dp</dimen>
     <dimen name="edit_text_width">184dp</dimen>
@@ -18,11 +19,13 @@
     <dimen name="Item_card_side_margin">8dp</dimen>
     <dimen name="Item_card_height">16dp</dimen>
     <dimen name="margin_text">16dp</dimen>
-    <dimen name="layout_constraintGuide_percent_one">0.1</dimen>
-    <dimen name="layout_constraintGuide_percent_two">0.2</dimen>
+    <dimen name="layout_constraintGuide_percent_one">0.10</dimen>
+    <dimen name="layout_constraintGuide_percent_two">0.12</dimen>
     <dimen name="layout_constraintGuide_percent_three">0.8</dimen>
     <dimen name="text_size_description">18sp</dimen>
+    <dimen name="text_size_user">18sp</dimen>
     <dimen name="text_size_description_large">25sp</dimen>
+
 
 
 </resources>
