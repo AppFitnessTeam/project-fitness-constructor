@@ -6,6 +6,33 @@
         <item name="cornerSize">16dp</item>
     </style>
 
+    <!--    ExerciseFragment styles-->
+    <style name="text_style">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/exercise_big_text_size</item>
+    </style>
+
+    <style name="title_text_view_style" parent="text_style">
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginBottom">@dimen/margin_8</item>
+        <item name="alpha">1.0</item>
+    </style>
+
+    <style name="text_view_style" parent="text_style">
+        <item name="alpha">0.8</item>
+    </style>
+
+    <style name="edit_text_style">
+        <item name="android:textSize">@dimen/edit_text_size</item>
+    </style>
+
+    <style name="exercise_image_view_style">
+        <item name="android:layout_width">@dimen/exercise_image_width</item>
+        <item name="android:layout_height">@dimen/exercise_image_height</item>
+        <item name="android:layout_marginTop">@dimen/margin_8</item>
+        <item name="android:layout_marginBottom">@dimen/margin_16</item>
+    </style>
+
     <style name="positive_button_style" parent="Widget.Material3.Button">
         <item name="fontFamily">@font/roboto</item>
         <item name="android:textSize">@dimen/button_text_size</item>

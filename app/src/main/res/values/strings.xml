@@ -7,19 +7,20 @@
     <string name="lable">Lable</string>
     <string name="workout_list_top_text">Product</string>
     <string name="workout_name">Workout_name</string>
-    <string name="exercise_name">Exercise name</string>
-    <string name="excercise_name">Exercise name</string>
-    <string name="steps">STEPS</string>
-    <string name="time">SEC</string>
-    <string name="enter_steps_you_ve_done">Enter steps you’ve done</string>
-    <string name="skip_workout">Skip workout</string>
-    <string name="next_exercise">Next exercise</string>
     <string name="ems">10</string>
     <string name="fab_content_description">fab_content_description</string>
     <string name="hint_for_steps">25</string>
     <string name="content_description_search">any_description</string>
     <string name="fab_content_desc">fab content</string>
-    <string name="content_desc_steps">"Image shows exercise "</string>
     <string name="count_1">While you can</string>
+
+    <!--    ExerciseFragment text-->
+    <string name="exercise_name_text">Exercise name</string>
+    <string name="rest_name_text">Rest</string>
+    <string name="steps">STEPS</string>
+    <string name="time">SEC</string>
+    <string name="enter_steps_you_ve_done">Enter steps you’ve done</string>
+    <string name="skip_workout_button_text">Skip workout</string>
+    <string name="next_exercise_button_text">Next exercise</string>
 
 </resources>

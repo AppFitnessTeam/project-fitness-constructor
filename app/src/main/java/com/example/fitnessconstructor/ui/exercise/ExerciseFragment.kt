@@ -84,8 +84,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
 
     private fun setViewTime(stepWorkout: StepWorkout) {
         with(binding.exerciseLayout) {
-            stepsEditText.visibility = View.INVISIBLE
-            textEnterStepsTextView.visibility = View.INVISIBLE
+            textInputLayout.visibility = View.INVISIBLE
             timer = createTimer(stepWorkout.count) {
                 exerciseCountTextView.text = it.toString()
             }.start()
@@ -95,7 +94,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
     private fun setViewStep(stepWorkout: StepWorkout) {
         with(binding.exerciseLayout) {
             stepsEditText.visibility = View.VISIBLE
-            textEnterStepsTextView.visibility = View.VISIBLE
+            textInputLayout.visibility = View.VISIBLE
             if (stepWorkout.count < 0) {
                 exerciseCountTextView.text = resources.getText(R.string.count_1)
                 exerciseTypeTextView.visibility = View.INVISIBLE
