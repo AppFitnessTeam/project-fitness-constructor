@@ -18,6 +18,8 @@
     <string name="count_1">While you can</string>
     <string name="skip_test">Skip Test</string>
     <string name="start_test">Start test</string>
+
+<!--    AppSettingsFragment text-->
     <string name="fitness_level">Excellent</string>
     <string name="individual_training_program">individual training program</string>
     <string name="male">male</string>
@@ -44,9 +46,9 @@
     <string name="age_55">more 55</string>
     <string name="level">Fitness Level</string>
     <string name="level_low">low</string>
-    <string name="level_midle">midle</string>
+    <string name="level_middle">middle</string>
     <string name="level_high">high</string>
-    <string name="age_exelent">exelent</string>
+    <string name="level_excellent">excellent</string>
     <string name="day">Day</string>
     <string name="day_description">(Please select no more than 3 days per week for training)</string>
     <string name="day_su">Su</string>

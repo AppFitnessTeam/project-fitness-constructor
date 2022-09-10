@@ -6,7 +6,6 @@
     android:gravity="center"
     android:orientation="vertical">
 
-
     <TextView
         android:id="@+id/sex"
         android:layout_width="wrap_content"
@@ -110,11 +109,11 @@
             android:text="@string/level_low" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chip_level_midle"
+            android:id="@+id/chip_level_middle"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/level_midle" />
+            android:text="@string/level_middle" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/chip_level_high"
@@ -124,11 +123,11 @@
             android:text="@string/level_high" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_exelent"
+            android:id="@+id/chip_age_excellent"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/age_exelent" />
+            android:text="@string/level_excellent" />
 
     </com.google.android.material.chip.ChipGroup>
 
