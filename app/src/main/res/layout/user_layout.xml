@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/sex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Sex Gender"
+        android:textSize="18sp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_gender_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_gender_male"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="male" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_gender_female"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="female" />
+    </com.google.android.material.chip.ChipGroup>
+
+
+    <TextView
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Age"
+        android:textSize="18sp" />
+
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_age_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_age_19_25"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="19-25" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_age_25_35"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25-35" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_age_35_45"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35-45" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_age_45_55"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45-55" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_age_55"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="more 55" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Fitness Level"
+        android:textSize="18sp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_level_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_level_low"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="low" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_level_midle"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="midle" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_level_high"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="high" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_age_exelent"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="exelent" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Day"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/day_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="(Please select no more than 3 days per week for training)"
+        android:textSize="12sp" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_day_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_su"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Su" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_mo"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_to"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_we"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="We" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_th"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Th" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_fr"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fr" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_sa"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sa" />
+    </com.google.android.material.chip.ChipGroup>
+</LinearLayout>
