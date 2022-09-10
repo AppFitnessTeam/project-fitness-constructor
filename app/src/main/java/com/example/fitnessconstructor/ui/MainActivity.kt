@@ -4,7 +4,6 @@ import android.animation.ObjectAnimator
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.animation.AnticipateInterpolator
 import androidx.appcompat.app.AppCompatActivity
@@ -50,18 +49,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.menu_top_bar,menu)
+        menuInflater.inflate(R.menu.menu_top_bar, menu)
         return true
     }
 
     private fun bottomActionBarLaunch() {
         val navHostFragment = supportFragmentManager.findFragmentById(
-            R.id.fragmentContainerView
+            R.id.fragment_container_view
         ) as NavHostFragment
         navController = navHostFragment.navController
 
         // Setup the bottom navigation view with navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         bottomNavigationView.setupWithNavController(navController)
 
         // Setup the ActionBar with navController and 3 top level destinations
