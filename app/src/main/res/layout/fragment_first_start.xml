@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/top_bar_height">
 
-    <TextView
-        android:id="@+id/your_fitness_level_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:gravity="center"
-        android:text="@string/your_fitness_level_text"
-        android:textSize="@dimen/edit_text_size"
-        app:layout_constraintBottom_toTopOf="@id/guideline_one"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_one"
         android:layout_width="wrap_content"
@@ -25,16 +13,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_one" />
 
-
     <TextView
-        android:id="@+id/your_fitness_level"
-        android:layout_width="@dimen/edit_text_width"
+        android:id="@+id/hello"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@xml/rounded_border_edittext"
-        android:ems="@string/ems"
         android:gravity="center"
-        android:hint="@string/fitness_level"
-        android:textSize="@dimen/edit_text_size"
+        android:text="@string/hello"
+        android:textSize="@dimen/text_size_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_one" />
@@ -48,26 +33,28 @@
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_two" />
 
     <TextView
-        android:id="@+id/individual_training_program_description"
+        android:id="@+id/hello_description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_text"
         android:gravity="center"
-        android:text="@string/individual_training_program_description"
-        android:textSize="@dimen/text_size_description"
+        android:text="@string/hello_description"
+        android:textSize="@dimen/text_size_description_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_two" />
 
-    <include
-        android:id="@+id/user_layout"
-        layout="@layout/user_layout"
+    <TextView
+        android:id="@+id/hello_description_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/guideline_three"
+        android:layout_margin="@dimen/margin_text"
+        android:gravity="center"
+        android:text="@string/hello_description_two"
+        android:textSize="@dimen/text_size_description_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/individual_training_program_description" />
+        app:layout_constraintTop_toBottomOf="@id/hello_description" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_three"
@@ -77,19 +64,31 @@
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_three" />
 
     <Button
-        android:id="@+id/button_programm"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_skip"
+        android:layout_width="@dimen/radius_button_h"
         android:layout_height="@dimen/radius_button_w"
         android:layout_margin="@dimen/margin_text"
         android:fontFamily="@font/roboto"
-        android:text="@string/individual_training_program"
+        android:text="@string/skip_test"
         android:textSize="@dimen/text_size_roboto_med"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_next"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline_three" />
 
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="@dimen/radius_button_h"
+        android:layout_height="@dimen/radius_button_w"
+        android:layout_margin="@dimen/margin_text"
+        android:fontFamily="@font/roboto"
+        android:text="@string/start_test"
+        android:textSize="@dimen/text_size_roboto_med"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_skip"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_three" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
