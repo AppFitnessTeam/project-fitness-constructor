@@ -4,7 +4,5 @@
         <item name="postSplashScreenTheme">@style/Theme.FitnessConstructor</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_launcher</item>
         <item name="windowSplashScreenBackground">@android:color/white</item>
-
-
     </style>
 </resources>

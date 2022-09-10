@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    //unique style for FAB
     <style name="fab_square" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>
     </style>
 
+    <style name="positive_button_style" parent="Widget.Material3.Button">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
+
+    <style name="negative_button_style" parent="Widget.Material3.Button.ElevatedButton">
+        <item name="fontFamily">@font/roboto</item>
+        <item name="android:textSize">@dimen/button_text_size</item>
+    </style>
 
 </resources>

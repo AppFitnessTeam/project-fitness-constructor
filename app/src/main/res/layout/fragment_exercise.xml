@@ -7,21 +7,27 @@
 
     <include
         android:id="@+id/exercise_layout"
-        layout="@layout/exercise_layout" />
+        layout="@layout/exercise_layout"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
     <include
         android:id="@+id/rest_layout"
         layout="@layout/rest_layout"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:visibility="invisible" />
 
     <Button
         android:id="@+id/button_skip"
-        android:layout_width="@dimen/radius_button_h"
-        android:layout_height="@dimen/radius_button_w"
-        android:layout_margin="21dp"
-        android:fontFamily="@font/roboto"
+        style="@style/negative_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/skip_workout"
-        android:textSize="@dimen/text_size_roboto_med"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_next"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
@@ -30,12 +36,11 @@
 
     <Button
         android:id="@+id/button_next"
-        android:layout_width="@dimen/radius_button_h"
-        android:layout_height="@dimen/radius_button_w"
-        android:layout_margin="21dp"
-        android:fontFamily="@font/roboto"
+        style="@style/positive_button_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/next_exercise"
-        android:textSize="@dimen/text_size_roboto_med"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/button_skip"
