@@ -12,7 +12,7 @@ class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHo
 
     private var data = emptyList<Workout>()
 
-    fun setData(workoutList:List<Workout>){
+    fun setData(workoutList: List<Workout>) {
         data = workoutList
         notifyDataSetChanged()
     }
@@ -21,8 +21,7 @@ class WorkoutListAdapter : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHo
         private val binding = ItemWorkoutListBinding.bind(item)
 
         fun bind(item: Workout) = with(binding) {
-            //TODO bind elements with item
-
+            workoutNameTextView.text = item.name
         }
     }
 
