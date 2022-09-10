@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="top_bar_height">64dp</dimen>
+    <dimen name="ic_image_size">24dp</dimen>
+    <dimen name="top_bar_text_size">22sp</dimen>
+    <dimen name="exercise_big_text_size">32sp</dimen>
+    <dimen name="fab_bottom_margin">600dp</dimen>
+    <dimen name="layout_marginTop">8dp</dimen>
     <dimen name="null_dp">0dp</dimen>
 
     <!--    Item workout dimens-->
@@ -21,6 +27,26 @@
     <!--    Image size-->
     <dimen name="exercise_image_width">160dp</dimen>
     <dimen name="exercise_image_height">160dp</dimen>
+    <dimen name="edit_text_width">184dp</dimen>
+    <dimen name="edit_test_height">56dp</dimen>
+    <dimen name="exercise_small_text_size">12sp</dimen>
+    <dimen name="radius_button_h">131dp</dimen>
+    <dimen name="radius_button_w">40dp</dimen>
+    <dimen name="text_size_roboto_med">14sp</dimen>
+    <dimen name="edit_text_size">20sp</dimen>
+    <dimen name="Item_card_size_between_name_step">200dp</dimen>
+    <dimen name="Item_card_side_margin">8dp</dimen>
+    <dimen name="Item_card_height">16dp</dimen>
+    <dimen name="margin_text">16dp</dimen>
+    <dimen name="layout_constraintGuide_percent_one">0.10</dimen>
+    <dimen name="layout_constraintGuide_percent_two">0.12</dimen>
+    <dimen name="layout_constraintGuide_percent_three">0.85</dimen>
+    <dimen name="text_size_description">18sp</dimen>
+    <dimen name="text_size_user">18sp</dimen>
+    <dimen name="text_size_description_large">25sp</dimen>
+
+
+
 
     <!--    Text size-->
     <dimen name="button_text_size">16sp</dimen>
