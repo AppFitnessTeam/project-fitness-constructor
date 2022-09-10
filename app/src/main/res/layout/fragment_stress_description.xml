@@ -6,18 +6,6 @@
     android:layout_height="match_parent"
     android:layout_marginTop="@dimen/top_bar_height">
 
-    <TextView
-        android:id="@+id/your_fitness_level_text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_text"
-        android:gravity="center"
-        android:text="You have done a stress test. It was COOL! \n Your fitness level:"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@id/guideline_one"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_one"
         android:layout_width="wrap_content"
@@ -25,16 +13,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_one" />
 
-
     <TextView
-        android:id="@+id/your_fitness_level"
-        android:layout_width="@dimen/edit_text_width"
-        android:layout_height="@dimen/edit_test_height"
-        android:background="@xml/rounded_border_edittext"
-        android:ems="@string/ems"
+        android:id="@+id/stress_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="@string/fitness_level"
-        android:textSize="@dimen/edit_text_size"
+        android:text="STRESS TEST"
+        android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_one" />
@@ -48,17 +33,28 @@
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_two" />
 
     <TextView
-        android:id="@+id/individual_training_program_description"
+        android:id="@+id/what_is_stress_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_text"
         android:gravity="center"
-        android:text="We will help you to choose an individual training program for you. \nTo do this, fill in your details:"
+        android:text="The stress test is a special test \n that will determine the level of \n your physical fitness."
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline_two" />
 
+    <TextView
+        android:id="@+id/stress_test_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_text"
+        android:gravity="center"
+        android:text=" You will need to do three exercises in sequence with no rest in between.  \n These exercises will be: \nPush-ups, squats and running in place. \n \nEach exercise should be done \n for 30 seconds. \n \nAfter each exercise, sew on the number of times that you managed ..."
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/what_is_stress_test" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_three"
@@ -68,19 +64,31 @@
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_three" />
 
     <Button
-        android:id="@+id/button_programm"
-        android:layout_width="wrap_content"
+        android:id="@+id/button_skip"
+        android:layout_width="@dimen/radius_button_h"
         android:layout_height="@dimen/radius_button_w"
         android:layout_margin="21dp"
         android:fontFamily="@font/roboto"
-        android:text="@string/individual_training_program"
+        android:text="@string/skip_test"
         android:textSize="@dimen/text_size_roboto_med"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_next"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline_three" />
 
+    <Button
+        android:id="@+id/button_next"
+        android:layout_width="@dimen/radius_button_h"
+        android:layout_height="@dimen/radius_button_w"
+        android:layout_margin="21dp"
+        android:fontFamily="@font/roboto"
+        android:text="@string/start_test"
+        android:textSize="@dimen/text_size_roboto_med"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_skip"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_three" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -18,4 +18,8 @@
     <dimen name="Item_card_side_margin">8dp</dimen>
     <dimen name="Item_card_height">16dp</dimen>
     <dimen name="margin_text">16dp</dimen>
+    <dimen name="layout_constraintGuide_percent_one">0.1</dimen>
+    <dimen name="layout_constraintGuide_percent_two">0.2</dimen>
+    <dimen name="layout_constraintGuide_percent_three">0.8</dimen>
+
 </resources>
