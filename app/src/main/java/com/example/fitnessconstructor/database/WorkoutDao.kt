@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface WorkoutDao {
     // Получаем список всех программ тренировок
-    @Query("SELECT * FROM workout")
+    @Query("SELECT * FROM workout WHERE is_in_list = 1")
     fun getWorkout(): Flow<List<WorkoutEntity>>
 
     @Update // обновление по PrimaryKey
