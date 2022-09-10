@@ -46,7 +46,7 @@ class WorkoutUseCaseImpl @Inject constructor(
         for (i in exercises.indices) {
             result.add(exercises[i])
             try {
-                val isApproach = exercises[i].id == exercises[i + 1].id
+                val isApproach = exercises[i].name == exercises[i + 1].name
                 if (isApproach) result.add(rest[0]) else result.add(rest[1])
             } catch (andArray: IndexOutOfBoundsException) {
             }
