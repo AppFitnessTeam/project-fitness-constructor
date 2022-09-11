@@ -2,6 +2,7 @@ package com.example.fitnessconstructor.ui.workoutlist
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.fitnessconstructor.databinding.FragmentWorkoutListBinding
@@ -30,17 +31,31 @@ class WorkoutListFragment :
     private fun initViews() {
         binding.apply {
             recyclerWorkoutList.adapter = adapter
-            floatingActionButton.setOnClickListener { /*TODO("add create workout")*/ }
+            floatingActionButton.setOnClickListener {
+                toastBlock()
+                //TODO("add create workout")
+            }
         }
     }
 
-    override fun onItemClick(workout: Workout) {
+    override fun onStartClick(workout: Workout) {
         val action =
             WorkoutListFragmentDirections.actionWorkoutListFragmentToWorkoutFragment(workout.id)
         findNavController().navigate(action)
     }
+
+    override fun onSettingsClick(workout: Workout) {
+        toastBlock()
+        //TODO("add alert dialog with workout settings")
+    }
+
+    //TODO("Not yet implemented")
+    private fun toastBlock() {
+        Toast.makeText(requireContext(), "Not yet implemented", Toast.LENGTH_SHORT).show()
+    }
 }
 
 interface ItemClickListener {
-    fun onItemClick(workout: Workout)
+    fun onStartClick(workout: Workout)
+    fun onSettingsClick(workout: Workout)
 }
