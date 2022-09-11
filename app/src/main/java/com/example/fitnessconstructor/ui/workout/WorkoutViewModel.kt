@@ -17,7 +17,8 @@ class WorkoutViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val navArgs = WorkoutFragmentArgs.fromSavedStateHandle(savedStateHandle)
-    private val workoutId = navArgs.workoutId //TODO("get workout")
+    private val workoutId = navArgs.workoutId
+    private val workoutDay = 2 //TODO("get day")
 
     private val _exerciseList = MutableLiveData<List<Exercise>>()
     val exerciseList: LiveData<List<Exercise>> = _exerciseList
@@ -26,8 +27,8 @@ class WorkoutViewModel @Inject constructor(
 
     init {
         viewModelScope.launch {
-            _exerciseList.postValue(workoutUseCase.getWorkoutExercises(7, 2))
-            stepsWorkout = workoutUseCase.getWorkoutSteps(7, 2).toTypedArray()
+            _exerciseList.postValue(workoutUseCase.getWorkoutExercises(workoutId, workoutDay))
+            stepsWorkout = workoutUseCase.getWorkoutSteps(workoutId, workoutDay).toTypedArray()
         }
     }
 }

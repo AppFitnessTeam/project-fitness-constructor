@@ -8,7 +8,8 @@
     <dimen name="null_dp">0dp</dimen>
 
     <!--    Item workout dimens-->
-    <dimen name="padding_start_end_workout_layout">16dp</dimen>
+    <dimen name="card_width">224dp</dimen>
+    <dimen name="padding_workout_layout">8dp</dimen>
     <dimen name="layout_workout_height">64dp</dimen>
 
     <!--    Item exercise dimens-->
