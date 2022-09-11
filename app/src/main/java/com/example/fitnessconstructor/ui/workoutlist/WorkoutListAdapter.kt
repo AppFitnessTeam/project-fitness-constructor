@@ -25,6 +25,8 @@ class WorkoutListAdapter(
         fun bind(workout: Workout) = with(binding) {
             workoutNameTextView.text = workout.name
             itemView.setOnClickListener { listener.onItemClick(workout) }
+            workoutDescriptionTextView.text =
+                itemView.resources.getString(R.string.workout_description_text, 2, 2) //TODO("set args from data")
         }
     }
 
