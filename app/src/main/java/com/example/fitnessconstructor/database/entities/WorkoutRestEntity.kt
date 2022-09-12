@@ -7,28 +7,29 @@ import androidx.room.PrimaryKey
 import com.example.fitnessconstructor.domain.entities.Rest
 
 @Entity(
-    tableName = "workout_rest",
+    tableName = WorkoutRestEntity.TABLE_NAME,
     foreignKeys = [
         ForeignKey(
             entity = WorkoutEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["workout_id"],
+            parentColumns = [WorkoutEntity.COLUMN_ID],
+            childColumns = [WorkoutRestEntity.COLUMN_WORKOUT_ID],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
         )
     ]
 )
 data class WorkoutRestEntity(
-    @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = COLUMN_ID)
     val id: Int = 0,
 
-    @ColumnInfo(name = "workout_id") // номер программы из списка программ тренировок
+    @ColumnInfo(name = COLUMN_WORKOUT_ID) // номер программы из списка программ тренировок
     val workoutId: Int?,     //здесь всегда будет 1
 
-    @ColumnInfo(name = "appr_rest") // время отдыха между подходами в упражнении
+    @ColumnInfo(name = COLUMN_APPR_REST) // время отдыха между подходами в упражнении
     val apprRest: Int,
 
-    @ColumnInfo(name = "exercise_rest")// время отдыха между упражнениями
+    @ColumnInfo(name = COLUMN_EXERCISE_REST)// время отдыха между упражнениями
     val exerciseRest: Int
 ) {
 
@@ -37,5 +38,13 @@ data class WorkoutRestEntity(
             Rest(id = this.id, count = apprRest),
             Rest(id = this.id, count = exerciseRest)
         )
+    }
+
+    companion object {
+        const val TABLE_NAME = "workout_rest"
+        const val COLUMN_ID = "id"
+        const val COLUMN_WORKOUT_ID = "workout_id"
+        const val COLUMN_APPR_REST = "appr_rest"
+        const val COLUMN_EXERCISE_REST = "exercise_rest"
     }
 }
