@@ -1,13 +1,7 @@
 package com.example.fitnessconstructor.di
 
-import com.example.fitnessconstructor.data.CreateWorkoutUseCaseImpl
-import com.example.fitnessconstructor.data.StatisticUseCaseImpl
-import com.example.fitnessconstructor.data.StressUseCaseImpl
-import com.example.fitnessconstructor.data.WorkoutUseCaseImpl
-import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
-import com.example.fitnessconstructor.domain.StatisticUseCase
-import com.example.fitnessconstructor.domain.StressUseCase
-import com.example.fitnessconstructor.domain.WorkoutUseCase
+import com.example.fitnessconstructor.data.*
+import com.example.fitnessconstructor.domain.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -33,4 +27,8 @@ abstract class UseCasesModule {
     @Binds
     @Singleton
     abstract fun bindStatisticUseCase(impl: StatisticUseCaseImpl): StatisticUseCase
+
+    @Binds
+    @Singleton
+    abstract fun bindWorkoutSettingsUseCase(impl: WorkoutSettingsUseCaseImpl): WorkoutSettingsUseCase
 }
