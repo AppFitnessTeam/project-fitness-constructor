@@ -10,6 +10,10 @@
     <string name="workout_description_text">Level: %1$d, Day: %2$d</string>
     <string name="start_workout_button_text">Start</string>
     <string name="reset_workout_button_text">Reset</string>
+<!--    Settings AlertDialog-->
+    <string name="rest_sets_text">Rest time between sets</string>
+    <string name="rest_exercises_text">Rest time between different exercises</string>
+    <string name="week_exercises_text">Choose days and time if you want to receive notifications</string>
 
     <!--TODO("change when the layouts be ready")-->
     <string name="statistic_fragment">"Statistic fragment "</string>

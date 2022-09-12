@@ -3,9 +3,11 @@ package com.example.fitnessconstructor.ui.workoutlist
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.fitnessconstructor.databinding.FragmentWorkoutListBinding
+import com.example.fitnessconstructor.databinding.WorkoutSettingsDialogBinding
 import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -45,13 +47,24 @@ class WorkoutListFragment :
     }
 
     override fun onSettingsClick(workout: Workout) {
-        toastBlock()
-        //TODO("add alert dialog with workout settings")
+        showWorkoutSettingsDialog()
     }
 
     //TODO("Not yet implemented")
     private fun toastBlock() {
         Toast.makeText(requireContext(), "Not yet implemented", Toast.LENGTH_SHORT).show()
+    }
+
+    private fun showWorkoutSettingsDialog(){
+        //TODO("add workout settings from viewModel")
+        val dialogBinding = WorkoutSettingsDialogBinding.inflate(layoutInflater)
+        val dialog = AlertDialog.Builder(requireContext())
+            .setView(dialogBinding.root)
+            .setTitle("Test Title")
+            .setCancelable(true)
+            //TODO("update workout settings by viewModel")
+            .create()
+        dialog.show()
     }
 }
 

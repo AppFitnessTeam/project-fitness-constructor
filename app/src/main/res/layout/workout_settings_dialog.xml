@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_8">
+
+    <EditText
+        android:id="@+id/workout_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Workout name" />
+
+    <TextView
+        android:id="@+id/appr_rest_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        android:text="@string/rest_sets_text" />
+
+    <com.google.android.material.slider.Slider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="5"
+        android:valueFrom="10"
+        android:valueTo="30"
+        app:labelBehavior="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        android:text="@string/rest_exercises_text" />
+
+    <com.google.android.material.slider.Slider
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stepSize="10"
+        android:valueFrom="30"
+        android:valueTo="120"
+        app:labelBehavior="visible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        android:text="@string/week_exercises_text" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chip_day_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_su"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_su" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_mo"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_mo" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_to"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_to" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_we"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_we" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_th"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_th" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_fr"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/day_fr" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_day_sa"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/chip_day_sa" />
+    </com.google.android.material.chip.ChipGroup>
+
+</LinearLayout>
