@@ -18,12 +18,24 @@ data class WorkoutEntity(
     val name: String,
 
     @ColumnInfo(name = COLUMN_IS_IN_LIST) //  указывает какие тренировки на главном экране, может принимать значение 0 или 1
-    val isInList: Int?
+    val isInList: Int?,
+
+    @ColumnInfo(name = COLUMN_DAY) //  на каком дне остановился пользователь
+    val day: Int?,
+
+    @ColumnInfo(name = COLUMN_USER_NAME) // колонка с пользовательским именем программы
+    val userName: String?
 
 ) : Serializable {
 
     fun toWorkout(): Workout {
-        return Workout(id = this.id, name = this.name, stepsWorkout = mutableListOf())
+        return Workout(
+            id = this.id,
+            name = this.name,
+            stepsWorkout = mutableListOf(),
+            day = this.day,
+            userName = this.userName
+        )
     }
 
     companion object {
@@ -31,6 +43,8 @@ data class WorkoutEntity(
         const val COLUMN_ID = "id"
         const val COLUMN_NAME = "name"
         const val COLUMN_IS_IN_LIST = "is_in_list"
+        const val COLUMN_DAY = "day"
+        const val COLUMN_USER_NAME = "user_name"
     }
 }
 
