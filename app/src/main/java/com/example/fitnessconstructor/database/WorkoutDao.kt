@@ -30,5 +30,14 @@ interface WorkoutDao {
     // получаем программу программу тренировки в зависимости от её номера и дня
     @Query("SELECT * FROM workout_exercises WHERE workout_id IS :workoutId AND day IS :day")
     suspend fun getWorkoutExercises(workoutId: Int?, day: Int?): List<ExercisesEntity>
+
+    // получаем настройки программы
+    @Query("SELECT * FROM workout  WHERE id IS :id")
+    suspend fun getWorkoutSettings(id: Int?): Flow<WorkoutSettingsEntity>
+
+    // получаем время программы в зависимости от номера программы
+    @Query("SELECT * FROM workout_notification  WHERE id IS :id")
+    suspend fun getWorkoutNotification(id: Int?): Flow<WorkoutNotificationEntity>
+
 }
 

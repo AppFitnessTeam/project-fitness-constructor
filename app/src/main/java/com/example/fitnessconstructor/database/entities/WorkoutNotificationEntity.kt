@@ -27,19 +27,19 @@ data class WorkoutNotificationEntity(
     val workoutId: Int?,
 
     @ColumnInfo(name = COLUMN_MO) //время в понедельник
-    val monday: Long,
+    val monday: Long?,
     @ColumnInfo(name = COLUMN_TU)
-    val tuesday: Long,
+    val tuesday: Long?,
     @ColumnInfo(name = COLUMN_WE)
-    val wednesday: Long,
+    val wednesday: Long?,
     @ColumnInfo(name = COLUMN_TH)
-    val thursday: Long,
+    val thursday: Long?,
     @ColumnInfo(name = COLUMN_FR)
-    val friday: Long,
+    val friday: Long?,
     @ColumnInfo(name = COLUMN_SA)
-    val saturday: Long,
+    val saturday: Long?,
     @ColumnInfo(name = COLUMN_SU)
-    val sunday: Long,
+    val sunday: Long?,
 ) {
 
 
