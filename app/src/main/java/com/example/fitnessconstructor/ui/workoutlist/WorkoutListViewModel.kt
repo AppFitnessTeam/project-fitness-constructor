@@ -39,7 +39,7 @@ class WorkoutListViewModel @Inject constructor(
             workoutName = workoutName,
             arrpRest = apprRest,
             exerciseRest = exerciseRest,
-            week = mapOf(
+            weekList = mapOf(
                 DayOfWeek.SUNDAY to timeArray[0],
                 DayOfWeek.MONDAY to timeArray[1],
                 DayOfWeek.TUESDAY to timeArray[2],

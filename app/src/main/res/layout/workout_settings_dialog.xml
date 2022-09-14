@@ -48,60 +48,9 @@
         android:layout_margin="@dimen/margin_8"
         android:text="@string/week_exercises_text" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_day_group"
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/week_notification_recycler_view"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_su"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/day_su" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_mo"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/day_mo" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_to"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/day_to" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_we"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/day_we" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_th"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/day_th" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_fr"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/day_fr" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_day_sa"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/chip_day_sa" />
-    </com.google.android.material.chip.ChipGroup>
-
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </LinearLayout>

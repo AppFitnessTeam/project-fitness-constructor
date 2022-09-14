@@ -11,6 +11,8 @@ import com.example.fitnessconstructor.databinding.WorkoutSettingsDialogBinding
 import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import java.sql.Time
+import java.time.DayOfWeek
 
 @AndroidEntryPoint
 class WorkoutListFragment :
@@ -55,16 +57,28 @@ class WorkoutListFragment :
         Toast.makeText(requireContext(), "Not yet implemented", Toast.LENGTH_SHORT).show()
     }
 
-    private fun showWorkoutSettingsDialog(){
+    private fun showWorkoutSettingsDialog() {
         //TODO("add workout settings from viewModel")
         val dialogBinding = WorkoutSettingsDialogBinding.inflate(layoutInflater)
+        dialogBinding.weekNotificationRecyclerView.adapter = WeekListAdapter(createWeekList())
         val dialog = AlertDialog.Builder(requireContext())
             .setView(dialogBinding.root)
-            .setTitle("Test Title")
             .setCancelable(true)
             //TODO("update workout settings by viewModel")
             .create()
         dialog.show()
+    }
+
+    private fun createWeekList(): List<Pair<DayOfWeek, Time?>> {
+        return listOf(
+            Pair(DayOfWeek.SUNDAY, null),
+            Pair(DayOfWeek.MONDAY, null),
+            Pair(DayOfWeek.TUESDAY, null),
+            Pair(DayOfWeek.WEDNESDAY, null),
+            Pair(DayOfWeek.THURSDAY, null),
+            Pair(DayOfWeek.FRIDAY, null),
+            Pair(DayOfWeek.SATURDAY, null)
+        )
     }
 }
 

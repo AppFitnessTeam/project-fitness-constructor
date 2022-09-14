@@ -8,5 +8,5 @@ data class WorkoutSettings(
     val workoutName: String,
     val arrpRest: Int,
     val exerciseRest: Int,
-    val week: Map<DayOfWeek, Time?> //TODO("think about variable type")
+    val weekList: Map<DayOfWeek, Time?> //TODO("think about variable type")
 )
