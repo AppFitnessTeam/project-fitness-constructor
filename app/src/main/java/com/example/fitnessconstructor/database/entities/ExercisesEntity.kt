@@ -8,10 +8,9 @@ import com.example.fitnessconstructor.domain.entities.ExerciseType
 data class ExercisesEntity(
     @Embedded val workoutExercises: WorkoutExercises,
     @Relation(
-        parentColumn = "exercise_id",
-        entityColumn = "id",
+        parentColumn = WorkoutExercises.COLUMN_EXERCISE_ID,
+        entityColumn = AllExercisesEntity.COLUMN_ID,
     )
-
     val exercise: AllExercisesEntity
 ) {
 

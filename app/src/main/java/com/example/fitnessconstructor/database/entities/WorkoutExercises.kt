@@ -6,37 +6,47 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "workout_exercises",
+    tableName = WorkoutExercises.TABLE_NAME,
     foreignKeys = [
         ForeignKey(
             entity = WorkoutEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["workout_id"],
+            parentColumns = [WorkoutEntity.COLUMN_ID],
+            childColumns = [WorkoutExercises.COLUMN_WORKOUT_ID],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
         ),
         ForeignKey(
             entity = AllExercisesEntity::class,
-            parentColumns = ["id"],
-            childColumns = ["exercise_id"],
+            parentColumns = [AllExercisesEntity.COLUMN_ID],
+            childColumns = [WorkoutExercises.COLUMN_EXERCISE_ID],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
         )
     ]
 )
 data class WorkoutExercises(
-    @PrimaryKey(autoGenerate = true)//Идентификатор будет генерироваться первая колонка автоматически
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = COLUMN_ID)
     val id: Int = 0,
 
-    @ColumnInfo(name = "workout_id") // номер программы из списка программ тренировок
+    @ColumnInfo(name = COLUMN_WORKOUT_ID) // номер программы из списка программ тренировок
     val workoutId: Int,
 
-    @ColumnInfo(name = "day") // какой день тренировки. Всего 3 дня тренировки в неделю
+    @ColumnInfo(name = COLUMN_DAY) // какой день тренировки. Всего 3 дня тренировки в неделю
     val day: String,
 
-    @ColumnInfo(name = "exercise_id") // номер упражнения из списка упражнений
+    @ColumnInfo(name = COLUMN_EXERCISE_ID) // номер упражнения из списка упражнений
     val exerciseId: Int,
 
-    @ColumnInfo(name = "count") // количество , секунды или до отказа (-1)
+    @ColumnInfo(name = COLUMN_COUNT) // количество , секунды или до отказа (-1)
     val count: Int,
-)
+) {
+    companion object {
+        const val TABLE_NAME = "workout_exercises"
+        const val COLUMN_ID = "id"
+        const val COLUMN_WORKOUT_ID = "workout_id"
+        const val COLUMN_DAY = "day"
+        const val COLUMN_EXERCISE_ID = "exercise_id"
+        const val COLUMN_COUNT = "count"
+    }
+}
