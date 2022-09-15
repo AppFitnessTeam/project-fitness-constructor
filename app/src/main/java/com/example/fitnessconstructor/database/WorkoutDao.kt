@@ -35,9 +35,9 @@ interface WorkoutDao {
     @Query("SELECT * FROM workout  WHERE id IS :id")
     suspend fun getWorkoutSettings(id: Int?): WorkoutSettingsEntity
 
-    // получаем время программы в зависимости от номера программы
-    @Query("SELECT * FROM workout_notification  WHERE id IS :id")
-    suspend fun getWorkoutNotification(id: Int?): WorkoutNotificationEntity
+//    // получаем время программы в зависимости от номера программы
+//    @Query("SELECT * FROM workout_notification  WHERE id IS :id")
+//    suspend fun getWorkoutNotification(id: Int?): WorkoutNotificationEntity
 
 }
 
