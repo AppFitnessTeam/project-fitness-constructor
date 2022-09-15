@@ -9,15 +9,18 @@ import com.example.fitnessconstructor.databinding.WeekListItemBinding
 import java.sql.Time
 import java.time.DayOfWeek
 
-class WeekListAdapter(private val weekList: List<Pair<DayOfWeek, Time?>>) :
-    RecyclerView.Adapter<WeekListAdapter.WeekListViewHolder>() {
+class WeekListAdapter(
+    private val weekList: List<Pair<DayOfWeek, Time?>>,
+    private val listener: SetTimeByWeek
+) : RecyclerView.Adapter<WeekListAdapter.WeekListViewHolder>() {
 
     inner class WeekListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val binding = WeekListItemBinding.bind(itemView)
+        private val binding = WeekListItemBinding.bind(itemView)
 
         fun bind(weekItem: Pair<DayOfWeek, Time?>) = with(binding) {
             dayOfWeekTextView.text = weekItem.first.name
             setTimeTextView.text = weekItem.second?.toString() ?: "set time"
+            setTimeTextView.setOnClickListener { listener.onSetTimeClick() }
         }
     }
 

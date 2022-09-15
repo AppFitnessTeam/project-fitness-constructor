@@ -17,7 +17,7 @@ import java.time.DayOfWeek
 @AndroidEntryPoint
 class WorkoutListFragment :
     BaseFragment<FragmentWorkoutListBinding>(FragmentWorkoutListBinding::inflate),
-    ItemClickListener {
+    ItemClickListener, SetTimeByWeek {
 
     private val viewModel: WorkoutListViewModel by viewModels()
     private val adapter = WorkoutListAdapter(this)
@@ -60,7 +60,7 @@ class WorkoutListFragment :
     private fun showWorkoutSettingsDialog() {
         //TODO("add workout settings from viewModel")
         val dialogBinding = WorkoutSettingsDialogBinding.inflate(layoutInflater)
-        dialogBinding.weekNotificationRecyclerView.adapter = WeekListAdapter(createWeekList())
+        dialogBinding.weekNotificationRecyclerView.adapter = WeekListAdapter(createWeekList(), this)
         val dialog = AlertDialog.Builder(requireContext())
             .setView(dialogBinding.root)
             .setCancelable(true)
@@ -80,9 +80,17 @@ class WorkoutListFragment :
             Pair(DayOfWeek.SATURDAY, null)
         )
     }
+
+    override fun onSetTimeClick() {
+        toastBlock()
+    }
 }
 
 interface ItemClickListener {
     fun onStartClick(workout: Workout)
     fun onSettingsClick(workout: Workout)
+}
+
+interface SetTimeByWeek{
+    fun onSetTimeClick()
 }
