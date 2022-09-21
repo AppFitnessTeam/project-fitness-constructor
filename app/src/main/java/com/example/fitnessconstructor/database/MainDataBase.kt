@@ -13,7 +13,7 @@ import com.example.fitnessconstructor.database.entities.*
         TypeExercisesEntity::class,
         WorkoutRestEntity::class,
         WorkoutEntity::class,
-        WorkoutExercises::class],
+        WorkoutExercisesEntity::class],
     version = 1,
     exportSchema = true
 )

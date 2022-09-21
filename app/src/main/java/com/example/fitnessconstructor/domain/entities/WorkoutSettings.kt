@@ -6,12 +6,8 @@ import java.time.DayOfWeek
 data class WorkoutSettings(
     val workoutId: Int,
     val workoutName: String,
-    val arrpRest: Int,
-    val exerciseRest: Int,
-    val weekList: Map<DayOfWeek, Time?> //TODO("think about variable type")
-)
     val workoutUserName: String?,
-    val apprRest: Int,
+    val setsRest: Int,
     val exerciseRest: Int,
-   // val week: Map<DayOfWeek, Time?>?
+    val weekList: List<Pair<DayOfWeek, Time?>> //TODO("think about variable type")
 )

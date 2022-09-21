@@ -32,7 +32,6 @@ data class WorkoutEntity(
         return Workout(
             id = this.id,
             name = this.name,
-            stepsWorkout = mutableListOf(),
             day = this.day,
             userName = this.userName
         )

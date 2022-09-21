@@ -42,7 +42,6 @@ data class WorkoutNotificationEntity(
     val sunday: Long?,
 ) {
 
-
     companion object {
         const val TABLE_NAME = "workout_notification"
         const val COLUMN_ID = "id"
@@ -54,7 +53,5 @@ data class WorkoutNotificationEntity(
         const val COLUMN_FR = "fr"
         const val COLUMN_SA = "sa"
         const val COLUMN_SU = "su"
-
-
     }
 }

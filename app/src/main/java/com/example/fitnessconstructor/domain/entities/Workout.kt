@@ -9,7 +9,6 @@ import kotlinx.android.parcel.Parcelize
 data class Workout(
     val id: Int,
     val name: String,
-    val stepsWorkout: MutableList<StepWorkout>, //TODO("not need, remove later")
     val day: Int?,
     val userName: String?
 ) : Parcelable

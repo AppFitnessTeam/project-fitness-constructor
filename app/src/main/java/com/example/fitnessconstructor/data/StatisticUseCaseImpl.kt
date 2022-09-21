@@ -7,11 +7,7 @@ import javax.inject.Singleton
 @Singleton
 class StatisticUseCaseImpl @Inject constructor() : StatisticUseCase {
 
-    @Inject
-    lateinit var repository: FakeRepository //TODO ("change when working with real database")
-
     override suspend fun getStatistic() {
         TODO("Not yet implemented")
     }
-
 }

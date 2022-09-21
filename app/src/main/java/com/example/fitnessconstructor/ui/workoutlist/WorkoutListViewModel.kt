@@ -30,16 +30,17 @@ class WorkoutListViewModel @Inject constructor(
     fun updateWorkoutSettings(
         workoutId: Int,
         workoutName: String,
-        apprRest: Int,
+        setsRest: Int,
         exerciseRest: Int,
         timeArray: Array<Time?>
     ) {
         val newWorkoutSettings = WorkoutSettings(
             workoutId = workoutId,
             workoutName = workoutName,
-            arrpRest = apprRest,
+            workoutUserName = workoutName,
+            setsRest = setsRest,
             exerciseRest = exerciseRest,
-            weekList = mapOf(
+            weekList = listOf(
                 DayOfWeek.SUNDAY to timeArray[0],
                 DayOfWeek.MONDAY to timeArray[1],
                 DayOfWeek.TUESDAY to timeArray[2],

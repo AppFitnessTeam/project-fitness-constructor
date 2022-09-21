@@ -106,6 +106,11 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        timer?.cancel()
+    }
+
     private fun createTimer(time: Int, renderView: (Long) -> Unit): CountDownTimer {
         return object : CountDownTimer(time.toLong() * 1000, 1000) {
             override fun onTick(p0: Long) {

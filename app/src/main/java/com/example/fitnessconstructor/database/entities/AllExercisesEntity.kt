@@ -39,5 +39,4 @@ data class AllExercisesEntity(
         const val COLUMN_NAME_RUS = "name_rus"
         const val COLUMN_TYPE_ID = "type_id"
     }
-
 }

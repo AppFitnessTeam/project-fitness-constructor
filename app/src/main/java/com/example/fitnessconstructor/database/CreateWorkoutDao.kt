@@ -2,7 +2,7 @@ package com.example.fitnessconstructor.database
 
 import androidx.room.*
 import com.example.fitnessconstructor.database.entities.WorkoutEntity
-import com.example.fitnessconstructor.database.entities.WorkoutExercises
+import com.example.fitnessconstructor.database.entities.WorkoutExercisesEntity
 
 
 @Dao
@@ -18,11 +18,11 @@ interface CreateWorkoutDao {
 
     //addExerciseToWorkout
     @Insert(onConflict = OnConflictStrategy.REPLACE )
-    suspend fun addExercise(exercise: WorkoutExercises)
+    suspend fun addExercise(exercise: WorkoutExercisesEntity)
 
     //removeExerciseFromWorkout
     @Delete
-    fun deleteExercise(exercise: WorkoutExercises)
+    fun deleteExercise(exercise: WorkoutExercisesEntity)
 
     //removeWorkoutEntity
     @Delete
