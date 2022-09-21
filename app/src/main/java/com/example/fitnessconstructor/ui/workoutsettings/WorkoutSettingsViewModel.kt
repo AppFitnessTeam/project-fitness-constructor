@@ -28,11 +28,10 @@ class WorkoutSettingsViewModel @Inject constructor(
     }
 
     fun updateWorkoutSettings(
-        workoutId: Int,
         workoutName: String,
         setsRest: Int,
         exerciseRest: Int,
-        timeArray: Array<Time?>
+        weekList: List<Pair<DayOfWeek, Time?>>
     ) {
         val newWorkoutSettings = WorkoutSettings(
             workoutId = workoutId,
@@ -40,18 +39,16 @@ class WorkoutSettingsViewModel @Inject constructor(
             workoutUserName = workoutName,
             setsRest = setsRest,
             exerciseRest = exerciseRest,
-            weekList = listOf(
-                DayOfWeek.SUNDAY to timeArray[0],
-                DayOfWeek.MONDAY to timeArray[1],
-                DayOfWeek.TUESDAY to timeArray[2],
-                DayOfWeek.WEDNESDAY to timeArray[3],
-                DayOfWeek.THURSDAY to timeArray[4],
-                DayOfWeek.FRIDAY to timeArray[5],
-                DayOfWeek.SATURDAY to timeArray[6]
-            )
+            weekList = weekList
         )
         viewModelScope.launch {
             workoutSettingsUseCase.updateWorkoutSettings(newWorkoutSettings)
+        }
+    }
+
+    fun deleteWorkout() {
+        viewModelScope.launch {
+            workoutSettingsUseCase.deleteWorkout(workoutId)
         }
     }
 }
