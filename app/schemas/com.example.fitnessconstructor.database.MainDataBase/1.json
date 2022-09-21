@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "81bc6d33d34ff077fc1cd7879da1fb6a",
+    "identityHash": "29a0a33a544da8501c7bd10f61def66a",
     "entities": [
       {
         "tableName": "all_exercises",
@@ -208,7 +208,7 @@
             "notNull": false
           },
           {
-            "fieldPath": "apprRest",
+            "fieldPath": "setsRest",
             "columnName": "appr_rest",
             "affinity": "INTEGER",
             "notNull": true
@@ -243,7 +243,7 @@
       },
       {
         "tableName": "workout",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `is_in_list` INTEGER, `day` INTEGER, `user_name` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `name_rus` TEXT NOT NULL, `is_in_list` INTEGER, `day` INTEGER, `user_name` TEXT, `lvl` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -254,6 +254,12 @@
           {
             "fieldPath": "name",
             "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nameRus",
+            "columnName": "name_rus",
             "affinity": "TEXT",
             "notNull": true
           },
@@ -272,6 +278,12 @@
           {
             "fieldPath": "userName",
             "columnName": "user_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lvl",
+            "columnName": "lvl",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -356,7 +368,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '81bc6d33d34ff077fc1cd7879da1fb6a')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '29a0a33a544da8501c7bd10f61def66a')"
     ]
   }
 }
