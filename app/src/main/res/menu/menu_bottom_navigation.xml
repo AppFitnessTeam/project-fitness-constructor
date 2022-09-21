@@ -15,7 +15,7 @@
         app:tooltipText="Description" />
 
     <item
-        android:id="@+id/appSettingsFragment"
+        android:id="@+id/userSettingsFragment"
         android:icon="@drawable/ic_bottom_menu_settings"
         android:title="@string/settings_text_menu"
         app:tooltipText="Description" />
