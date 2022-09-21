@@ -16,4 +16,8 @@ class WorkoutSettingsUseCaseImpl @Inject constructor(
     override suspend fun updateWorkoutSettings(workoutSettings: WorkoutSettings) {
         TODO("Not yet implemented")
     }
+
+    override suspend fun deleteWorkout(workoutId: Int) {
+        TODO("Not yet implemented")
+    }
 }
