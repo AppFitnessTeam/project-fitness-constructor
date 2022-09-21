@@ -1,5 +1,6 @@
 package com.example.fitnessconstructor.data
 
+import com.example.fitnessconstructor.database.StressDao
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
@@ -12,18 +13,16 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class StressUseCaseImpl @Inject constructor() : StressUseCase {
+class StressUseCaseImpl @Inject constructor(
+    private val stressDao: StressDao
+) : StressUseCase {
 
-    @Inject
-    lateinit var repository: FakeRepository //TODO ("change when working with real database")
-
-    override suspend fun getStressWorkout(): Workout =
-        withContext(Dispatchers.IO) {
-            return@withContext repository.getStressWorkout()
-        }
+    override suspend fun getStressWorkout(): Workout {
+        TODO("later")
+    }
 
     override fun getStressExercises(): Flow<StepWorkout> {
-        return repository.getStressWorkout().stepsWorkout.asFlow().flowOn(Dispatchers.IO)
+        TODO("later")
     }
 
     override suspend fun getResult(stressTestResult: Array<Int>): String =

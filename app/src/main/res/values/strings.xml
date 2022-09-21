@@ -10,6 +10,10 @@
     <string name="workout_description_text">Level: %1$d, Day: %2$d</string>
     <string name="start_workout_button_text">Start</string>
     <string name="reset_workout_button_text">Reset</string>
+<!--    Settings AlertDialog-->
+    <string name="rest_sets_text">Rest time between sets</string>
+    <string name="rest_exercises_text">Rest time between different exercises</string>
+    <string name="week_exercises_text">Choose days and time if you want to receive notifications</string>
 
     <!--TODO("change when the layouts be ready")-->
     <string name="statistic_fragment">"Statistic fragment "</string>
@@ -61,12 +65,15 @@
     <string name="level_excellent">excellent</string>
     <string name="day">Day</string>
     <string name="day_description">(Please select no more than 3 days per week for training)</string>
-    <string name="day_su">Su</string>
-    <string name="day_mo">Mo</string>
-    <string name="day_to">To</string>
-    <string name="day_we">We</string>
-    <string name="day_th">Th</string>
-    <string name="day_fr">Fr</string>
-    <string name="chip_day_sa">Sa</string>
+
+<!--    Week notifications text-->
+    <string name="day_sunday_text">Sunday:</string>
+    <string name="day_monday_text">Monday:</string>
+    <string name="day_tuesday_text">Tuesday:</string>
+    <string name="day_wednesday_text">Wednesday:</string>
+    <string name="day_thursday_text">Thursday:</string>
+    <string name="day_friday_text">Friday:</string>
+    <string name="day_saturday_text">Saturday:</string>
+    <string name="set_time_text">set time</string>
 
 </resources>

@@ -6,16 +6,16 @@ import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.ExerciseType
 
 data class ExercisesEntity(
-    @Embedded val workoutExercises: WorkoutExercises,
+    @Embedded val workoutExercisesEntity: WorkoutExercisesEntity,
     @Relation(
-        parentColumn = WorkoutExercises.COLUMN_EXERCISE_ID,
+        parentColumn = WorkoutExercisesEntity.COLUMN_EXERCISE_ID,
         entityColumn = AllExercisesEntity.COLUMN_ID,
     )
     val exercise: AllExercisesEntity
 ) {
 
     fun toExercise(): Exercise = Exercise(
-        id = workoutExercises.id,
+        id = workoutExercisesEntity.id,
         name = exercise.nameEng.toString(),
         type = when (exercise.typeId?.toInt()) {
             1 -> ExerciseType.STRESS
@@ -24,6 +24,6 @@ data class ExercisesEntity(
                 ExerciseType.TIME
             }
         },
-        count = workoutExercises.count
+        count = workoutExercisesEntity.count
     )
 }

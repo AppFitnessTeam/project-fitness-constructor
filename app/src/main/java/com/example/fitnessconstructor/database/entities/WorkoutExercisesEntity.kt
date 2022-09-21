@@ -6,25 +6,25 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = WorkoutExercises.TABLE_NAME,
+    tableName = WorkoutExercisesEntity.TABLE_NAME,
     foreignKeys = [
         ForeignKey(
             entity = WorkoutEntity::class,
             parentColumns = [WorkoutEntity.COLUMN_ID],
-            childColumns = [WorkoutExercises.COLUMN_WORKOUT_ID],
+            childColumns = [WorkoutExercisesEntity.COLUMN_WORKOUT_ID],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
         ),
         ForeignKey(
             entity = AllExercisesEntity::class,
             parentColumns = [AllExercisesEntity.COLUMN_ID],
-            childColumns = [WorkoutExercises.COLUMN_EXERCISE_ID],
+            childColumns = [WorkoutExercisesEntity.COLUMN_EXERCISE_ID],
             onDelete = ForeignKey.CASCADE,
             onUpdate = ForeignKey.CASCADE
         )
     ]
 )
-data class WorkoutExercises(
+data class WorkoutExercisesEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
     val id: Int = 0,

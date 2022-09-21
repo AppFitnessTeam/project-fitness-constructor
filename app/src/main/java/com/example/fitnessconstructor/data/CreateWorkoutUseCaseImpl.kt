@@ -11,9 +11,6 @@ import javax.inject.Singleton
 @Singleton
 class CreateWorkoutUseCaseImpl @Inject constructor() : CreateWorkoutUseCase {
 
-    @Inject
-    lateinit var repository: FakeRepository //TODO ("change when working with real database")
-
     override suspend fun createWorkout() {
         TODO("Not yet implemented")
     }

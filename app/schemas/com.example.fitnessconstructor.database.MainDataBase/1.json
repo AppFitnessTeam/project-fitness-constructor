@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "cbaca9edd2432f2d3ab60b0dc7795029",
+    "identityHash": "81bc6d33d34ff077fc1cd7879da1fb6a",
     "entities": [
       {
         "tableName": "all_exercises",
@@ -243,7 +243,7 @@
       },
       {
         "tableName": "workout",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `is_in_list` INTEGER)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `is_in_list` INTEGER, `day` INTEGER, `user_name` TEXT)",
         "fields": [
           {
             "fieldPath": "id",
@@ -261,6 +261,18 @@
             "fieldPath": "isInList",
             "columnName": "is_in_list",
             "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "day",
+            "columnName": "day",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "user_name",
+            "affinity": "TEXT",
             "notNull": false
           }
         ],
@@ -344,7 +356,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'cbaca9edd2432f2d3ab60b0dc7795029')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '81bc6d33d34ff077fc1cd7879da1fb6a')"
     ]
   }
 }

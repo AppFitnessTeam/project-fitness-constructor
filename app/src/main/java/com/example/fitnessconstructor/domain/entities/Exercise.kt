@@ -13,5 +13,5 @@ data class Exercise(
     val id: Int,
     override val name: String,
     override val type: ExerciseType,
-    override var count: Int = 0 //TODO("change var to val when working with real database")
+    override val count: Int
 ) : StepWorkout, Parcelable
