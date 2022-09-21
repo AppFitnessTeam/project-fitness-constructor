@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_workoutListFragment_to_workoutFragment"
             app:destination="@id/workoutFragment" />
+        <action
+            android:id="@+id/action_workoutListFragment_to_workoutSettingsFragment"
+            app:destination="@id/workoutSettingsFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutFragment"
@@ -46,4 +49,15 @@
         android:name="com.example.fitnessconstructor.ui.settings.AppSettingsFragment"
         android:label="fragment_app_settings"
         tools:layout="@layout/fragment_app_settings" />
+
+    <fragment
+        android:id="@+id/workoutSettingsFragment"
+        android:name="com.example.fitnessconstructor.ui.workoutsettings.WorkoutSettingsFragment"
+        android:label="fragment_workout_settings"
+        tools:layout="@layout/fragment_workout_settings" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.fitnessconstructor.ui.workoutlist
+package com.example.fitnessconstructor.ui.workoutsettings
 
 import android.view.LayoutInflater
 import android.view.View

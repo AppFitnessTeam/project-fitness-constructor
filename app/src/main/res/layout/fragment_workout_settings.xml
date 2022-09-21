@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="@dimen/margin_8">
+    android:padding="@dimen/margin_8"
+    tools:context=".ui.workoutsettings.WorkoutSettingsFragment">
 
     <EditText
         android:id="@+id/workout_name_edit_text"
