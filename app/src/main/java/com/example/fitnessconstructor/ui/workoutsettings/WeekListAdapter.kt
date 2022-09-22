@@ -1,4 +1,4 @@
-package com.example.fitnessconstructor.ui.workoutlist
+package com.example.fitnessconstructor.ui.workoutsettings
 
 import android.view.LayoutInflater
 import android.view.View
@@ -10,9 +10,17 @@ import java.sql.Time
 import java.time.DayOfWeek
 
 class WeekListAdapter(
-    private val weekList: List<Pair<DayOfWeek, Time?>>,
     private val listener: SetTimeByWeek
 ) : RecyclerView.Adapter<WeekListAdapter.WeekListViewHolder>() {
+
+    private var weekList = emptyList<Pair<DayOfWeek, Time?>>()
+
+    fun setWeekList(newWeekList: List<Pair<DayOfWeek, Time?>>) {
+        weekList = newWeekList
+        notifyDataSetChanged()
+    }
+
+    fun getWeekList() = weekList
 
     inner class WeekListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = WeekListItemBinding.bind(itemView)

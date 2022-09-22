@@ -17,6 +17,4 @@ interface CreateWorkoutUseCase {
 
     suspend fun addExerciseToWorkout(exercise: Exercise)
     suspend fun removeExerciseFromWorkout(exercise: Exercise)
-
-    suspend fun deleteWorkout(workout: Workout)
 }

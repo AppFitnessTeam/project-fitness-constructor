@@ -9,7 +9,7 @@ import javax.inject.Singleton
 class WorkoutSettingsUseCaseImpl @Inject constructor(
     //TODO("add dao")
 ) : WorkoutSettingsUseCase {
-    override suspend fun getWorkoutSettings(): WorkoutSettings {
+    override suspend fun getWorkoutSettings(workoutId: Int): WorkoutSettings {
         TODO("Not yet implemented")
     }
 
