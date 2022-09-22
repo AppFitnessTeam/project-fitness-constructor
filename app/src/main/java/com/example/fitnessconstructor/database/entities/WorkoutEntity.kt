@@ -17,6 +17,9 @@ data class WorkoutEntity(
     @ColumnInfo(name = COLUMN_NAME) // колонка с именем программы
     val name: String,
 
+    @ColumnInfo(name = COLUMN_NAME_RUS) // колонка с именем программы
+    val nameRus: String,
+
     @ColumnInfo(name = COLUMN_IS_IN_LIST) //  указывает какие тренировки на главном экране, может принимать значение 0 или 1
     val isInList: Int?,
 
@@ -24,7 +27,10 @@ data class WorkoutEntity(
     val day: Int?,
 
     @ColumnInfo(name = COLUMN_USER_NAME) // колонка с пользовательским именем программы
-    val userName: String?
+    val userName: String?,
+
+    @ColumnInfo(name = COLUMN_LVL) // колонка с уровнем подготовки
+    val lvl: String?
 
 ) : Serializable {
 
@@ -32,8 +38,11 @@ data class WorkoutEntity(
         return Workout(
             id = this.id,
             name = this.name,
+            nameRus = this.nameRus,
+            isInList = this.isInList,
             day = this.day,
-            userName = this.userName
+            userName = this.userName,
+            lvl = this.lvl
         )
     }
 
@@ -41,6 +50,8 @@ data class WorkoutEntity(
         const val TABLE_NAME = "workout"
         const val COLUMN_ID = "id"
         const val COLUMN_NAME = "name"
+        const val COLUMN_NAME_RUS = "name_rus"
+        const val COLUMN_LVL = "lvl"
         const val COLUMN_IS_IN_LIST = "is_in_list"
         const val COLUMN_DAY = "day"
         const val COLUMN_USER_NAME = "user_name"
