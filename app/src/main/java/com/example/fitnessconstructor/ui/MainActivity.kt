@@ -40,34 +40,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //bottom action bar
-        bottomActionBarLaunch()
-
-        //remove action bar while launch app
         supportActionBar?.hide()
-        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_top_bar, menu)
         return true
-    }
-
-    private fun bottomActionBarLaunch() {
-        val navHostFragment = supportFragmentManager.findFragmentById(
-            R.id.fragment_container_view
-        ) as NavHostFragment
-        navController = navHostFragment.navController
-
-        // Setup the bottom navigation view with navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        bottomNavigationView.setupWithNavController(navController)
-
-        // Setup the ActionBar with navController and 3 top level destinations
-        appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.workoutListFragment, R.id.statisticFragment, R.id.userSettingsFragment)
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     private fun splashScreenLaunch() {
@@ -96,5 +74,4 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
-
 }
