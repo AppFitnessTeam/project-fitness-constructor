@@ -51,7 +51,11 @@
         android:id="@+id/userSettingsFragment"
         android:name="com.example.fitnessconstructor.ui.usersettings.UserSettingsFragment"
         android:label="fragment_user_settings"
-        tools:layout="@layout/fragment_user_settings" />
+        tools:layout="@layout/fragment_user_settings" >
+        <action
+            android:id="@+id/action_userSettingsFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/workoutSettingsFragment"
