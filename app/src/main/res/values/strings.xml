@@ -38,7 +38,7 @@
 
     <!--    AppSettingsFragment text-->
     <string name="fitness_level">Excellent</string>
-    <string name="individual_training_program">individual training program</string>
+    <string name="save_lvl_button_text">Save your level</string>
     <string name="male">male</string>
     <string name="female">female</string>
     <string name="hello">Thank you for choosing our app</string>
@@ -55,19 +55,13 @@
     <string name="sex">\n \nSex Gender</string>
     <string name="gender_male">Male</string>
     <string name="gender_female">Female</string>
-    <string name="age">Age</string>
-    <string name="age_19_25">19-25</string>
-    <string name="age_25_35">25-35</string>
-    <string name="age_35_45">35-45</string>
-    <string name="age_45_55">45-55</string>
-    <string name="age_55">more 55</string>
     <string name="level">Fitness Level</string>
     <string name="level_low">low</string>
     <string name="level_middle">middle</string>
     <string name="level_high">high</string>
-    <string name="level_excellent">excellent</string>
     <string name="day">Day</string>
     <string name="day_description">(Please select no more than 3 days per week for training)</string>
+    <string name="stress_button_text">Test your level</string>
 
     <!--    Week notifications text-->
     <string name="day_sunday_text">Sunday:</string>

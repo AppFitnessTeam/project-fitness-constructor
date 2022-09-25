@@ -72,12 +72,11 @@
         app:layout_constraintGuide_percent="@dimen/layout_constraintGuide_percent_three" />
 
     <Button
-        android:id="@+id/button_program"
-        style="@style/positive_button_style"
+        android:id="@+id/save_user_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_text"
-        android:text="@string/individual_training_program"
+        android:text="@string/save_lvl_button_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="spread"

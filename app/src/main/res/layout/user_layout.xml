@@ -7,87 +7,6 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/sex"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/sex"
-        android:textSize="@dimen/text_size_user" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_gender_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:singleSelection="true">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_gender_male"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gender_male" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_gender_female"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/gender_female" />
-    </com.google.android.material.chip.ChipGroup>
-
-
-    <TextView
-        android:id="@+id/age"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/age"
-        android:textSize="@dimen/text_size_user" />
-
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_age_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:singleSelection="true">
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_19_25"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_19_25" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_25_35"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_25_35" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_35_45"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_35_45" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_45_55"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_45_55" />
-
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_55"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/age_55" />
-    </com.google.android.material.chip.ChipGroup>
-
-    <TextView
         android:id="@+id/level"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -122,12 +41,11 @@
             android:layout_height="wrap_content"
             android:text="@string/level_high" />
 
-        <com.google.android.material.chip.Chip
-            android:id="@+id/chip_age_excellent"
-            style="@style/Widget.MaterialComponents.Chip.Choice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/level_excellent" />
-
     </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/stress_test_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stress_button_text" />
 </LinearLayout>
