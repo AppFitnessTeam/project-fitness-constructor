@@ -14,10 +14,8 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.concurrent.Executors
 
@@ -40,34 +38,30 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //bottom action bar
-        bottomActionBarLaunch()
-
-        //remove action bar while launch app
         supportActionBar?.hide()
-        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setupAppBar()
+    }
+
+    private fun setupAppBar() {
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragment_container_view) as NavHostFragment
+        navController = navHostFragment.navController
+        setupActionBarWithNavController(navController)
+
+        binding.topAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.user_settings_menu_item -> {
+                    navController.navigate(R.id.userSettingsFragment)
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_top_bar, menu)
         return true
-    }
-
-    private fun bottomActionBarLaunch() {
-        val navHostFragment = supportFragmentManager.findFragmentById(
-            R.id.fragment_container_view
-        ) as NavHostFragment
-        navController = navHostFragment.navController
-
-        // Setup the bottom navigation view with navController
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        bottomNavigationView.setupWithNavController(navController)
-
-        // Setup the ActionBar with navController and 3 top level destinations
-        appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.workoutListFragment, R.id.statisticFragment, R.id.appSettingsFragment)
-        )
-        setupActionBarWithNavController(navController, appBarConfiguration)
     }
 
     private fun splashScreenLaunch() {
@@ -96,5 +90,4 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp(appBarConfiguration)
     }
-
 }

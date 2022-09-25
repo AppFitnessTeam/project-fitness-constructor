@@ -24,7 +24,7 @@ data class WorkoutNotificationEntity(
     val id: Int = 0,
 
     @ColumnInfo(name = COLUMN_WORKOUT_ID) // номер программы из списка программ тренировок
-    val workoutId: Int?,
+    val workoutId: Int,
 
     @ColumnInfo(name = COLUMN_MO) //время в понедельник
     val monday: Long?,
@@ -48,7 +48,7 @@ data class WorkoutNotificationEntity(
         const val COLUMN_WORKOUT_ID = "workout_id"
         const val COLUMN_MO = "monday"
         const val COLUMN_TU = "tuesday"
-        const val COLUMN_WE = "wedensday"
+        const val COLUMN_WE = "wednesday"
         const val COLUMN_TH = "thursday"
         const val COLUMN_FR = "friday"
         const val COLUMN_SA = "saturday"

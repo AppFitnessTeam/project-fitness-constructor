@@ -30,8 +30,4 @@ class CreateWorkoutUseCaseImpl @Inject constructor() : CreateWorkoutUseCase {
     override suspend fun removeExerciseFromWorkout(exercise: Exercise) {
         TODO("Not yet implemented")
     }
-
-    override suspend fun deleteWorkout(workout: Workout) {
-        TODO("Not yet implemented")
-    }
 }

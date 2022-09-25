@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.fitnessconstructor.database.MainDataBase
 import com.example.fitnessconstructor.database.StressDao
 import com.example.fitnessconstructor.database.WorkoutDao
+import com.example.fitnessconstructor.database.WorkoutSettingsDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,12 +24,14 @@ object DatabaseModule {
     fun provideStressDao(database: MainDataBase): StressDao = database.getStressDao()
 
     @Provides
+    fun provideWorkoutSettingsDao(database: MainDataBase): WorkoutSettingsDao =
+        database.getWorkoutSettingsDao()
+
+    @Provides
     @Singleton
     fun provideDatabase(@ApplicationContext appContext: Context): MainDataBase {
         return Room.databaseBuilder(appContext, MainDataBase::class.java, "exercise.db")
-
             .createFromAsset("databases/init_database.db")
-            .fallbackToDestructiveMigration()
             .build()
     }
 }

@@ -58,9 +58,8 @@ class WorkoutSettingsFragment :
         findNavController().navigateUp()
     }
 
-
     override fun onSetTimeClick() {
-        TODO("later")
+       toastBlock()
     }
 }
 
