@@ -32,7 +32,6 @@ object DatabaseModule {
     fun provideDatabase(@ApplicationContext appContext: Context): MainDataBase {
         return Room.databaseBuilder(appContext, MainDataBase::class.java, "exercise.db")
             .createFromAsset("databases/init_database.db")
-            .fallbackToDestructiveMigration()
             .build()
     }
 }
