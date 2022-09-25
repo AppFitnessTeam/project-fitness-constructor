@@ -21,7 +21,7 @@
     <!--TODO("change when the layouts be ready")-->
     <string name="statistic_fragment">"Statistic fragment "</string>
     <string name="settings_fragment">"Settings fragment "</string>
-    <string name="lable">Lable</string>
+    <string name="user">User Settings</string>
 
     <!--    ExerciseFragment text-->
     <string name="exercise_name_text">Exercise name</string>

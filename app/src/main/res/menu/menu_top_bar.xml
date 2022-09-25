@@ -2,19 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/edit"
-        android:title="@string/lable"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/favorite"
+        android:id="@+id/user_settings_menu_item"
         android:icon="@drawable/ic_trailing_icon"
-        android:title="@string/lable"
+        android:title="@string/user"
         app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/more"
-        android:title="@string/lable"
-        app:showAsAction="never" />
 
 </menu>
