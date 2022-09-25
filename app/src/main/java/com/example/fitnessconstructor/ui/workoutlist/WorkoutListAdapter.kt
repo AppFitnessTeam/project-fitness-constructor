@@ -23,7 +23,7 @@ class WorkoutListAdapter(
         private val binding = ItemWorkoutListBinding.bind(item)
 
         fun bind(workout: Workout) = with(binding) {
-            workoutNameTextView.text = workout.name
+            workoutNameTextView.text = workout.userName
             workoutDescriptionTextView.text =
                 itemView.resources.getString(R.string.workout_description_text, 2, 2) //TODO("set args from data")
             workoutStartButton.setOnClickListener { listener.onStartClick(workout) }
