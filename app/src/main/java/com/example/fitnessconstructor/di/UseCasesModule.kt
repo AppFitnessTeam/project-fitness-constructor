@@ -26,9 +26,5 @@ abstract class UseCasesModule {
 
     @Binds
     @Singleton
-    abstract fun bindStatisticUseCase(impl: StatisticUseCaseImpl): StatisticUseCase
-
-    @Binds
-    @Singleton
     abstract fun bindWorkoutSettingsUseCase(impl: WorkoutSettingsUseCaseImpl): WorkoutSettingsUseCase
 }

@@ -102,6 +102,10 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
                     exerciseLayout.stepsEditText.text.toString().toInt()
                 )
             }
+
+            buttonSkip.setOnClickListener {
+                findNavController().navigate(R.id.action_exerciseFragment_to_addWorkoutFragment)
+            }
         }
     }
 

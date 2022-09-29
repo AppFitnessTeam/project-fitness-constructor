@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.Flow
 interface CreateWorkoutUseCase {
 
     suspend fun createWorkout()
-    suspend fun editWorkout(workout: Workout)
 
     /**
      * Asynch fun to get exercises from data for create workout

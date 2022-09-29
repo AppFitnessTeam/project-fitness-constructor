@@ -8,7 +8,6 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface StressDao {
-    // получаем название стрессупражнения по его номеру, а таже его номер типа(всегда будет 1)
     @Query("SELECT * FROM stress_exercises")
     suspend fun getStressExercises(): List<StressExercisesEntity>
 }
