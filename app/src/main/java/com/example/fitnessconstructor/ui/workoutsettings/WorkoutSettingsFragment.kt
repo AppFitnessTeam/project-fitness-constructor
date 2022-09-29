@@ -24,6 +24,7 @@ class WorkoutSettingsFragment :
         super.onViewCreated(view, savedInstanceState)
         initViews()
         viewModel.workoutSettings.observe(viewLifecycleOwner) { renderData(it) }
+        viewModel.getWorkoutSettings()
     }
 
     private fun renderData(workoutSettings: WorkoutSettings) {
@@ -40,6 +41,8 @@ class WorkoutSettingsFragment :
             weekNotificationRecyclerView.adapter = adapter
             saveButton.setOnClickListener { updateSettings() }
             deleteButton.setOnClickListener { deleteWorkout() }
+            setsTimeSlider.value = 30f
+            exerciseTimeSlider.value = 120f
         }
     }
 

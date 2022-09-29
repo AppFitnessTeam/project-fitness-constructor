@@ -21,7 +21,7 @@ class WorkoutSettingsViewModel @Inject constructor(
     private val _workoutSettings = MutableLiveData<WorkoutSettings>()
     val workoutSettings: LiveData<WorkoutSettings> = _workoutSettings
 
-    init {
+    fun getWorkoutSettings() {
         viewModelScope.launch {
             _workoutSettings.postValue(workoutSettingsUseCase.getWorkoutSettings(workoutId))
         }
