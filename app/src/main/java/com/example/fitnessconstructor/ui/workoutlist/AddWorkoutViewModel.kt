@@ -4,6 +4,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.*
 import com.example.fitnessconstructor.di.PreferencesKeys
+import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.WorkoutUseCase
 import com.example.fitnessconstructor.domain.entities.StepWorkout
@@ -17,6 +18,7 @@ import javax.inject.Inject
 class AddWorkoutViewModel @Inject constructor(
     private val workoutUseCase: WorkoutUseCase,
     private val stressUseCase: StressUseCase,
+    private val createWorkoutUseCase: CreateWorkoutUseCase,
     private val dataStore: DataStore<Preferences>
 ) : ViewModel() {
 
@@ -24,6 +26,9 @@ class AddWorkoutViewModel @Inject constructor(
 
     private val _stressStepsWorkout = MutableLiveData<Array<StepWorkout>>()
     val stressStepWorkout: LiveData<Array<StepWorkout>> = _stressStepsWorkout
+
+    private val _newWorkoutId = MutableLiveData<Int>()
+    val newWorkoutId: LiveData<Int> = _newWorkoutId
 
     val userLevel = dataStore.data.map { preferences ->
         preferences[PreferencesKeys.userLevelKey] ?: "Do test"
@@ -38,6 +43,22 @@ class AddWorkoutViewModel @Inject constructor(
     fun getStressWorkoutSteps() {
         viewModelScope.launch {
             _stressStepsWorkout.postValue(stressUseCase.getWorkoutSteps().toTypedArray())
+        }
+    }
+
+    fun createWorkout() {
+        viewModelScope.launch {
+            val newWorkout = Workout(
+                id = allWorkoutList.value?.size?.plus(1) ?: 0,
+                name = "Example",
+                nameRus = "Example",
+                isInList = 1,
+                day = 1,
+                userName = null,
+                lvl = null
+            )
+            createWorkoutUseCase.createWorkout(newWorkout)
+            _newWorkoutId.postValue(newWorkout.id)
         }
     }
 }

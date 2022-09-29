@@ -26,6 +26,7 @@ class AddWorkoutFragment :
         viewModel.allWorkoutList.observe(viewLifecycleOwner) { renderData(it) }
         viewModel.userLevel.observe(viewLifecycleOwner) { updateLevel(it) }
         viewModel.stressStepWorkout.observe(viewLifecycleOwner) { startStress(it) }
+        viewModel.newWorkoutId.observe(viewLifecycleOwner) { createWorkout(it) }
     }
 
     private fun startStress(stepWorkouts: Array<StepWorkout>) {
@@ -45,9 +46,17 @@ class AddWorkoutFragment :
     private fun initViews() {
         with(binding) {
             allWorkoutRecyclerView.adapter = adapter
-            crateWorkoutButton.setOnClickListener { toastBlock() }
+            crateWorkoutButton.setOnClickListener { viewModel.createWorkout() }
             stressTestButton.setOnClickListener { startDialogTestDescription() }
         }
+    }
+
+    private fun createWorkout(newWorkoutId: Int) {
+        val action =
+            AddWorkoutFragmentDirections.actionAddWorkoutFragmentToWorkoutSettingsFragment(
+                newWorkoutId
+            )
+        findNavController().navigate(action)
     }
 
     private fun startDialogTestDescription() {

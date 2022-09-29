@@ -3,6 +3,8 @@ package com.example.fitnessconstructor.data
 import com.example.fitnessconstructor.database.CreateWorkoutDao
 import com.example.fitnessconstructor.database.entities.WorkoutEntity
 import com.example.fitnessconstructor.database.entities.WorkoutExercisesEntity
+import com.example.fitnessconstructor.database.entities.WorkoutNotificationEntity
+import com.example.fitnessconstructor.database.entities.WorkoutRestEntity
 import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.Workout
@@ -27,6 +29,18 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
                 day = workout.day,
                 userName = workout.name,
                 lvl = workout.lvl
+            )
+        )
+
+        createWorkoutDao.setRestToNewWorkout(
+            WorkoutRestEntity(
+                workoutId = workout.id
+            )
+        )
+
+        createWorkoutDao.setNotificationToNewWorkout(
+            WorkoutNotificationEntity(
+                workoutId = workout.id
             )
         )
     }
