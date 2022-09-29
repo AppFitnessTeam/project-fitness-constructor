@@ -13,6 +13,8 @@ interface WorkoutUseCase {
 
     fun getAllWorkoutsList(): Flow<List<Workout>>
 
+    suspend fun addWorkoutToSelected(workoutId: Int)
+
     suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise>
     suspend fun getWorkoutSteps(workoutId: Int, day: Int): List<StepWorkout>
 }

@@ -35,6 +35,10 @@ class WorkoutUseCaseImpl @Inject constructor(
         }
     }
 
+    override suspend fun addWorkoutToSelected(workoutId: Int) {
+        workoutDao.selectWorkout(workoutId)
+    }
+
     override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> =
         withContext(Dispatchers.IO) {
             return@withContext workoutDao.getWorkoutExercises(workoutId, day).map {

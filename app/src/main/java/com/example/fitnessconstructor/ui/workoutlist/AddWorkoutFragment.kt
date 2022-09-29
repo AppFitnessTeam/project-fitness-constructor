@@ -3,6 +3,7 @@ package com.example.fitnessconstructor.ui.workoutlist
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.example.fitnessconstructor.databinding.FragmentAddWorkoutBinding
 import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.ui.BaseFragment
@@ -35,7 +36,8 @@ class AddWorkoutFragment :
     }
 
     override fun onItemClick(workout: Workout) {
-        toastBlock()
+        viewModel.addWorkoutToList(workout)
+        findNavController().navigateUp()
     }
 }
 

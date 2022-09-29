@@ -4,9 +4,12 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.WorkoutUseCase
+import com.example.fitnessconstructor.domain.entities.Workout
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,4 +20,10 @@ class AddWorkoutViewModel @Inject constructor(
 ) : ViewModel() {
 
     val allWorkoutList = workoutUseCase.getAllWorkoutsList().asLiveData()
+
+    fun addWorkoutToList(workout: Workout){
+        viewModelScope.launch {
+            workoutUseCase.addWorkoutToSelected(workout.id)
+        }
+    }
 }

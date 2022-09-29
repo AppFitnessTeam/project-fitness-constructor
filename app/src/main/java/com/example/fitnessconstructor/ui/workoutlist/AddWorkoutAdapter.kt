@@ -25,6 +25,7 @@ class AddWorkoutAdapter(
         fun bind(workout: Workout) = with(binding) {
             workoutNameTextView.text = workout.name
             workoutLevelTextView.text = workout.lvl
+            itemView.setOnClickListener { listener.onItemClick(workout) }
         }
     }
 

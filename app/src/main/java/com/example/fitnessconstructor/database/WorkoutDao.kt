@@ -15,6 +15,9 @@ interface WorkoutDao {
     @Query("SELECT * FROM workout WHERE id != 1")
     fun getAllWorkout(): Flow<List<WorkoutEntity>>
 
+    @Query("UPDATE workout SET is_in_list = 1 WHERE id = :workoutId")
+    suspend fun selectWorkout(workoutId: Int)
+
     @Update // обновление по PrimaryKey
     suspend fun updateWorkout(workout: WorkoutEntity)// функция обновления программы, например нужно обновить значение isInList
 
