@@ -17,9 +17,6 @@
             android:id="@+id/action_workoutListFragment_to_workoutSettingsFragment"
             app:destination="@id/workoutSettingsFragment" />
         <action
-            android:id="@+id/action_workoutListFragment_to_userSettingsFragment"
-            app:destination="@id/userSettingsFragment" />
-        <action
             android:id="@+id/action_workoutListFragment_to_addWorkoutFragment"
             app:destination="@id/addWorkoutFragment" />
     </fragment>
@@ -45,15 +42,6 @@
             android:name="stepsWorkout"
             app:argType="com.example.fitnessconstructor.domain.entities.StepWorkout[]" />
     </fragment>
-    <fragment
-        android:id="@+id/userSettingsFragment"
-        android:name="com.example.fitnessconstructor.ui.usersettings.UserSettingsFragment"
-        android:label="fragment_user_settings"
-        tools:layout="@layout/fragment_user_settings" >
-        <action
-            android:id="@+id/action_userSettingsFragment_to_exerciseFragment"
-            app:destination="@id/exerciseFragment" />
-    </fragment>
 
     <fragment
         android:id="@+id/workoutSettingsFragment"
@@ -70,5 +58,8 @@
         android:name="com.example.fitnessconstructor.ui.workoutlist.AddWorkoutFragment"
         android:label="fragment_add_workout"
         tools:layout="@layout/fragment_add_workout">
+        <action
+            android:id="@+id/action_addWorkoutFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
     </fragment>
 </navigation>

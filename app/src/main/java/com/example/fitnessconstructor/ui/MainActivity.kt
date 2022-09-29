@@ -51,7 +51,6 @@ class MainActivity : AppCompatActivity() {
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.user_settings_menu_item -> {
-                    navController.navigate(R.id.userSettingsFragment)
                     true
                 }
                 else -> false
