@@ -43,11 +43,6 @@
             app:argType="com.example.fitnessconstructor.domain.entities.StepWorkout[]" />
     </fragment>
     <fragment
-        android:id="@+id/statisticFragment"
-        android:name="com.example.fitnessconstructor.ui.statistic.StatisticFragment"
-        android:label="fragment_statistic"
-        tools:layout="@layout/fragment_statistic" />
-    <fragment
         android:id="@+id/userSettingsFragment"
         android:name="com.example.fitnessconstructor.ui.usersettings.UserSettingsFragment"
         android:label="fragment_user_settings"

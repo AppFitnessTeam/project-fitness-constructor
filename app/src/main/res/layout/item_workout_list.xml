@@ -15,7 +15,6 @@
 
         <TextView
             android:id="@+id/workout_name_text_view"
-            style="@style/item_title_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/workout_description_text_view"
@@ -25,7 +24,6 @@
 
         <TextView
             android:id="@+id/workout_description_text_view"
-            style="@style/item_description_workout_text_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@id/workout_start_button"
@@ -44,7 +42,6 @@
 
         <Button
             android:id="@+id/workout_start_button"
-            style="@style/positive_button_style"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start_workout_button_text"
