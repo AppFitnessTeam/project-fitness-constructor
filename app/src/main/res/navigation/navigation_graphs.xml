@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_workoutFragment_to_exerciseFragment"
             app:destination="@id/exerciseFragment" />
+        <argument
+            android:name="day"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/exerciseFragment"

@@ -39,7 +39,10 @@ class WorkoutListFragment :
 
     override fun onStartClick(workout: Workout) {
         val action =
-            WorkoutListFragmentDirections.actionWorkoutListFragmentToWorkoutFragment(workout.id)
+            WorkoutListFragmentDirections.actionWorkoutListFragmentToWorkoutFragment(
+                workoutId = workout.id,
+                day = workout.day ?: 1
+            )
         findNavController().navigate(action)
     }
 
