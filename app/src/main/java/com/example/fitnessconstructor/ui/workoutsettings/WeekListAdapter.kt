@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessconstructor.R
-import com.example.fitnessconstructor.databinding.WeekListItemBinding
+import com.example.fitnessconstructor.databinding.ItemWeekListBinding
 import java.sql.Time
 import java.time.DayOfWeek
 
@@ -23,7 +23,7 @@ class WeekListAdapter(
     fun getWeekList() = weekList
 
     inner class WeekListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val binding = WeekListItemBinding.bind(itemView)
+        private val binding = ItemWeekListBinding.bind(itemView)
 
         fun bind(weekItem: Pair<DayOfWeek, Time?>) = with(binding) {
             dayOfWeekTextView.text = weekItem.first.name
@@ -34,7 +34,7 @@ class WeekListAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeekListViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.week_list_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_week_list, parent, false)
         return WeekListViewHolder(view)
     }
 
