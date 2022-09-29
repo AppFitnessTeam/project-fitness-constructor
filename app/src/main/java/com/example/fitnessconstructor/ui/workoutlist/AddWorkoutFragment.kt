@@ -23,6 +23,11 @@ class AddWorkoutFragment :
         super.onViewCreated(view, savedInstanceState)
         initViews()
         viewModel.allWorkoutList.observe(viewLifecycleOwner) { renderData(it) }
+        viewModel.userLevel.observe(viewLifecycleOwner) { updateLevel(it) }
+    }
+
+    private fun updateLevel(userLevel: String) {
+        binding.levelTextView.text = userLevel
     }
 
     private fun renderData(allWorkoutList: List<Workout>) {

@@ -3,6 +3,7 @@ package com.example.fitnessconstructor.di
 import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import dagger.Module
 import dagger.Provides
@@ -22,4 +23,9 @@ object DataStoreModule {
     @Singleton
     fun provideDataStore(@ApplicationContext appContext: Context): DataStore<Preferences> =
         appContext.dataStore
+}
+
+object PreferencesKeys {
+    private const val USER_LEVEL_KEY = "user_level_key"
+    val userLevelKey = stringPreferencesKey(USER_LEVEL_KEY)
 }
