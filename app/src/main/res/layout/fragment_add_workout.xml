@@ -14,7 +14,7 @@
         app:layout_constraintBottom_toBottomOf="@id/stress_test_button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/stress_test_button"
-        tools:text="Your fitness level:" />
+        android:text="@string/level_text" />
 
     <TextView
         android:id="@+id/level_text_view"
@@ -32,9 +32,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Test your level" />
+        android:text="@string/stress_button_text" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="@dimen/margin_8"
         android:id="@+id/all_workout_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -43,11 +44,12 @@
 
     <Button
         android:id="@+id/crate_workout_button"
+        android:layout_marginTop="@dimen/margin_8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/all_workout_recycler_view"
-        tools:text="Create custom workout" />
+        android:text="@string/custom_workout_button_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>

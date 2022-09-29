@@ -2,8 +2,10 @@ package com.example.fitnessconstructor.ui.workoutlist
 
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.FragmentAddWorkoutBinding
 import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.ui.BaseFragment
@@ -31,8 +33,23 @@ class AddWorkoutFragment :
         with(binding) {
             allWorkoutRecyclerView.adapter = adapter
             crateWorkoutButton.setOnClickListener { toastBlock() }
-            stressTestButton.setOnClickListener { toastBlock() }
+            stressTestButton.setOnClickListener { startDialogTestDescription() }
         }
+    }
+
+    private fun startDialogTestDescription() {
+        val dialog = AlertDialog.Builder(requireContext())
+            .setCancelable(true)
+            .setTitle(R.string.stress_test)
+            .setMessage(R.string.stress_test_description)
+            .setPositiveButton(R.string.start_test) { _, _ ->
+                toastBlock()
+            }
+            .setNegativeButton(R.string.skip_test) { dialog, _ ->
+                dialog.dismiss()
+            }
+            .create()
+        dialog.show()
     }
 
     override fun onItemClick(workout: Workout) {
