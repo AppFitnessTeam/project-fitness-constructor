@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.FragmentAddWorkoutBinding
+import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -24,6 +25,13 @@ class AddWorkoutFragment :
         initViews()
         viewModel.allWorkoutList.observe(viewLifecycleOwner) { renderData(it) }
         viewModel.userLevel.observe(viewLifecycleOwner) { updateLevel(it) }
+        viewModel.stressStepWorkout.observe(viewLifecycleOwner) { startStress(it) }
+    }
+
+    private fun startStress(stepWorkouts: Array<StepWorkout>) {
+        val action =
+            AddWorkoutFragmentDirections.actionAddWorkoutFragmentToExerciseFragment(stepWorkouts)
+        findNavController().navigate(action)
     }
 
     private fun updateLevel(userLevel: String) {
@@ -48,7 +56,7 @@ class AddWorkoutFragment :
             .setTitle(R.string.stress_test)
             .setMessage(R.string.stress_test_description)
             .setPositiveButton(R.string.start_test) { _, _ ->
-                toastBlock()
+                viewModel.getStressWorkoutSteps()
             }
             .setNegativeButton(R.string.skip_test) { dialog, _ ->
                 dialog.dismiss()

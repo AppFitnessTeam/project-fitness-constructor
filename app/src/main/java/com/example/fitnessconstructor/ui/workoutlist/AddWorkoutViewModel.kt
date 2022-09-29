@@ -2,12 +2,11 @@ package com.example.fitnessconstructor.ui.workoutlist
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.asLiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.fitnessconstructor.di.PreferencesKeys
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.WorkoutUseCase
+import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.map
@@ -23,6 +22,9 @@ class AddWorkoutViewModel @Inject constructor(
 
     val allWorkoutList = workoutUseCase.getAllWorkoutsList().asLiveData()
 
+    private val _stressStepsWorkout = MutableLiveData<Array<StepWorkout>>()
+    val stressStepWorkout: LiveData<Array<StepWorkout>> = _stressStepsWorkout
+
     val userLevel = dataStore.data.map { preferences ->
         preferences[PreferencesKeys.userLevelKey] ?: "Do test"
     }.asLiveData()
@@ -30,6 +32,12 @@ class AddWorkoutViewModel @Inject constructor(
     fun addWorkoutToList(workout: Workout) {
         viewModelScope.launch {
             workoutUseCase.addWorkoutToSelected(workout.id)
+        }
+    }
+
+    fun getStressWorkoutSteps() {
+        viewModelScope.launch {
+            _stressStepsWorkout.postValue(stressUseCase.getWorkoutSteps().toTypedArray())
         }
     }
 }

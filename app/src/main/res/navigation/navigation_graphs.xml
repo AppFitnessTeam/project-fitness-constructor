@@ -44,6 +44,9 @@
         <argument
             android:name="stepsWorkout"
             app:argType="com.example.fitnessconstructor.domain.entities.StepWorkout[]" />
+        <action
+            android:id="@+id/action_exerciseFragment_to_addWorkoutFragment"
+            app:destination="@id/addWorkoutFragment" />
     </fragment>
 
     <fragment

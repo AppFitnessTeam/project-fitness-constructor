@@ -3,11 +3,7 @@ package com.example.fitnessconstructor.data
 import com.example.fitnessconstructor.database.StressDao
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.entities.StepWorkout
-import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -17,13 +13,10 @@ class StressUseCaseImpl @Inject constructor(
     private val stressDao: StressDao
 ) : StressUseCase {
 
-    override suspend fun getStressWorkout(): Workout {
-        TODO("later")
-    }
-
-    override fun getStressExercises(): Flow<StepWorkout> {
-        TODO("later")
-    }
+    override suspend fun getWorkoutSteps(): List<StepWorkout> =
+        withContext(Dispatchers.IO) {
+            return@withContext stressDao.getStressExercises().map { it.toStepWorkout() }
+        }
 
     override suspend fun getResult(stressTestResult: Array<Int>): String =
         withContext(Dispatchers.Default) {
@@ -49,9 +42,9 @@ class StressUseCaseImpl @Inject constructor(
     }
 
     private enum class StressResult(val intRange: IntRange, val message: String) {
-        LOW(0..80, "Your POWER is below average. We will help you"),
+        LOW(0..80, "Low POWER"),
         NORMAL(81..100, "Good POWER"),
         HIGH(101..150, "High POWER"),
-        MONSTER(151..300, "Excellent POWER"),
+        MONSTER(151..300, "Monster POWER"),
     }
 }

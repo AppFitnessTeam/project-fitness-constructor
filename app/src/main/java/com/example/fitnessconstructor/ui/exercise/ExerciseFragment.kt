@@ -3,6 +3,7 @@ package com.example.fitnessconstructor.ui.exercise
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -27,6 +28,18 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
         initView()
         viewModel.isSteps.observe(viewLifecycleOwner) { skipWorkout() }
         viewModel.stepWorkout.observe(viewLifecycleOwner) { renderData(it) }
+        viewModel.stressMessage.observe(viewLifecycleOwner) { showStressResult(it) }
+    }
+
+    private fun showStressResult(stressResult: String) {
+        val dialog = AlertDialog.Builder(requireContext())
+            .setTitle(R.string.stress_test)
+            .setMessage(stressResult)
+            .setPositiveButton("OK") { dialog, _ ->
+                findNavController().navigate(R.id.action_exerciseFragment_to_addWorkoutFragment)
+            }
+            .create()
+        dialog.show()
     }
 
     private fun initView() {
@@ -79,7 +92,17 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
     }
 
     private fun setViewStress(stepWorkout: StepWorkout) {
-        // TODO("Not yet implemented")
+        with(binding) {
+            timer = createTimer(stepWorkout.count, stepWorkout.type) {
+                exerciseLayout.exerciseCountTextView.text = it.toString()
+            }.start()
+
+            buttonNext.setOnClickListener {
+                viewModel.addCount(
+                    exerciseLayout.stepsEditText.text.toString().toInt()
+                )
+            }
+        }
     }
 
     private fun setViewTime(stepWorkout: StepWorkout) {
@@ -111,14 +134,18 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
         timer?.cancel()
     }
 
-    private fun createTimer(time: Int, renderView: (Long) -> Unit): CountDownTimer {
+    private fun createTimer(
+        time: Int,
+        type: ExerciseType = ExerciseType.TIME,
+        renderView: (Long) -> Unit
+    ): CountDownTimer {
         return object : CountDownTimer(time.toLong() * 1000, 1000) {
             override fun onTick(p0: Long) {
                 renderView(p0 / 1000)
             }
 
             override fun onFinish() {
-                viewModel.nextStep()
+                if (type == ExerciseType.TIME) viewModel.nextStep()
             }
         }
     }
