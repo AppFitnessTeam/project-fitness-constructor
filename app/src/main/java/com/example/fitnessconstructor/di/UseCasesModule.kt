@@ -1,7 +1,13 @@
 package com.example.fitnessconstructor.di
 
-import com.example.fitnessconstructor.data.*
-import com.example.fitnessconstructor.domain.*
+import com.example.fitnessconstructor.data.CreateWorkoutUseCaseImpl
+import com.example.fitnessconstructor.data.StressUseCaseImpl
+import com.example.fitnessconstructor.data.WorkoutSettingsUseCaseImpl
+import com.example.fitnessconstructor.data.WorkoutUseCaseImpl
+import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
+import com.example.fitnessconstructor.domain.StressUseCase
+import com.example.fitnessconstructor.domain.WorkoutSettingsUseCase
+import com.example.fitnessconstructor.domain.WorkoutUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

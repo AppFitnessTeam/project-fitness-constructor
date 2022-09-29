@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import com.example.fitnessconstructor.domain.entities.Exercise
+import com.example.fitnessconstructor.domain.entities.ExerciseType
 
 @Entity(
     tableName = AllExercisesEntity.TABLE_NAME,
@@ -17,7 +19,6 @@ import androidx.room.PrimaryKey
         )
     ]
 )
-
 data class AllExercisesEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
@@ -32,6 +33,22 @@ data class AllExercisesEntity(
     @ColumnInfo(name = COLUMN_TYPE_ID) // колонка с типом упражнения( стресс, количественный или на время)
     val typeId: Int?
 ) {
+
+    fun toExercise(): Exercise {
+        return Exercise(
+            id = id!!,
+            name = nameEng!!,
+            type = when (typeId?.toInt()) {
+                1 -> ExerciseType.STRESS
+                2 -> ExerciseType.STEP
+                else -> {
+                    ExerciseType.TIME
+                }
+            },
+            count = 0
+        )
+    }
+
     companion object {
         const val TABLE_NAME = "all_exercises"
         const val COLUMN_ID = "id"

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/layout_exercise_height"
+    android:paddingStart="@dimen/padding_start_end_exercise_layout"
+    android:paddingTop="@dimen/padding_top_bottom_layout"
+    android:paddingEnd="@dimen/padding_start_end_exercise_layout"
+    android:paddingBottom="@dimen/padding_top_bottom_layout">
+
+    <ImageView
+        android:id="@+id/exercise_list_item_image"
+        style="@style/exercise_icon_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_no_image_block_24" />
+
+    <TextView
+        android:id="@+id/exercise_name_text_view"
+        style="@style/item_title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/text_margin_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/exercise_list_item_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Exercise name" />
+
+    <EditText
+        android:id="@+id/exercise_count_edit_text"
+        style="@style/item_title_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_8"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/type_text_view"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="25" />
+
+    <TextView
+        android:id="@+id/type_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="sec" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

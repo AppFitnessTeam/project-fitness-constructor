@@ -23,4 +23,5 @@ abstract class MainDataBase : RoomDatabase() {
     abstract fun getWorkoutDao(): WorkoutDao
     abstract fun getStressDao(): StressDao
     abstract fun getWorkoutSettingsDao(): WorkoutSettingsDao
+    abstract fun getCreateWorkoutDao(): CreateWorkoutDao
 }

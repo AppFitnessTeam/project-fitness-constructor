@@ -1,8 +1,6 @@
 package com.example.fitnessconstructor.domain.entities
 
 import android.os.Parcelable
-import androidx.room.ColumnInfo
-import com.example.fitnessconstructor.database.entities.WorkoutEntity
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

@@ -10,6 +10,7 @@
     <string name="rest_sets_text">Rest time between sets</string>
     <string name="rest_exercises_text">Rest time between different exercises</string>
     <string name="week_exercises_text">Choose days and time if you want to receive notifications</string>
+    <string name="edit_exercises_button_text">Edit exercises</string>
     <string name="save_button_text">Save</string>
     <string name="delete_button_text">Delete</string>
 
@@ -51,5 +52,9 @@
     <string name="day_friday_text">Friday:</string>
     <string name="day_saturday_text">Saturday:</string>
     <string name="set_time_text">set time</string>
+
+    <!--    EditWorkoutFragment text-->
+    <string name="title_day_text_view">Day</string>
+    <string name="text_save_button">Save</string>
 
 </resources>

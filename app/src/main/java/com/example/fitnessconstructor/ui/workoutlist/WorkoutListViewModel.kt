@@ -1,6 +1,7 @@
 package com.example.fitnessconstructor.ui.workoutlist
 
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import com.example.fitnessconstructor.domain.WorkoutUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

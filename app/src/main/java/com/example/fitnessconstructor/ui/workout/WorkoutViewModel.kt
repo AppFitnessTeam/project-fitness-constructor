@@ -1,7 +1,6 @@
 package com.example.fitnessconstructor.ui.workout
 
 import androidx.lifecycle.*
-import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
 import com.example.fitnessconstructor.domain.WorkoutUseCase
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.StepWorkout
