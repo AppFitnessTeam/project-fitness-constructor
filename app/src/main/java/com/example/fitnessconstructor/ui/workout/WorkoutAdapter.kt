@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessconstructor.R
-import com.example.fitnessconstructor.databinding.ItemWorkoutBinding
+import com.example.fitnessconstructor.databinding.ItemExerciseListBinding
 import com.example.fitnessconstructor.domain.entities.Exercise
 
 class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() {
@@ -18,7 +18,7 @@ class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() 
     }
 
     class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val binding = ItemWorkoutBinding.bind(item)
+        val binding = ItemExerciseListBinding.bind(item)
 
         fun bind(item: Exercise) = with(binding) {
             apply {
@@ -32,7 +32,7 @@ class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutListHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_workout, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_exercise_list, parent, false)
         return WorkoutListHolder(view)
     }
 

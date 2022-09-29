@@ -5,12 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessconstructor.R
-import com.example.fitnessconstructor.databinding.ItemWorkoutListBinding
+import com.example.fitnessconstructor.databinding.ItemAllWorkoutListBinding
 import com.example.fitnessconstructor.domain.entities.Workout
 
-class WorkoutListAdapter(
-    val listener: ItemCustomWorkoutClickListener
-) : RecyclerView.Adapter<WorkoutListAdapter.WorkoutListHolder>() {
+class AddWorkoutAdapter(
+    val listener: ItemWorkoutClickListener
+) : RecyclerView.Adapter<AddWorkoutAdapter.WorkoutListHolder>() {
 
     private var data = emptyList<Workout>()
 
@@ -20,20 +20,18 @@ class WorkoutListAdapter(
     }
 
     inner class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
-        private val binding = ItemWorkoutListBinding.bind(item)
+        private val binding = ItemAllWorkoutListBinding.bind(item)
 
         fun bind(workout: Workout) = with(binding) {
-            workoutNameTextView.text = workout.userName
-            workoutDescriptionTextView.text =
-                itemView.resources.getString(R.string.workout_description_text, workout.lvl, workout.day)
-            workoutStartButton.setOnClickListener { listener.onStartClick(workout) }
-            workoutSettingsImageView.setOnClickListener { listener.onSettingsClick(workout) }
+            workoutNameTextView.text = workout.name
+            workoutLevelTextView.text = workout.lvl
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutListHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_workout_list, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_all_workout_list, parent, false)
         return WorkoutListHolder(view)
     }
 
