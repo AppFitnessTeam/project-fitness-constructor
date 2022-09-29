@@ -12,7 +12,7 @@ interface WorkoutDao {
     @Query("SELECT * FROM workout WHERE is_in_list = 1")
     fun getSelectedWorkout(): Flow<List<WorkoutEntity>>
 
-    @Query("SELECT * FROM workout")
+    @Query("SELECT * FROM workout WHERE id != 1")
     fun getAllWorkout(): Flow<List<WorkoutEntity>>
 
     @Update // обновление по PrimaryKey
