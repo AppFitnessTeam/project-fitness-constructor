@@ -1,32 +1,34 @@
 package com.example.fitnessconstructor.database
 
-import androidx.room.*
-import com.example.fitnessconstructor.database.entities.WorkoutEntity
-import com.example.fitnessconstructor.database.entities.WorkoutExercisesEntity
-
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import com.example.fitnessconstructor.database.entities.*
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CreateWorkoutDao {
 
-    //create workout
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun createWorkout(workout: WorkoutEntity)
 
-    //editWorkout
-    @Update
-    suspend fun editWorkout(workout: WorkoutEntity)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun setRestToNewWorkout(workoutRestEntity: WorkoutRestEntity)
 
-    //addExerciseToWorkout
-    @Insert(onConflict = OnConflictStrategy.REPLACE )
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun setNotificationToNewWorkout(workoutNotificationEntity: WorkoutNotificationEntity)
+
+    @Query("SELECT * FROM all_exercises")
+    suspend fun getAllExercises(): List<AllExercisesEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addExercise(exercise: WorkoutExercisesEntity)
 
-    //removeExerciseFromWorkout
-    @Delete
-    fun deleteExercise(exercise: WorkoutExercisesEntity)
+    @Query("SELECT * FROM workout_exercises WHERE workout_id IS :workoutId AND day IS :day")
+    fun getWorkoutExercises(workoutId: Int?, day: Int?): Flow<List<ExercisesEntity>>
 
-    //cleanUpAllWorkouts
     @Query("DELETE FROM workout")
     fun deleteAllWorkouts()
-
 }
 

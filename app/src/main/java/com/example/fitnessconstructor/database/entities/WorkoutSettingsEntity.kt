@@ -26,7 +26,7 @@ data class WorkoutSettingsEntity(
         setsRest = rest.setsRest,
         exerciseRest = rest.exerciseRest,
         workoutUserName = workout.userName,
-        weekList = listOf<Pair<DayOfWeek,Time?>>(
+        weekList = listOf<Pair<DayOfWeek, Time?>>(
             DayOfWeek.SUNDAY to notification.sunday?.let { Time(it) },
             DayOfWeek.MONDAY to notification.monday?.let { Time(it) },
             DayOfWeek.TUESDAY to notification.tuesday?.let { Time(it) },

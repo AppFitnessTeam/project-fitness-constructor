@@ -19,12 +19,24 @@ class WorkoutUseCaseImpl @Inject constructor(
     private val workoutDao: WorkoutDao
 ) : WorkoutUseCase {
 
-    override fun getWorkoutsList(): Flow<List<Workout>> {
-        return workoutDao.getWorkout().map {
+    override fun getSelectedWorkoutsList(): Flow<List<Workout>> {
+        return workoutDao.getSelectedWorkout().map {
             it.map { workoutEntity ->
                 workoutEntity.toWorkout()
             }
         }
+    }
+
+    override fun getAllWorkoutsList(): Flow<List<Workout>> {
+        return workoutDao.getAllWorkout().map {
+            it.map { workoutEntity ->
+                workoutEntity.toWorkout()
+            }
+        }
+    }
+
+    override suspend fun addWorkoutToSelected(workoutId: Int) {
+        workoutDao.selectWorkout(workoutId)
     }
 
     override suspend fun getWorkoutExercises(workoutId: Int, day: Int): List<Exercise> =

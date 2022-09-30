@@ -17,8 +17,8 @@
             android:id="@+id/action_workoutListFragment_to_workoutSettingsFragment"
             app:destination="@id/workoutSettingsFragment" />
         <action
-            android:id="@+id/action_workoutListFragment_to_userSettingsFragment"
-            app:destination="@id/userSettingsFragment" />
+            android:id="@+id/action_workoutListFragment_to_addWorkoutFragment"
+            app:destination="@id/addWorkoutFragment" />
     </fragment>
     <fragment
         android:id="@+id/workoutFragment"
@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_workoutFragment_to_exerciseFragment"
             app:destination="@id/exerciseFragment" />
+        <argument
+            android:name="day"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/exerciseFragment"
@@ -41,20 +44,9 @@
         <argument
             android:name="stepsWorkout"
             app:argType="com.example.fitnessconstructor.domain.entities.StepWorkout[]" />
-    </fragment>
-    <fragment
-        android:id="@+id/statisticFragment"
-        android:name="com.example.fitnessconstructor.ui.statistic.StatisticFragment"
-        android:label="fragment_statistic"
-        tools:layout="@layout/fragment_statistic" />
-    <fragment
-        android:id="@+id/userSettingsFragment"
-        android:name="com.example.fitnessconstructor.ui.usersettings.UserSettingsFragment"
-        android:label="fragment_user_settings"
-        tools:layout="@layout/fragment_user_settings" >
         <action
-            android:id="@+id/action_userSettingsFragment_to_exerciseFragment"
-            app:destination="@id/exerciseFragment" />
+            android:id="@+id/action_exerciseFragment_to_addWorkoutFragment"
+            app:destination="@id/addWorkoutFragment" />
     </fragment>
 
     <fragment
@@ -62,6 +54,31 @@
         android:name="com.example.fitnessconstructor.ui.workoutsettings.WorkoutSettingsFragment"
         android:label="fragment_workout_settings"
         tools:layout="@layout/fragment_workout_settings">
+        <argument
+            android:name="workoutId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_workoutSettingsFragment_to_editWorkoutFragment"
+            app:destination="@id/editWorkoutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWorkoutFragment"
+        android:name="com.example.fitnessconstructor.ui.workoutlist.AddWorkoutFragment"
+        android:label="fragment_add_workout"
+        tools:layout="@layout/fragment_add_workout">
+        <action
+            android:id="@+id/action_addWorkoutFragment_to_exerciseFragment"
+            app:destination="@id/exerciseFragment" />
+        <action
+            android:id="@+id/action_addWorkoutFragment_to_workoutSettingsFragment"
+            app:destination="@id/workoutSettingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editWorkoutFragment"
+        android:name="com.example.fitnessconstructor.ui.workoutsettings.EditWorkoutFragment"
+        android:label="fragment_edit_workout"
+        tools:layout="@layout/fragment_edit_workout">
         <argument
             android:name="workoutId"
             android:defaultValue="0"

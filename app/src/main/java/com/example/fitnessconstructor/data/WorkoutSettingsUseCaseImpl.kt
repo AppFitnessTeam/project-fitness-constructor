@@ -38,7 +38,7 @@ class WorkoutSettingsUseCaseImpl @Inject constructor(
 
     override suspend fun deleteWorkout(workoutId: Int) =
         withContext(Dispatchers.IO) {
-            workoutSettingsDao.deleteWorkout(workoutId)
+            workoutSettingsDao.deleteWorkoutFromList(workoutId)
         }
 
     private fun convertDataToNotificationEntity(workoutSettings: WorkoutSettings): WorkoutNotificationEntity {

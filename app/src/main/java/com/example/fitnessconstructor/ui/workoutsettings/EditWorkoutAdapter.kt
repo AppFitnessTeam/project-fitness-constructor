@@ -1,14 +1,14 @@
-package com.example.fitnessconstructor.ui.workout
+package com.example.fitnessconstructor.ui.workoutsettings
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitnessconstructor.R
-import com.example.fitnessconstructor.databinding.ItemExerciseListBinding
+import com.example.fitnessconstructor.databinding.ItemEditExerciseListBinding
 import com.example.fitnessconstructor.domain.entities.Exercise
 
-class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() {
+class EditWorkoutAdapter : RecyclerView.Adapter<EditWorkoutAdapter.WorkoutListHolder>() {
 
     private var data = emptyList<Exercise>()
 
@@ -18,21 +18,21 @@ class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() 
     }
 
     class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val binding = ItemExerciseListBinding.bind(item)
+        val binding = ItemEditExerciseListBinding.bind(item)
 
         fun bind(item: Exercise) = with(binding) {
             apply {
                 exerciseNameTextView.text = item.name
-                exerciseCountTextView.text =
-                    if (item.count > 0) item.count.toString() else itemView.resources.getText(R.string.count_1)
-                //TODO("add exercise icon")
+                exerciseCountEditText.setText("0")
+                typeTextView.text = item.type.name
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutListHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.item_exercise_list, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.item_edit_exercise_list, parent, false)
         return WorkoutListHolder(view)
     }
 

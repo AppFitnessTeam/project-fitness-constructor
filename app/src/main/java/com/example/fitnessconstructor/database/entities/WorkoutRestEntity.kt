@@ -27,10 +27,10 @@ data class WorkoutRestEntity(
     val workoutId: Int?,     //здесь всегда будет 1
 
     @ColumnInfo(name = COLUMN_SETS_REST) // время отдыха между подходами в упражнении
-    val setsRest: Int,
+    val setsRest: Int = 30,
 
     @ColumnInfo(name = COLUMN_EXERCISE_REST)// время отдыха между упражнениями
-    val exerciseRest: Int
+    val exerciseRest: Int = 120
 ) {
 
     fun toListRest(): List<Rest> {

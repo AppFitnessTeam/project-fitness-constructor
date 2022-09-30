@@ -10,7 +10,13 @@ import kotlinx.coroutines.flow.Flow
 interface WorkoutDao {
     // Получаем список всех программ тренировок
     @Query("SELECT * FROM workout WHERE is_in_list = 1")
-    fun getWorkout(): Flow<List<WorkoutEntity>>
+    fun getSelectedWorkout(): Flow<List<WorkoutEntity>>
+
+    @Query("SELECT * FROM workout WHERE id != 1")
+    fun getAllWorkout(): Flow<List<WorkoutEntity>>
+
+    @Query("UPDATE workout SET is_in_list = 1 WHERE id = :workoutId")
+    suspend fun selectWorkout(workoutId: Int)
 
     @Update // обновление по PrimaryKey
     suspend fun updateWorkout(workout: WorkoutEntity)// функция обновления программы, например нужно обновить значение isInList
@@ -30,10 +36,5 @@ interface WorkoutDao {
     // получаем программу программу тренировки в зависимости от её номера и дня
     @Query("SELECT * FROM workout_exercises WHERE workout_id IS :workoutId AND day IS :day")
     suspend fun getWorkoutExercises(workoutId: Int?, day: Int?): List<ExercisesEntity>
-
-//    // получаем время программы в зависимости от номера программы
-//    @Query("SELECT * FROM workout_notification  WHERE id IS :id")
-//    suspend fun getWorkoutNotification(id: Int?): WorkoutNotificationEntity
-
 }
 

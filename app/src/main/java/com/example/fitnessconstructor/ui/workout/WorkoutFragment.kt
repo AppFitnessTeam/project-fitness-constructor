@@ -5,11 +5,9 @@ import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.FragmentWorkoutBinding
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.ui.BaseFragment
-import com.example.fitnessconstructor.ui.exercise.ExerciseFragmentArgs
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,7 +32,8 @@ class WorkoutFragment : BaseFragment<FragmentWorkoutBinding>(FragmentWorkoutBind
         binding.apply {
             recyclerWorkout.adapter = adapter
             floatingActionButton.setOnClickListener {
-                val action = WorkoutFragmentDirections.actionWorkoutFragmentToExerciseFragment(viewModel.stepsWorkout)
+                val action =
+                    WorkoutFragmentDirections.actionWorkoutFragmentToExerciseFragment(viewModel.stepsWorkout)
                 findNavController().navigate(action)
             }
         }

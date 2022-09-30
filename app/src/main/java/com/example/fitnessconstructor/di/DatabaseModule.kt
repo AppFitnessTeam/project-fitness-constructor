@@ -2,10 +2,7 @@ package com.example.fitnessconstructor.di
 
 import android.content.Context
 import androidx.room.Room
-import com.example.fitnessconstructor.database.MainDataBase
-import com.example.fitnessconstructor.database.StressDao
-import com.example.fitnessconstructor.database.WorkoutDao
-import com.example.fitnessconstructor.database.WorkoutSettingsDao
+import com.example.fitnessconstructor.database.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -26,6 +23,10 @@ object DatabaseModule {
     @Provides
     fun provideWorkoutSettingsDao(database: MainDataBase): WorkoutSettingsDao =
         database.getWorkoutSettingsDao()
+
+    @Provides
+    fun provideCreateWorkoutDao(database: MainDataBase): CreateWorkoutDao =
+        database.getCreateWorkoutDao()
 
     @Provides
     @Singleton

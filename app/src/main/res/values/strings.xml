@@ -1,11 +1,6 @@
 <resources>
     <string name="app_name">Fitness Constructor</string>
 
-    <!--    Bottom menu text-->
-    <string name="workout_text_menu">Workouts</string>
-    <string name="statistic_text_menu">Statistic</string>
-    <string name="settings_text_menu">Settings</string>
-
     <!--    WorkoutListFragment text-->
     <string name="workout_description_text">Level: %1$s, Day: %2$d</string>
     <string name="start_workout_button_text">Start</string>
@@ -15,13 +10,9 @@
     <string name="rest_sets_text">Rest time between sets</string>
     <string name="rest_exercises_text">Rest time between different exercises</string>
     <string name="week_exercises_text">Choose days and time if you want to receive notifications</string>
+    <string name="edit_exercises_button_text">Edit exercises</string>
     <string name="save_button_text">Save</string>
     <string name="delete_button_text">Delete</string>
-
-    <!--TODO("change when the layouts be ready")-->
-    <string name="statistic_fragment">"Statistic fragment "</string>
-    <string name="settings_fragment">"Settings fragment "</string>
-    <string name="user">User Settings</string>
 
     <!--    ExerciseFragment text-->
     <string name="exercise_name_text">Exercise name</string>
@@ -33,35 +24,24 @@
     <string name="next_exercise_button_text">Next exercise</string>
     <string name="count_1">While you can</string>
 
+    <!--    AddSettingsFragment text-->
+    <string name="level_text">Your fitness level:</string>
+    <string name="stress_button_text">Test your level</string>
+    <string name="custom_workout_button_text">Create custom workout</string>
+    <!--    Dialog stress test dialog-->
+    <string name="stress_test">STRESS TEST</string>
+    <string name="stress_test_description">The stress test is a special test that will determine the level of your physical fitness.
+        \n
+        \nYou will need to do three exercises in sequence with no rest in between.
+        \n
+        \nThese exercises will be:
+        \nPush-ups, squats and running in place.
+        \n
+        \nEach exercise should be done for 30 seconds.
+        \n
+        \nAfter each exercise, sew on the number of times that you managed.</string>
     <string name="skip_test">Skip Test</string>
     <string name="start_test">Start test</string>
-
-    <!--    AppSettingsFragment text-->
-    <string name="fitness_level">Excellent</string>
-    <string name="save_lvl_button_text">Save your level</string>
-    <string name="male">male</string>
-    <string name="female">female</string>
-    <string name="hello">Thank you for choosing our app</string>
-    <string name="hello_description">We will help you to choose \n individual training program \n for you.</string>
-    <string name="hello_description_two">To accurately know your level \nof physical fitness, please take the special stress test.</string>
-    <string name="stress_test">STRESS TEST</string>
-    <string name="what_is_stress_test">The stress test is a special test \n that will determine the level of \n your physical fitness.</string>
-    <string name="stress_test_description">You will need to do three exercises in sequence with no rest in between.
-        \n These exercises will be: \nPush-ups, squats and running in place. \n \nEach exercise should be done \n for 30 seconds.
-        \n \nAfter each exercise, sew on the number of times that you managed …</string>
-    <string name="individual_training_program_description">We will help you to choose an individual training program for you.
-        \nTo do this, fill in your details.\n (We don\'t save your personal information).</string>
-    <string name="your_fitness_level_text">You have done a stress test. It was COOL! \n Your fitness level:</string>
-    <string name="sex">\n \nSex Gender</string>
-    <string name="gender_male">Male</string>
-    <string name="gender_female">Female</string>
-    <string name="level">Fitness Level</string>
-    <string name="level_low">low</string>
-    <string name="level_middle">middle</string>
-    <string name="level_high">high</string>
-    <string name="day">Day</string>
-    <string name="day_description">(Please select no more than 3 days per week for training)</string>
-    <string name="stress_button_text">Test your level</string>
 
     <!--    Week notifications text-->
     <string name="day_sunday_text">Sunday:</string>
@@ -72,5 +52,9 @@
     <string name="day_friday_text">Friday:</string>
     <string name="day_saturday_text">Saturday:</string>
     <string name="set_time_text">set time</string>
+
+    <!--    EditWorkoutFragment text-->
+    <string name="title_day_text_view">Day</string>
+    <string name="text_save_button">Save</string>
 
 </resources>

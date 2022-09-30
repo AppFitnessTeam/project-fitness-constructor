@@ -8,7 +8,7 @@
 
     <include
         android:id="@+id/exercise_layout"
-        layout="@layout/exercise_layout"
+        layout="@layout/layout_exercise"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,7 +16,7 @@
 
     <include
         android:id="@+id/rest_layout"
-        layout="@layout/rest_layout"
+        layout="@layout/layout_rest"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,6 @@
 
     <Button
         android:id="@+id/button_skip"
-        style="@style/negative_button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/skip_workout_button_text"
@@ -37,7 +36,6 @@
 
     <Button
         android:id="@+id/button_next"
-        style="@style/positive_button_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/next_exercise_button_text"

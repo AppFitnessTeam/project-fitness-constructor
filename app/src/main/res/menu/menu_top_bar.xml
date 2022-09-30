@@ -2,9 +2,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/user_settings_menu_item"
-        android:icon="@drawable/ic_trailing_icon"
-        android:title="@string/user"
+        android:id="@+id/app_settings_menu_item"
+        android:icon="@drawable/ic_bottom_menu_settings"
+        android:title="@string/skip_test"
         app:showAsAction="ifRoom" />
 
 </menu>
