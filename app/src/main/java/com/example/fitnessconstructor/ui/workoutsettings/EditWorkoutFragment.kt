@@ -11,9 +11,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class EditWorkoutFragment :
-    BaseFragment<FragmentEditWorkoutBinding>(FragmentEditWorkoutBinding::inflate) {
+    BaseFragment<FragmentEditWorkoutBinding, EditWorkoutViewModel>(FragmentEditWorkoutBinding::inflate) {
 
-    private val viewModel: EditWorkoutViewModel by viewModels()
+    override val viewModel: EditWorkoutViewModel by viewModels()
     private val args: EditWorkoutFragmentArgs by navArgs()
 
     private val adapter = EditWorkoutAdapter()
@@ -21,6 +21,7 @@ class EditWorkoutFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        observeNavigation()
         viewModel.exerciseList.observe(viewLifecycleOwner) { renderData(it) }
     }
 

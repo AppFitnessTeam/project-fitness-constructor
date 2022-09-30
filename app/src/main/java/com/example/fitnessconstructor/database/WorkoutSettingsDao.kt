@@ -10,7 +10,7 @@ import com.example.fitnessconstructor.database.entities.WorkoutSettingsEntity
 interface WorkoutSettingsDao {
 
     @Query("SELECT * FROM workout  WHERE id = :id")
-    suspend fun getWorkoutSettings(id: Int?): WorkoutSettingsEntity
+    suspend fun getWorkoutSettings(id: Int): WorkoutSettingsEntity
 
     @Query("UPDATE workout SET user_name = :workoutUserName WHERE id = :workoutId")
     suspend fun updateWorkoutName(workoutId: Int, workoutUserName: String)

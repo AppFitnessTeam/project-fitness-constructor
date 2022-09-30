@@ -3,7 +3,6 @@ package com.example.fitnessconstructor.ui.workoutsettings
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.fitnessconstructor.databinding.FragmentWorkoutSettingsBinding
 import com.example.fitnessconstructor.domain.entities.WorkoutSettings
@@ -12,10 +11,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class WorkoutSettingsFragment :
-    BaseFragment<FragmentWorkoutSettingsBinding>(FragmentWorkoutSettingsBinding::inflate),
-    SetTimeByWeek {
+    BaseFragment<FragmentWorkoutSettingsBinding, WorkoutSettingsViewModel>(
+        FragmentWorkoutSettingsBinding::inflate
+    ), SetTimeByWeek {
 
-    private val viewModel: WorkoutSettingsViewModel by viewModels()
+    override val viewModel: WorkoutSettingsViewModel by viewModels()
+
     private val args: WorkoutSettingsFragmentArgs by navArgs()
     private val adapter = WeekListAdapter(this)
 
@@ -23,6 +24,7 @@ class WorkoutSettingsFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        observeNavigation()
         viewModel.workoutSettings.observe(viewLifecycleOwner) { renderData(it) }
         viewModel.getWorkoutSettings()
     }
@@ -43,23 +45,18 @@ class WorkoutSettingsFragment :
             weekNotificationRecyclerView.adapter = adapter
             saveButton.setOnClickListener { updateSettings() }
             deleteButton.setOnClickListener { deleteWorkout() }
-            editExercisesButton.setOnClickListener { editExercises(args.workoutId) }
+            editExercisesButton.setOnClickListener { editExercises() }
             setsTimeSlider.value = 30f
             exerciseTimeSlider.value = 120f
         }
     }
 
-    private fun editExercises(workoutId: Int) {
-        val action =
-            WorkoutSettingsFragmentDirections.actionWorkoutSettingsFragmentToEditWorkoutFragment(
-                workoutId
-            )
-        findNavController().navigate(action)
+    private fun editExercises() {
+        viewModel.editExercises()
     }
 
     private fun deleteWorkout() {
         viewModel.deleteWorkout()
-        findNavController().navigateUp()
     }
 
     private fun updateSettings() {
@@ -69,7 +66,6 @@ class WorkoutSettingsFragment :
             exerciseRest = binding.exerciseTimeSlider.value.toInt(),
             weekList = adapter.getWeekList()
         )
-        findNavController().navigateUp()
     }
 
     override fun onSetTimeClick() {

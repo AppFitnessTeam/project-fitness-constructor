@@ -1,8 +1,12 @@
 package com.example.fitnessconstructor.ui.workoutsettings
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
+import androidx.lifecycle.viewModelScope
 import com.example.fitnessconstructor.domain.WorkoutSettingsUseCase
 import com.example.fitnessconstructor.domain.entities.WorkoutSettings
+import com.example.fitnessconstructor.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import java.sql.Time
@@ -13,7 +17,7 @@ import javax.inject.Inject
 class WorkoutSettingsViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val workoutSettingsUseCase: WorkoutSettingsUseCase
-) : ViewModel() {
+) : BaseViewModel() {
 
     private val navArgs = WorkoutSettingsFragmentArgs.fromSavedStateHandle(savedStateHandle)
     private val workoutId = navArgs.workoutId
@@ -43,12 +47,22 @@ class WorkoutSettingsViewModel @Inject constructor(
         )
         viewModelScope.launch {
             workoutSettingsUseCase.updateWorkoutSettings(newWorkoutSettings)
+            navigateBack()
         }
     }
 
     fun deleteWorkout() {
         viewModelScope.launch {
             workoutSettingsUseCase.deleteWorkout(workoutId)
+            navigateBack()
         }
+    }
+
+    fun editExercises() {
+        navigate(
+            WorkoutSettingsFragmentDirections.actionWorkoutSettingsFragmentToEditWorkoutFragment(
+                workoutId
+            )
+        )
     }
 }

@@ -18,7 +18,7 @@ data class WorkoutEntity(
     val nameRus: String? = null,
 
     @ColumnInfo(name = COLUMN_IS_IN_LIST)
-    val isInList: Int = 0,
+    val isInList: Int = 1,
 
     @ColumnInfo(name = COLUMN_DAY)
     val day: Int = 1,

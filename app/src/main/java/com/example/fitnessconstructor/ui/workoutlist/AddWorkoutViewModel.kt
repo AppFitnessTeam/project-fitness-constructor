@@ -2,13 +2,14 @@ package com.example.fitnessconstructor.ui.workoutlist
 
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
-import androidx.lifecycle.*
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.fitnessconstructor.di.PreferencesKeys
 import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.WorkoutUseCase
-import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
+import com.example.fitnessconstructor.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -20,15 +21,9 @@ class AddWorkoutViewModel @Inject constructor(
     private val stressUseCase: StressUseCase,
     private val createWorkoutUseCase: CreateWorkoutUseCase,
     private val dataStore: DataStore<Preferences>
-) : ViewModel() {
+) : BaseViewModel() {
 
     val allWorkoutList = workoutUseCase.getAllWorkoutsList().asLiveData()
-
-    private val _stressStepsWorkout = MutableLiveData<Array<StepWorkout>>()
-    val stressStepWorkout: LiveData<Array<StepWorkout>> = _stressStepsWorkout
-
-    private val _newWorkoutId = MutableLiveData<Int>()
-    val newWorkoutId: LiveData<Int> = _newWorkoutId
 
     val userLevel = dataStore.data.map { preferences ->
         preferences[PreferencesKeys.userLevelKey] ?: "Do test"
@@ -40,9 +35,13 @@ class AddWorkoutViewModel @Inject constructor(
         }
     }
 
-    fun getStressWorkoutSteps() {
+    fun startStressTest() {
         viewModelScope.launch {
-            _stressStepsWorkout.postValue(stressUseCase.getWorkoutSteps().toTypedArray())
+            navigate(
+                AddWorkoutFragmentDirections.actionAddWorkoutFragmentToExerciseFragment(
+                    stressUseCase.getWorkoutSteps().toTypedArray()
+                )
+            )
         }
     }
 
@@ -52,7 +51,12 @@ class AddWorkoutViewModel @Inject constructor(
                 name = "New workout"
             )
             createWorkoutUseCase.createWorkout(newWorkout)
-            _newWorkoutId.postValue(newWorkout.id)
+
+            navigate(
+                AddWorkoutFragmentDirections.actionAddWorkoutFragmentToWorkoutSettingsFragment(
+                    createWorkoutUseCase.getLastWorkoutId()
+                )
+            )
         }
     }
 }

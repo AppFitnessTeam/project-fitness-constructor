@@ -4,35 +4,27 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.FragmentAddWorkoutBinding
-import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.domain.entities.Workout
 import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class AddWorkoutFragment :
-    BaseFragment<FragmentAddWorkoutBinding>(FragmentAddWorkoutBinding::inflate),
-    ItemWorkoutClickListener {
+    BaseFragment<FragmentAddWorkoutBinding, AddWorkoutViewModel>(
+        FragmentAddWorkoutBinding::inflate
+    ), ItemWorkoutClickListener {
 
-    private val viewModel: AddWorkoutViewModel by viewModels()
+    override val viewModel: AddWorkoutViewModel by viewModels()
     private val adapter = AddWorkoutAdapter(this)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        observeNavigation()
         viewModel.allWorkoutList.observe(viewLifecycleOwner) { renderData(it) }
         viewModel.userLevel.observe(viewLifecycleOwner) { updateLevel(it) }
-        viewModel.stressStepWorkout.observe(viewLifecycleOwner) { startStress(it) }
-        viewModel.newWorkoutId.observe(viewLifecycleOwner) { createWorkout(it) }
-    }
-
-    private fun startStress(stepWorkouts: Array<StepWorkout>) {
-        val action =
-            AddWorkoutFragmentDirections.actionAddWorkoutFragmentToExerciseFragment(stepWorkouts)
-        findNavController().navigate(action)
     }
 
     private fun updateLevel(userLevel: String) {
@@ -51,32 +43,20 @@ class AddWorkoutFragment :
         }
     }
 
-    private fun createWorkout(newWorkoutId: Int) {
-        val action =
-            AddWorkoutFragmentDirections.actionAddWorkoutFragmentToWorkoutSettingsFragment(
-                newWorkoutId
-            )
-        findNavController().navigate(action)
-    }
-
     private fun startDialogTestDescription() {
         val dialog = AlertDialog.Builder(requireContext())
             .setCancelable(true)
             .setTitle(R.string.stress_test)
             .setMessage(R.string.stress_test_description)
-            .setPositiveButton(R.string.start_test) { _, _ ->
-                viewModel.getStressWorkoutSteps()
-            }
-            .setNegativeButton(R.string.skip_test) { dialog, _ ->
-                dialog.dismiss()
-            }
+            .setPositiveButton(R.string.start_test) { _, _ -> viewModel.startStressTest() }
+            .setNegativeButton(R.string.skip_test) { dialog, _ -> dialog.dismiss() }
             .create()
         dialog.show()
     }
 
     override fun onItemClick(workout: Workout) {
         viewModel.addWorkoutToList(workout)
-        findNavController().navigateUp()
+        navigateBack()
     }
 }
 

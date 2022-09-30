@@ -7,6 +7,7 @@ import androidx.lifecycle.*
 import com.example.fitnessconstructor.di.PreferencesKeys
 import com.example.fitnessconstructor.domain.StressUseCase
 import com.example.fitnessconstructor.domain.entities.StepWorkout
+import com.example.fitnessconstructor.ui.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -16,7 +17,7 @@ class ExerciseViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle,
     private val stressUseCase: StressUseCase,
     private val dataStore: DataStore<Preferences>
-) : ViewModel() {
+) : BaseViewModel() {
 
     private val navArgs = ExerciseFragmentArgs.fromSavedStateHandle(savedStateHandle)
     private val stepsWorkout = navArgs.stepsWorkout

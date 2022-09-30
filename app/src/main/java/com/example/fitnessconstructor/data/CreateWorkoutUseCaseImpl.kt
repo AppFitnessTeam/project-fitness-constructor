@@ -21,26 +21,33 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
 ) : CreateWorkoutUseCase {
 
     override suspend fun createWorkout(workout: Workout) {
-        createWorkoutDao.createWorkout(
-            WorkoutEntity(
-                name = workout.name,
-                day = workout.day,
-                userName = workout.name
+        withContext(Dispatchers.IO) {
+            createWorkoutDao.createWorkout(
+                WorkoutEntity(
+                    name = workout.name,
+                    day = workout.day,
+                    userName = workout.name
+                )
             )
-        )
 
-        createWorkoutDao.setRestToNewWorkout(
-            WorkoutRestEntity(
-                workoutId = workout.id
+            val workoutId = createWorkoutDao.getLastIdWorkoutEntity()
+            createWorkoutDao.setRestToNewWorkout(
+                WorkoutRestEntity(
+                    workoutId = workoutId
+                )
             )
-        )
-
-        createWorkoutDao.setNotificationToNewWorkout(
-            WorkoutNotificationEntity(
-                workoutId = workout.id
+            createWorkoutDao.setNotificationToNewWorkout(
+                WorkoutNotificationEntity(
+                    workoutId = workoutId
+                )
             )
-        )
+        }
     }
+
+    override suspend fun getLastWorkoutId(): Int =
+        withContext(Dispatchers.IO) {
+            return@withContext createWorkoutDao.getLastIdWorkoutEntity()
+        }
 
     override suspend fun getAllExercises(): List<Exercise> =
         withContext(Dispatchers.IO) {

@@ -13,6 +13,9 @@ interface CreateWorkoutDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun createWorkout(workout: WorkoutEntity)
 
+    @Query("SELECT MAX(id) FROM workout")
+    suspend fun getLastIdWorkoutEntity(): Int
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun setRestToNewWorkout(workoutRestEntity: WorkoutRestEntity)
 
