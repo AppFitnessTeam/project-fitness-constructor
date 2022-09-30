@@ -28,15 +28,15 @@ class WorkoutSettingsViewModel @Inject constructor(
     }
 
     fun updateWorkoutSettings(
-        workoutName: String,
+        workoutNewName: String,
         setsRest: Int,
         exerciseRest: Int,
         weekList: List<Pair<DayOfWeek, Time?>>
     ) {
         val newWorkoutSettings = WorkoutSettings(
             workoutId = workoutId,
-            workoutName = workoutName,
-            workoutUserName = workoutName,
+            workoutName = workoutSettings.value!!.workoutName,
+            workoutUserName = workoutNewName,
             setsRest = setsRest,
             exerciseRest = exerciseRest,
             weekList = weekList

@@ -29,7 +29,9 @@ class WorkoutSettingsFragment :
 
     private fun renderData(workoutSettings: WorkoutSettings) {
         with(binding) {
-            workoutNameEditText.setText(workoutSettings.workoutUserName)
+            workoutNameEditText.setText(
+                workoutSettings.workoutUserName ?: workoutSettings.workoutName
+            )
             setsTimeSlider.value = workoutSettings.setsRest.toFloat()
             exerciseTimeSlider.value = workoutSettings.exerciseRest.toFloat()
         }
@@ -62,7 +64,7 @@ class WorkoutSettingsFragment :
 
     private fun updateSettings() {
         viewModel.updateWorkoutSettings(
-            workoutName = binding.workoutNameEditText.text.toString(),
+            workoutNewName = binding.workoutNameEditText.text.toString(),
             setsRest = binding.setsTimeSlider.value.toInt(),
             exerciseRest = binding.exerciseTimeSlider.value.toInt(),
             weekList = adapter.getWeekList()
