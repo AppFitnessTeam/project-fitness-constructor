@@ -15,7 +15,7 @@ interface WorkoutSettingsDao {
     @Query("UPDATE workout SET user_name = :workoutUserName WHERE id = :workoutId")
     suspend fun updateWorkoutName(workoutId: Int, workoutUserName: String)
 
-    @Query("UPDATE workout_rest SET sets_rest =:setsRest AND exercise_rest = :exerciseRest  WHERE workout_id = :workoutId")
+    @Query("UPDATE workout_rest SET sets_rest =:setsRest, exercise_rest =:exerciseRest  WHERE workout_id = :workoutId")
     suspend fun updateWorkoutRest(workoutId: Int, setsRest: Int, exerciseRest: Int)
 
     @Update
