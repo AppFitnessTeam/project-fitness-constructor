@@ -8,7 +8,6 @@ import com.example.fitnessconstructor.database.entities.*
     entities = [
         AllExercisesEntity::class,
         StressExercisesEntity::class,
-        StressWorkoutExercisesEntity::class,
         TypeExercisesEntity::class,
         WorkoutRestEntity::class,
         WorkoutEntity::class,
@@ -17,7 +16,6 @@ import com.example.fitnessconstructor.database.entities.*
     version = 1,
     exportSchema = true
 )
-
 abstract class MainDataBase : RoomDatabase() {
 
     abstract fun getWorkoutDao(): WorkoutDao

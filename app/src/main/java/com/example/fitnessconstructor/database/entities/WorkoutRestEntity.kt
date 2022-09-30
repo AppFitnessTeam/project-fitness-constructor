@@ -23,14 +23,14 @@ data class WorkoutRestEntity(
     @ColumnInfo(name = COLUMN_ID)
     val id: Int = 0,
 
-    @ColumnInfo(name = COLUMN_WORKOUT_ID) // номер программы из списка программ тренировок
-    val workoutId: Int?,     //здесь всегда будет 1
+    @ColumnInfo(name = COLUMN_WORKOUT_ID)
+    val workoutId: Int,
 
-    @ColumnInfo(name = COLUMN_SETS_REST) // время отдыха между подходами в упражнении
-    val setsRest: Int = 30,
+    @ColumnInfo(name = COLUMN_SETS_REST)
+    val setsRest: Int = DEFAULT_SETS_REST,
 
-    @ColumnInfo(name = COLUMN_EXERCISE_REST)// время отдыха между упражнениями
-    val exerciseRest: Int = 120
+    @ColumnInfo(name = COLUMN_EXERCISE_REST)
+    val exerciseRest: Int = DEFAULT_EXERCISE_REST
 ) {
 
     fun toListRest(): List<Rest> {
@@ -44,7 +44,10 @@ data class WorkoutRestEntity(
         const val TABLE_NAME = "workout_rest"
         const val COLUMN_ID = "id"
         const val COLUMN_WORKOUT_ID = "workout_id"
-        const val COLUMN_SETS_REST = "appr_rest"
+        const val COLUMN_SETS_REST = "sets_rest"
         const val COLUMN_EXERCISE_REST = "exercise_rest"
+
+        private const val DEFAULT_SETS_REST = 30
+        private const val DEFAULT_EXERCISE_REST = 120
     }
 }

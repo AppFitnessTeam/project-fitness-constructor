@@ -24,11 +24,8 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
         createWorkoutDao.createWorkout(
             WorkoutEntity(
                 name = workout.name,
-                nameRus = workout.nameRus,
-                isInList = workout.isInList,
                 day = workout.day,
-                userName = workout.name,
-                lvl = workout.lvl
+                userName = workout.name
             )
         )
 

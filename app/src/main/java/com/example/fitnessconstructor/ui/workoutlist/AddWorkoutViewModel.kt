@@ -49,13 +49,7 @@ class AddWorkoutViewModel @Inject constructor(
     fun createWorkout() {
         viewModelScope.launch {
             val newWorkout = Workout(
-                id = allWorkoutList.value?.size?.plus(1) ?: 0,
-                name = "Example",
-                nameRus = "Example",
-                isInList = 1,
-                day = 1,
-                userName = null,
-                lvl = null
+                name = "New workout"
             )
             createWorkoutUseCase.createWorkout(newWorkout)
             _newWorkoutId.postValue(newWorkout.id)
