@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "21cd57ce45cd6b99edc0d9ddb5331e72",
+    "identityHash": "b66184c887c883cb5fcee0b61f0fe0d4",
     "entities": [
       {
         "tableName": "all_exercises",
@@ -256,7 +256,7 @@
       },
       {
         "tableName": "workout_exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `day` TEXT NOT NULL, `exercise_id` INTEGER NOT NULL, `count` INTEGER NOT NULL, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`exercise_id`) REFERENCES `all_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `day` INTEGER NOT NULL, `exercise_id` INTEGER NOT NULL, `count` INTEGER NOT NULL, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`exercise_id`) REFERENCES `all_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -273,7 +273,7 @@
           {
             "fieldPath": "day",
             "columnName": "day",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -405,7 +405,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '21cd57ce45cd6b99edc0d9ddb5331e72')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b66184c887c883cb5fcee0b61f0fe0d4')"
     ]
   }
 }

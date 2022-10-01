@@ -33,7 +33,7 @@ data class WorkoutExercisesEntity(
     val workoutId: Int,
 
     @ColumnInfo(name = COLUMN_DAY)
-    val day: String,
+    val day: Int,
 
     @ColumnInfo(name = COLUMN_EXERCISE_ID)
     val exerciseId: Int,
