@@ -23,6 +23,11 @@ class EditWorkoutFragment :
         initViews()
         observeNavigation()
         viewModel.exerciseList.observe(viewLifecycleOwner) { renderData(it) }
+        viewModel.day.observe(viewLifecycleOwner) { renderDay(it) }
+    }
+
+    private fun renderDay(day: Int) {
+        binding.dayTextView.text = day.toString()
     }
 
     private fun renderData(exerciseList: List<Exercise>) {
@@ -32,9 +37,8 @@ class EditWorkoutFragment :
     private fun initViews() {
         with(binding) {
             recyclerWorkoutList.adapter = adapter
-            leftImageView.setOnClickListener { toastBlock() }
-            rightImageView.setOnClickListener { toastBlock() }
-            floatingActionButton.setOnClickListener { toastBlock() }
+            leftImageView.setOnClickListener { viewModel.previousDay() }
+            rightImageView.setOnClickListener { viewModel.nextDay() }
             saveButton.setOnClickListener { toastBlock() }
         }
     }

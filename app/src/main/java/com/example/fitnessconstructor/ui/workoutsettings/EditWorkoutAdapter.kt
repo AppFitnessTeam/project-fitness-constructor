@@ -20,11 +20,11 @@ class EditWorkoutAdapter : RecyclerView.Adapter<EditWorkoutAdapter.WorkoutListHo
     class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = ItemEditExerciseListBinding.bind(item)
 
-        fun bind(item: Exercise) = with(binding) {
+        fun bind(exercise: Exercise) = with(binding) {
             apply {
-                exerciseNameTextView.text = item.name
-                exerciseCountEditText.setText("0")
-                typeTextView.text = item.type.name
+                exerciseNameTextView.text = exercise.name
+                exerciseCountEditText.setText(exercise.count.toString())
+                typeTextView.text = exercise.type.name
             }
         }
     }

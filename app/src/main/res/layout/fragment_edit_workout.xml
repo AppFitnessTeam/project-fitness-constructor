@@ -54,23 +54,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_16"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/fab_square"
-        app:srcCompat="@drawable/ic_plus_fab"
-        tools:ignore="ContentDescription" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_workout_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/null_dp"
         android:layout_marginTop="@dimen/margin_16"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title_day_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
