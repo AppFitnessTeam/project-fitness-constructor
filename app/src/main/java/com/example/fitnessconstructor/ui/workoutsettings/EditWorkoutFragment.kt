@@ -39,7 +39,8 @@ class EditWorkoutFragment :
             recyclerWorkoutList.adapter = adapter
             leftImageView.setOnClickListener { viewModel.previousDay() }
             rightImageView.setOnClickListener { viewModel.nextDay() }
-            saveButton.setOnClickListener { toastBlock() }
+            saveButton.setOnClickListener { toastBlock() } //TODO("add function")
+            saveButton.setOnClickListener { toastBlock() } //TODO("add function")
         }
     }
 }

@@ -57,5 +57,6 @@
     <string name="title_day_text_view">Day</string>
     <string name="text_save_button">Save</string>
     <string name="text_cancel_button">Cancel</string>
+    <string name="text_add_button">Exercise</string>
 
 </resources>

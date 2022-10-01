@@ -17,6 +17,7 @@ data class ExercisesEntity(
         id = workoutExercisesEntity.id,
         name = exercise.nameEng,
         type = getTypeExerciseById(exercise.typeId),
-        count = workoutExercisesEntity.count
+        count = workoutExercisesEntity.count,
+        imagePath = exercise.imagePath
     )
 }

@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_day_text_view"
-
+        app:layout_constraintBottom_toBottomOf="@id/add_exercise_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/add_exercise_button" />
 
     <ImageView
         android:id="@+id/left_image_view"
@@ -45,6 +45,15 @@
         app:layout_constraintBottom_toBottomOf="@id/day_text_view"
         app:layout_constraintStart_toEndOf="@id/day_text_view"
         app:layout_constraintTop_toTopOf="@id/day_text_view" />
+
+    <Button
+        android:id="@+id/add_exercise_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_add_button"
+        app:icon="@drawable/ic_plus_fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/save_button"

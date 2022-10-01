@@ -43,6 +43,8 @@ class WorkoutSettingsFragment :
     private fun initViews() {
         with(binding) {
             weekNotificationRecyclerView.adapter = adapter
+            weekNotificationRecyclerView.visibility = View.GONE //TODO("delete after realized")
+            weekNotificationTextView.visibility = View.GONE //TODO("delete after realized")
             saveButton.setOnClickListener { updateSettings() }
             deleteButton.setOnClickListener { deleteWorkout() }
             editExercisesButton.setOnClickListener { editExercises() }

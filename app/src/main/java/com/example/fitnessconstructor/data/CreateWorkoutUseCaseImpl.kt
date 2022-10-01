@@ -86,6 +86,10 @@ private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao:
         return mapExercises.getOrPut(day) { mutableListOf() }
     }
 
+    fun addExercise(day: Int, exercise: Exercise) {
+        mapExercises[day]?.add(exercise)
+    }
+
     suspend fun initMapExercises() {
         val exerciseEntityList = createWorkoutDao.getWorkoutExercises(workoutId)
         exerciseEntityList.forEach {
