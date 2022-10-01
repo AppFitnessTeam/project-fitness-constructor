@@ -5,7 +5,6 @@ import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 import com.example.fitnessconstructor.domain.entities.Exercise
-import com.example.fitnessconstructor.domain.entities.ExerciseType
 import com.example.fitnessconstructor.domain.entities.StepWorkout
 
 @Entity(
@@ -23,25 +22,27 @@ import com.example.fitnessconstructor.domain.entities.StepWorkout
 data class StressExercisesEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
-    val id: Int?,
+    val id: Int,
 
-    @ColumnInfo(name = COLUMN_NAME_ENG) // колонка с аглийским названием упражнения
-    val nameEng: String?,
+    @ColumnInfo(name = COLUMN_NAME_ENG)
+    val nameEng: String,
 
-    @ColumnInfo(name = COLUMN_NAME_RUS) // колонка с русским названием упражнения
-    val nameRus: String?,
+    @ColumnInfo(name = COLUMN_NAME_RUS)
+    val nameRus: String,
 
-    // колонка с типом упражнения( стресс, количественный или на время)
     @ColumnInfo(name = COLUMN_TYPE_ID)
-    val typeId: Int     //здесь всегда будет 1
+    val typeId: Int = 1,
+
+    @ColumnInfo(name = COLUMN_COUNT)
+    val count: Int = STRESS_COUNT
 ) {
 
     fun toStepWorkout(): StepWorkout {
         return Exercise(
-            id = id!!,
-            name = nameEng!!,
-            type = ExerciseType.STRESS,
-            count = 30
+            id = id,
+            name = nameEng,
+            type = getTypeExerciseById(typeId),
+            count = count
         )
     }
 
@@ -51,5 +52,8 @@ data class StressExercisesEntity(
         const val COLUMN_NAME_ENG = "name_eng"
         const val COLUMN_NAME_RUS = "name_rus"
         const val COLUMN_TYPE_ID = "type_id"
+        const val COLUMN_COUNT = "count"
+
+        private const val STRESS_COUNT = 30
     }
 }

@@ -12,7 +12,7 @@ interface WorkoutDao {
     @Query("SELECT * FROM workout WHERE is_in_list = 1")
     fun getSelectedWorkout(): Flow<List<WorkoutEntity>>
 
-    @Query("SELECT * FROM workout WHERE id != 1")
+    @Query("SELECT * FROM workout")
     fun getAllWorkout(): Flow<List<WorkoutEntity>>
 
     @Query("UPDATE workout SET is_in_list = 1 WHERE id = :workoutId")

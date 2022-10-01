@@ -9,18 +9,21 @@ import com.example.fitnessconstructor.database.entities.WorkoutSettingsEntity
 @Dao
 interface WorkoutSettingsDao {
 
-    @Query("SELECT * FROM workout  WHERE id IS :id")
-    suspend fun getWorkoutSettings(id: Int?): WorkoutSettingsEntity
+    @Query("SELECT * FROM workout  WHERE id = :id")
+    suspend fun getWorkoutSettings(id: Int): WorkoutSettingsEntity
 
-    @Query("UPDATE workout SET user_name = :workoutUserName WHERE id IS :workoutId")
+    @Query("UPDATE workout SET user_name = :workoutUserName WHERE id = :workoutId")
     suspend fun updateWorkoutName(workoutId: Int, workoutUserName: String)
 
-    @Query("UPDATE workout_rest SET appr_rest =:setsRest AND exercise_rest = :exerciseRest  WHERE workout_id = :workoutId")
+    @Query("UPDATE workout_rest SET sets_rest =:setsRest, exercise_rest =:exerciseRest  WHERE workout_id = :workoutId")
     suspend fun updateWorkoutRest(workoutId: Int, setsRest: Int, exerciseRest: Int)
 
     @Update
     suspend fun updateNotification(workoutNotificationEntity: WorkoutNotificationEntity)
 
-    @Query("UPDATE workout SET is_in_list = 0 WHERE id IS :id")
-    suspend fun deleteWorkoutFromList(id: Int?)
+    @Query("UPDATE workout SET is_in_list = 0, day = 1 WHERE id = :id AND is_custom = 0")
+    suspend fun deleteWorkoutFromList(id: Int)
+
+    @Query("DELETE FROM workout WHERE id = :id AND is_custom = 1")
+    suspend fun deleteCustomWorkout(id: Int)
 }

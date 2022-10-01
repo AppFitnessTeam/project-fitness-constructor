@@ -12,9 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_day_text_view"
-        app:layout_constraintBottom_toBottomOf="@id/save_button"
+        app:layout_constraintBottom_toBottomOf="@id/add_exercise_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/save_button" />
+        app:layout_constraintTop_toTopOf="@id/add_exercise_button" />
 
     <ImageView
         android:id="@+id/left_image_view"
@@ -30,10 +30,10 @@
         android:id="@+id/day_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/save_button"
+        app:layout_constraintBottom_toBottomOf="@id/title_day_text_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/save_button"
+        app:layout_constraintTop_toTopOf="@id/title_day_text_view"
         tools:text="1" />
 
     <ImageView
@@ -47,30 +47,38 @@
         app:layout_constraintTop_toTopOf="@id/day_text_view" />
 
     <Button
+        android:id="@+id/add_exercise_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_add_button"
+        app:icon="@drawable/ic_plus_fab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/text_save_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floating_action_button"
+    <Button
+        android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16"
+        android:text="@string/text_cancel_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:shapeAppearanceOverlay="@style/fab_square"
-        app:srcCompat="@drawable/ic_plus_fab"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintEnd_toStartOf="@id/save_button" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_workout_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/null_dp"
         android:layout_marginTop="@dimen/margin_16"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/save_button"
         app:layout_constraintTop_toBottomOf="@id/title_day_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,35 +2,41 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "97739dd7861201be695c2e592cca921f",
+    "identityHash": "b66184c887c883cb5fcee0b61f0fe0d4",
     "entities": [
       {
         "tableName": "all_exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name_eng` TEXT, `name_rus` TEXT, `type_id` INTEGER, FOREIGN KEY(`type_id`) REFERENCES `type_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name_eng` TEXT NOT NULL, `name_rus` TEXT NOT NULL, `type_id` INTEGER NOT NULL, `image_path` TEXT NOT NULL, FOREIGN KEY(`type_id`) REFERENCES `type_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "nameEng",
             "columnName": "name_eng",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "nameRus",
             "columnName": "name_rus",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "typeId",
             "columnName": "type_id",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
+          },
+          {
+            "fieldPath": "imagePath",
+            "columnName": "image_path",
+            "affinity": "TEXT",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -56,29 +62,35 @@
       },
       {
         "tableName": "stress_exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `name_eng` TEXT, `name_rus` TEXT, `type_id` INTEGER NOT NULL, FOREIGN KEY(`type_id`) REFERENCES `type_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name_eng` TEXT NOT NULL, `name_rus` TEXT NOT NULL, `type_id` INTEGER NOT NULL, `count` INTEGER NOT NULL, FOREIGN KEY(`type_id`) REFERENCES `type_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "nameEng",
             "columnName": "name_eng",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "nameRus",
             "columnName": "name_rus",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "typeId",
             "columnName": "type_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "count",
+            "columnName": "count",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -105,81 +117,20 @@
         ]
       },
       {
-        "tableName": "stress_workout_exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `workout_id` INTEGER, `stress_exercises_id` INTEGER, `count` INTEGER, FOREIGN KEY(`stress_exercises_id`) REFERENCES `stress_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "workoutId",
-            "columnName": "workout_id",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "stressExercisesId",
-            "columnName": "stress_exercises_id",
-            "affinity": "INTEGER",
-            "notNull": false
-          },
-          {
-            "fieldPath": "count",
-            "columnName": "count",
-            "affinity": "INTEGER",
-            "notNull": false
-          }
-        ],
-        "primaryKey": {
-          "columnNames": [
-            "id"
-          ],
-          "autoGenerate": true
-        },
-        "indices": [],
-        "foreignKeys": [
-          {
-            "table": "stress_exercises",
-            "onDelete": "CASCADE",
-            "onUpdate": "CASCADE",
-            "columns": [
-              "stress_exercises_id"
-            ],
-            "referencedColumns": [
-              "id"
-            ]
-          },
-          {
-            "table": "workout",
-            "onDelete": "CASCADE",
-            "onUpdate": "CASCADE",
-            "columns": [
-              "workout_id"
-            ],
-            "referencedColumns": [
-              "id"
-            ]
-          }
-        ]
-      },
-      {
         "tableName": "type_exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `type` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "type",
             "columnName": "type",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -193,7 +144,7 @@
       },
       {
         "tableName": "workout_rest",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER, `appr_rest` INTEGER NOT NULL, `exercise_rest` INTEGER NOT NULL, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `sets_rest` INTEGER NOT NULL, `exercise_rest` INTEGER NOT NULL, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -205,11 +156,11 @@
             "fieldPath": "workoutId",
             "columnName": "workout_id",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "setsRest",
-            "columnName": "appr_rest",
+            "columnName": "sets_rest",
             "affinity": "INTEGER",
             "notNull": true
           },
@@ -243,7 +194,7 @@
       },
       {
         "tableName": "workout",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `name_rus` TEXT NOT NULL, `is_in_list` INTEGER, `day` INTEGER, `user_name` TEXT, `lvl` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `name_rus` TEXT, `is_in_list` INTEGER NOT NULL, `day` INTEGER NOT NULL, `user_name` TEXT, `lvl` TEXT NOT NULL, `is_custom` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -261,19 +212,19 @@
             "fieldPath": "nameRus",
             "columnName": "name_rus",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "isInList",
             "columnName": "is_in_list",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "day",
             "columnName": "day",
             "affinity": "INTEGER",
-            "notNull": false
+            "notNull": true
           },
           {
             "fieldPath": "userName",
@@ -285,7 +236,13 @@
             "fieldPath": "lvl",
             "columnName": "lvl",
             "affinity": "TEXT",
-            "notNull": false
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCustomWorkout",
+            "columnName": "is_custom",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -299,7 +256,7 @@
       },
       {
         "tableName": "workout_exercises",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `day` TEXT NOT NULL, `exercise_id` INTEGER NOT NULL, `count` INTEGER NOT NULL, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`exercise_id`) REFERENCES `all_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `day` INTEGER NOT NULL, `exercise_id` INTEGER NOT NULL, `count` INTEGER NOT NULL, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE , FOREIGN KEY(`exercise_id`) REFERENCES `all_exercises`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -316,7 +273,7 @@
           {
             "fieldPath": "day",
             "columnName": "day",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -366,7 +323,7 @@
       },
       {
         "tableName": "workout_notification",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `monday` INTEGER, `tuesday` INTEGER, `wednesday` INTEGER, `thursday` INTEGER, `friday` INTEGER, `saturday` INTEGER, `sunday` INTEGER, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `workout_id` INTEGER NOT NULL, `sunday` INTEGER, `monday` INTEGER, `tuesday` INTEGER, `wednesday` INTEGER, `thursday` INTEGER, `friday` INTEGER, `saturday` INTEGER, FOREIGN KEY(`workout_id`) REFERENCES `workout`(`id`) ON UPDATE CASCADE ON DELETE CASCADE )",
         "fields": [
           {
             "fieldPath": "id",
@@ -379,6 +336,12 @@
             "columnName": "workout_id",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "sunday",
+            "columnName": "sunday",
+            "affinity": "INTEGER",
+            "notNull": false
           },
           {
             "fieldPath": "monday",
@@ -415,12 +378,6 @@
             "columnName": "saturday",
             "affinity": "INTEGER",
             "notNull": false
-          },
-          {
-            "fieldPath": "sunday",
-            "columnName": "sunday",
-            "affinity": "INTEGER",
-            "notNull": false
           }
         ],
         "primaryKey": {
@@ -448,7 +405,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '97739dd7861201be695c2e592cca921f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'b66184c887c883cb5fcee0b61f0fe0d4')"
     ]
   }
 }

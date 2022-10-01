@@ -4,14 +4,14 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = TypeExercisesEntity.TABLE_NAME)//таблица с типом упражнения( стресс, количественный или на время)
+@Entity(tableName = TypeExercisesEntity.TABLE_NAME)
 data class TypeExercisesEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
-    val id: Int?,
+    val id: Int,
 
-    @ColumnInfo(name = COLUMN_TYPE) // колонка с типом упражнения( стресс, количественный или на время)
-    val type: String?
+    @ColumnInfo(name = COLUMN_TYPE)
+    val type: String
 ) {
     companion object {
         const val TABLE_NAME = "type_exercises"

@@ -29,17 +29,17 @@ data class WorkoutExercisesEntity(
     @ColumnInfo(name = COLUMN_ID)
     val id: Int = 0,
 
-    @ColumnInfo(name = COLUMN_WORKOUT_ID) // номер программы из списка программ тренировок
+    @ColumnInfo(name = COLUMN_WORKOUT_ID)
     val workoutId: Int,
 
-    @ColumnInfo(name = COLUMN_DAY) // какой день тренировки. Всего 3 дня тренировки в неделю
-    val day: String,
+    @ColumnInfo(name = COLUMN_DAY)
+    val day: Int,
 
-    @ColumnInfo(name = COLUMN_EXERCISE_ID) // номер упражнения из списка упражнений
+    @ColumnInfo(name = COLUMN_EXERCISE_ID)
     val exerciseId: Int,
 
-    @ColumnInfo(name = COLUMN_COUNT) // количество , секунды или до отказа (-1)
-    val count: Int,
+    @ColumnInfo(name = COLUMN_COUNT)
+    val count: Int = DEFAULT_COUNT,
 ) {
     companion object {
         const val TABLE_NAME = "workout_exercises"
@@ -48,5 +48,7 @@ data class WorkoutExercisesEntity(
         const val COLUMN_DAY = "day"
         const val COLUMN_EXERCISE_ID = "exercise_id"
         const val COLUMN_COUNT = "count"
+
+        private const val DEFAULT_COUNT = 0
     }
 }

@@ -3,7 +3,6 @@ package com.example.fitnessconstructor.ui.workout
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.fitnessconstructor.databinding.FragmentWorkoutBinding
 import com.example.fitnessconstructor.domain.entities.Exercise
@@ -11,9 +10,11 @@ import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WorkoutFragment : BaseFragment<FragmentWorkoutBinding>(FragmentWorkoutBinding::inflate) {
+class WorkoutFragment : BaseFragment<FragmentWorkoutBinding, WorkoutViewModel>(
+    FragmentWorkoutBinding::inflate
+) {
 
-    private val viewModel: WorkoutViewModel by viewModels()
+    override val viewModel: WorkoutViewModel by viewModels()
     private val args: WorkoutFragmentArgs by navArgs()
 
     private val adapter = WorkoutAdapter()
@@ -21,6 +22,7 @@ class WorkoutFragment : BaseFragment<FragmentWorkoutBinding>(FragmentWorkoutBind
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        observeNavigation()
         viewModel.exerciseList.observe(viewLifecycleOwner) { renderData(it) }
     }
 
@@ -31,11 +33,7 @@ class WorkoutFragment : BaseFragment<FragmentWorkoutBinding>(FragmentWorkoutBind
     private fun initViews() {
         binding.apply {
             recyclerWorkout.adapter = adapter
-            floatingActionButton.setOnClickListener {
-                val action =
-                    WorkoutFragmentDirections.actionWorkoutFragmentToExerciseFragment(viewModel.stepsWorkout)
-                findNavController().navigate(action)
-            }
+            floatingActionButton.setOnClickListener { viewModel.startWorkout() }
         }
     }
 }

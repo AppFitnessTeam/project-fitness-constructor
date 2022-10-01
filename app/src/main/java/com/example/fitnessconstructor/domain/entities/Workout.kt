@@ -5,11 +5,11 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Workout(
-    val id: Int,
+    val id: Int = 0,
     val name: String,
-    val nameRus: String,
-    val isInList: Int?,
-    val day: Int?,
-    val userName: String?,
-    val lvl: String?
+    val nameRus: String? = null,
+    val isInList: Int = 1,
+    val day: Int = 1,
+    val userName: String? = null,
+    val lvl: String? = null
 ) : Parcelable

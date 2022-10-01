@@ -9,8 +9,6 @@ import com.example.fitnessconstructor.domain.CreateWorkoutUseCase
 import com.example.fitnessconstructor.domain.entities.Exercise
 import com.example.fitnessconstructor.domain.entities.Workout
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -20,30 +18,42 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
     private val createWorkoutDao: CreateWorkoutDao
 ) : CreateWorkoutUseCase {
 
+    private var workoutExercises: WorkoutExercises? = null
+
     override suspend fun createWorkout(workout: Workout) {
-        createWorkoutDao.createWorkout(
-            WorkoutEntity(
-                name = workout.name,
-                nameRus = workout.nameRus,
-                isInList = workout.isInList,
-                day = workout.day,
-                userName = workout.name,
-                lvl = workout.lvl
+        withContext(Dispatchers.IO) {
+            createWorkoutDao.createWorkout(
+                WorkoutEntity(
+                    name = workout.name,
+                    day = workout.day,
+                    userName = workout.name
+                )
             )
-        )
 
-        createWorkoutDao.setRestToNewWorkout(
-            WorkoutRestEntity(
-                workoutId = workout.id
+            val workoutId = createWorkoutDao.getLastIdWorkoutEntity()
+            createWorkoutDao.setRestToNewWorkout(
+                WorkoutRestEntity(
+                    workoutId = workoutId
+                )
             )
-        )
-
-        createWorkoutDao.setNotificationToNewWorkout(
-            WorkoutNotificationEntity(
-                workoutId = workout.id
+            createWorkoutDao.setNotificationToNewWorkout(
+                WorkoutNotificationEntity(
+                    workoutId = workoutId
+                )
             )
-        )
+        }
     }
+
+    override suspend fun getLastWorkoutId(): Int =
+        withContext(Dispatchers.IO) {
+            return@withContext createWorkoutDao.getLastIdWorkoutEntity()
+        }
+
+    override suspend fun getExercisesByDay(workoutId: Int, day: Int): List<Exercise> =
+        withContext(Dispatchers.IO) {
+            workoutExercises = WorkoutExercises.getInstance(workoutId, createWorkoutDao)
+            return@withContext workoutExercises!!.getExercisesByDay(day)
+        }
 
     override suspend fun getAllExercises(): List<Exercise> =
         withContext(Dispatchers.IO) {
@@ -60,16 +70,45 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
             createWorkoutDao.addExercise(
                 WorkoutExercisesEntity(
                     workoutId = workoutId,
-                    day = day.toString(),
+                    day = day,
                     exerciseId = exerciseId,
                     count = count
                 )
             )
         }
+}
 
-    override fun getWorkoutExercises(workoutId: Int, day: Int): Flow<List<Exercise>> {
-        return createWorkoutDao.getWorkoutExercises(workoutId, day).map { list ->
-            list.map { it.toExercise() }
+private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao: CreateWorkoutDao) {
+
+    private val mapExercises = mutableMapOf<Int, MutableList<Exercise>>()
+
+    fun getExercisesByDay(day: Int): MutableList<Exercise> {
+        return mapExercises.getOrPut(day) { mutableListOf() }
+    }
+
+    fun addExercise(day: Int, exercise: Exercise) {
+        mapExercises[day]?.add(exercise)
+    }
+
+    suspend fun initMapExercises() {
+        val exerciseEntityList = createWorkoutDao.getWorkoutExercises(workoutId)
+        exerciseEntityList.forEach {
+            val keyMap = it.workoutExercisesEntity.day
+            if (!mapExercises.containsKey(keyMap)) mapExercises[keyMap] = mutableListOf()
+            mapExercises[keyMap]!!.add(it.toExercise())
+        }
+    }
+
+    companion object {
+        private var INSTANCE: WorkoutExercises? = null
+
+        suspend fun getInstance(
+            workoutId: Int,
+            createWorkoutDao: CreateWorkoutDao
+        ): WorkoutExercises {
+            if (INSTANCE == null || INSTANCE!!.workoutId != workoutId) INSTANCE =
+                WorkoutExercises(workoutId, createWorkoutDao).also { it.initMapExercises() }
+            return INSTANCE!!
         }
     }
 }

@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.topAppBar.setOnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.user_settings_menu_item -> {
+                R.id.app_settings_menu_item -> {
                     true
                 }
                 else -> false

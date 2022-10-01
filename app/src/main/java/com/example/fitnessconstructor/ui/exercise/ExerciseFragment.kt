@@ -5,7 +5,6 @@ import android.os.CountDownTimer
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.FragmentExerciseBinding
@@ -16,9 +15,12 @@ import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseBinding::inflate) {
+class ExerciseFragment : BaseFragment<FragmentExerciseBinding, ExerciseViewModel>(
+    FragmentExerciseBinding::inflate
+) {
 
-    private val viewModel: ExerciseViewModel by viewModels()
+    override val viewModel: ExerciseViewModel by viewModels()
+
     private val navArgs: ExerciseFragmentArgs by navArgs()
 
     private var timer: CountDownTimer? = null
@@ -26,6 +28,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initView()
+        observeNavigation()
         viewModel.isSteps.observe(viewLifecycleOwner) { skipWorkout() }
         viewModel.stepWorkout.observe(viewLifecycleOwner) { renderData(it) }
         viewModel.stressMessage.observe(viewLifecycleOwner) { showStressResult(it) }
@@ -35,9 +38,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
         val dialog = AlertDialog.Builder(requireContext())
             .setTitle(R.string.stress_test)
             .setMessage(stressResult)
-            .setPositiveButton("OK") { dialog, _ ->
-                findNavController().navigate(R.id.action_exerciseFragment_to_addWorkoutFragment)
-            }
+            .setPositiveButton("OK") { _, _ -> navigateBack() }
             .create()
         dialog.show()
     }
@@ -56,7 +57,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
 
     private fun skipWorkout() {
         timer?.cancel()
-        findNavController().navigateUp()
+        navigateBack()
     }
 
     private fun renderData(stepWorkout: StepWorkout) {
@@ -104,7 +105,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding>(FragmentExerciseB
             }
 
             buttonSkip.setOnClickListener {
-                findNavController().navigate(R.id.action_exerciseFragment_to_addWorkoutFragment)
+                navigateBack()
             }
         }
     }

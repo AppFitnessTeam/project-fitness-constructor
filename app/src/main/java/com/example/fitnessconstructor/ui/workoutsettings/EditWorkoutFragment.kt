@@ -11,9 +11,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class EditWorkoutFragment :
-    BaseFragment<FragmentEditWorkoutBinding>(FragmentEditWorkoutBinding::inflate) {
+    BaseFragment<FragmentEditWorkoutBinding, EditWorkoutViewModel>(FragmentEditWorkoutBinding::inflate) {
 
-    private val viewModel: EditWorkoutViewModel by viewModels()
+    override val viewModel: EditWorkoutViewModel by viewModels()
     private val args: EditWorkoutFragmentArgs by navArgs()
 
     private val adapter = EditWorkoutAdapter()
@@ -21,7 +21,13 @@ class EditWorkoutFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initViews()
+        observeNavigation()
         viewModel.exerciseList.observe(viewLifecycleOwner) { renderData(it) }
+        viewModel.day.observe(viewLifecycleOwner) { renderDay(it) }
+    }
+
+    private fun renderDay(day: Int) {
+        binding.dayTextView.text = day.toString()
     }
 
     private fun renderData(exerciseList: List<Exercise>) {
@@ -31,10 +37,10 @@ class EditWorkoutFragment :
     private fun initViews() {
         with(binding) {
             recyclerWorkoutList.adapter = adapter
-            leftImageView.setOnClickListener { toastBlock() }
-            rightImageView.setOnClickListener { toastBlock() }
-            floatingActionButton.setOnClickListener { toastBlock() }
-            saveButton.setOnClickListener { toastBlock() }
+            leftImageView.setOnClickListener { viewModel.previousDay() }
+            rightImageView.setOnClickListener { viewModel.nextDay() }
+            saveButton.setOnClickListener { toastBlock() } //TODO("add function")
+            saveButton.setOnClickListener { toastBlock() } //TODO("add function")
         }
     }
 }

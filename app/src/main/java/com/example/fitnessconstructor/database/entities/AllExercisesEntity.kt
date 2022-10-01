@@ -22,23 +22,26 @@ import com.example.fitnessconstructor.domain.entities.ExerciseType
 data class AllExercisesEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = COLUMN_ID)
-    val id: Int?,
+    val id: Int,
 
-    @ColumnInfo(name = COLUMN_NAME_ENG) // колонка с аглийским названием упражнения
-    val nameEng: String?,
+    @ColumnInfo(name = COLUMN_NAME_ENG)
+    val nameEng: String,
 
-    @ColumnInfo(name = COLUMN_NAME_RUS) // колонка с русским названием упражнения
-    val nameRus: String?,
+    @ColumnInfo(name = COLUMN_NAME_RUS)
+    val nameRus: String,
 
-    @ColumnInfo(name = COLUMN_TYPE_ID) // колонка с типом упражнения( стресс, количественный или на время)
-    val typeId: Int?
+    @ColumnInfo(name = COLUMN_TYPE_ID)
+    val typeId: Int,
+
+    @ColumnInfo(name = COLUMN_IMAGE_PATH)
+    val imagePath: String
 ) {
 
     fun toExercise(): Exercise {
         return Exercise(
-            id = id!!,
-            name = nameEng!!,
-            type = when (typeId?.toInt()) {
+            id = id,
+            name = nameEng,
+            type = when (typeId) {
                 1 -> ExerciseType.STRESS
                 2 -> ExerciseType.STEP
                 else -> {
@@ -55,5 +58,6 @@ data class AllExercisesEntity(
         const val COLUMN_NAME_ENG = "name_eng"
         const val COLUMN_NAME_RUS = "name_rus"
         const val COLUMN_TYPE_ID = "type_id"
+        const val COLUMN_IMAGE_PATH = "image_path"
     }
 }

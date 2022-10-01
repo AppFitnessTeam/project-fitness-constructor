@@ -23,10 +23,12 @@ data class WorkoutNotificationEntity(
     @ColumnInfo(name = COLUMN_ID)
     val id: Int = 0,
 
-    @ColumnInfo(name = COLUMN_WORKOUT_ID) // номер программы из списка программ тренировок
+    @ColumnInfo(name = COLUMN_WORKOUT_ID)
     val workoutId: Int,
 
-    @ColumnInfo(name = COLUMN_MO) //время в понедельник
+    @ColumnInfo(name = COLUMN_SU)
+    val sunday: Long? = null,
+    @ColumnInfo(name = COLUMN_MO)
     val monday: Long? = null,
     @ColumnInfo(name = COLUMN_TU)
     val tuesday: Long? = null,
@@ -37,9 +39,8 @@ data class WorkoutNotificationEntity(
     @ColumnInfo(name = COLUMN_FR)
     val friday: Long? = null,
     @ColumnInfo(name = COLUMN_SA)
-    val saturday: Long? = null,
-    @ColumnInfo(name = COLUMN_SU)
-    val sunday: Long? = null,
+    val saturday: Long? = null
+
 ) {
 
     companion object {
