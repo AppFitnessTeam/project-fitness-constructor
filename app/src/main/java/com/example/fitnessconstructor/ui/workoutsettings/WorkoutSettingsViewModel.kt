@@ -47,7 +47,9 @@ class WorkoutSettingsViewModel @Inject constructor(
         )
         viewModelScope.launch {
             workoutSettingsUseCase.updateWorkoutSettings(newWorkoutSettings)
-            navigateBack()
+            navigate(
+                WorkoutSettingsFragmentDirections.actionWorkoutSettingsFragmentToWorkoutListFragment()
+            )
         }
     }
 

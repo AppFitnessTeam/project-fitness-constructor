@@ -55,8 +55,7 @@ class AddWorkoutFragment :
     }
 
     override fun onItemClick(workout: Workout) {
-        viewModel.addWorkoutToList(workout)
-        navigateBack()
+        viewModel.addPreloadWorkout(workout.id)
     }
 }
 

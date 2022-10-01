@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_workoutSettingsFragment_to_editWorkoutFragment"
             app:destination="@id/editWorkoutFragment" />
+        <action
+            android:id="@+id/action_workoutSettingsFragment_to_workoutListFragment"
+            app:destination="@id/workoutListFragment" />
     </fragment>
     <fragment
         android:id="@+id/addWorkoutFragment"

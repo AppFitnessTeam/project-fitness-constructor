@@ -29,12 +29,6 @@ class AddWorkoutViewModel @Inject constructor(
         preferences[PreferencesKeys.userLevelKey] ?: "Do test"
     }.asLiveData()
 
-    fun addWorkoutToList(workout: Workout) {
-        viewModelScope.launch {
-            workoutUseCase.addWorkoutToSelected(workout.id)
-        }
-    }
-
     fun startStressTest() {
         viewModelScope.launch {
             navigate(
@@ -58,6 +52,16 @@ class AddWorkoutViewModel @Inject constructor(
                 )
             )
         }
+    }
+
+    fun addPreloadWorkout(workoutId: Int) {
+        viewModelScope.launch {
+            workoutUseCase.addWorkoutToSelected(workoutId)
+        }
+
+        navigate(
+            AddWorkoutFragmentDirections.actionAddWorkoutFragmentToWorkoutSettingsFragment(workoutId)
+        )
     }
 }
 

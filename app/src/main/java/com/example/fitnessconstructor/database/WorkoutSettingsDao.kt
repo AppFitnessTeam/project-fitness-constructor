@@ -21,6 +21,9 @@ interface WorkoutSettingsDao {
     @Update
     suspend fun updateNotification(workoutNotificationEntity: WorkoutNotificationEntity)
 
-    @Query("UPDATE workout SET is_in_list = 0 WHERE id IS :id")
+    @Query("UPDATE workout SET is_in_list = 0, day = 1 WHERE id = :id AND is_custom = 0")
     suspend fun deleteWorkoutFromList(id: Int)
+
+    @Query("DELETE FROM workout WHERE id = :id AND is_custom = 1")
+    suspend fun deleteCustomWorkout(id: Int)
 }
