@@ -10,26 +10,31 @@
     tools:context=".ui.workoutsettings.WorkoutSettingsFragment">
 
     <EditText
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         android:id="@+id/workout_name_edit_text"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/null_dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin_16"
+        app:layout_constraintEnd_toStartOf="@id/edit_exercises_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="Workout name" />
 
     <Button
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:id="@+id/edit_exercises_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/edit_exercises_button_text" />
+        android:text="@string/edit_exercises_button_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/text_sets_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_8"
-        android:text="@string/rest_sets_text" />
+        android:text="@string/rest_sets_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_exercises_button" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/sets_time_slider"
@@ -38,13 +43,18 @@
         android:stepSize="5"
         android:valueFrom="10"
         android:valueTo="30"
-        app:labelBehavior="visible" />
+        app:labelBehavior="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_sets_text_view" />
 
     <TextView
+        android:id="@+id/text_exercise_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_8"
-        android:text="@string/rest_exercises_text" />
+        android:text="@string/rest_exercises_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sets_time_slider" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/exercise_time_slider"
@@ -53,26 +63,34 @@
         android:stepSize="10"
         android:valueFrom="30"
         android:valueTo="120"
-        app:labelBehavior="visible" />
+        app:labelBehavior="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_exercise_text_view" />
 
     <TextView
         android:id="@+id/week_notification_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_8"
-        android:text="@string/week_exercises_text" />
+        android:text="@string/week_exercises_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/exercise_time_slider" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/week_notification_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/week_notification_text_view" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_16"
-        android:gravity="end">
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/delete_button"
