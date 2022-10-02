@@ -13,4 +13,21 @@
     <color name="workout_list_step_small_text">#49454F</color>
     <color name="workout_list_next_exercise_button">#6750A4</color>
 
+
+    <color name="light_blue_200">#b3e5fc</color>
+    <color name="light_blue_500">#03a9f4</color>
+    <color name="light_blue_700">#0288d1</color>
+    <color name="colorPrimaryBlue">#0277bd</color>
+    <color name="colorPrimaryDarkBlue">#01579b</color>
+
+
+    <color name="light_grey_200">#b0bec5</color>
+    <color name="light_grey_500">#607d8b</color>
+    <color name="light_grey_700">#455a64</color>
+    <color name="colorPrimaryGrey">#455a64</color>
+    <color name="colorPrimaryDarkGrey">#263238</color>
+
+    <color name="colorAccent40Alfa">#66AE0B0B</color>
+    <color name="colorAccent">#AE0B0B</color>
+
 </resources>

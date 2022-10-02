@@ -4,6 +4,7 @@
     <style name="fab_square" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
+        <item name="backgroundTint">@color/colorPrimaryDarkBlue</item>
     </style>
 
     <style name="text_style">
