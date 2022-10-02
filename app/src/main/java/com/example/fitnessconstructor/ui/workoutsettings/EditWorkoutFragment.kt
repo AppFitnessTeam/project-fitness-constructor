@@ -46,7 +46,7 @@ class EditWorkoutFragment :
             leftImageView.setOnClickListener { viewModel.previousDay(updateList()) }
             rightImageView.setOnClickListener { viewModel.nextDay(updateList()) }
             addExerciseButton.setOnClickListener { showDialogAddWorkout() }
-            saveButton.setOnClickListener { toastBlock() } //TODO("add function")
+            saveButton.setOnClickListener { viewModel.saveWorkout() } //TODO("add function")
             cancelButton.setOnClickListener { viewModel.navigateBack() }
         }
     }

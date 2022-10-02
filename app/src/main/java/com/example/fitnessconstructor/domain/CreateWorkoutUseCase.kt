@@ -17,4 +17,5 @@ interface CreateWorkoutUseCase {
     suspend fun getAllExercises(): List<Exercise>
 
     fun addExerciseToWorkout(workoutId: Int, day: Int, exercise: Exercise)
+    suspend fun saveWorkout()
 }
