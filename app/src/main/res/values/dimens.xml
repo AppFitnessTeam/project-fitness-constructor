@@ -11,6 +11,7 @@
     <dimen name="card_width">224dp</dimen>
     <dimen name="padding_workout_layout">8dp</dimen>
     <dimen name="layout_workout_height">64dp</dimen>
+    <dimen name="card_4dp">4dp</dimen>
 
     <!--    Item exercise dimens-->
     <dimen name="layout_exercise_height">56dp</dimen>

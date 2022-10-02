@@ -23,7 +23,7 @@
         <item name="colorOnPrimary">@color/white</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/light_blue_700</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
 
@@ -34,7 +34,7 @@
         <item name="colorAccent">#ef9a9a</item>
         <item name="colorPrimary">@color/colorPrimaryBlue</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkBlue</item>
-        <item name="floatingActionButtonStyle">@style/fab_square</item>
+<!--        <item name="floatingActionButtonStyle">@style/fab_square</item>-->
         <item name="materialCardViewStyle">@style/card_style</item>
 
     </style>

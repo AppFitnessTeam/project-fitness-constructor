@@ -13,6 +13,6 @@ data class Exercise(
     val id: Int,
     override val name: String,
     override val type: ExerciseType,
-    override val count: Int,
+    override var count: Int,
     val imagePath: String? = null
 ) : StepWorkout, Parcelable

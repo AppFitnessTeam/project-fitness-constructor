@@ -23,6 +23,7 @@
         tools:visibility="invisible" />
 
     <Button
+        style="@style/negative_button_style"
         android:id="@+id/button_skip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/exercise_layout" />
 
     <Button
+        style="@style/positive_button_style"
         android:id="@+id/button_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

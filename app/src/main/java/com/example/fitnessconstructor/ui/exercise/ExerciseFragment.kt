@@ -123,7 +123,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding, ExerciseViewModel
         with(binding.exerciseLayout) {
             stepsEditText.visibility = View.VISIBLE
             textInputLayout.visibility = View.VISIBLE
-            if (stepWorkout.count < 0) {
+            if (stepWorkout.count == 0) {
                 exerciseCountTextView.text = resources.getText(R.string.count_1)
                 exerciseTypeTextView.visibility = View.INVISIBLE
             } else {
