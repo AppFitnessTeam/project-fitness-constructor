@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import coil.load
 import com.example.fitnessconstructor.R
 import com.example.fitnessconstructor.databinding.ItemExerciseListBinding
 import com.example.fitnessconstructor.domain.entities.Exercise
@@ -26,7 +25,6 @@ class WorkoutAdapter : RecyclerView.Adapter<WorkoutAdapter.WorkoutListHolder>() 
                 exerciseNameTextView.text = item.name
                 exerciseCountTextView.text =
                     if (item.count > 0) item.count.toString() else itemView.resources.getText(R.string.count_1)
-                exerciseListItemImage.load(item.imagePath)
             }
         }
     }
