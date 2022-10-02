@@ -99,9 +99,8 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding, ExerciseViewModel
             }.start()
 
             buttonNext.setOnClickListener {
-                viewModel.addCount(
-                    exerciseLayout.stepsEditText.text.toString().toInt()
-                )
+                val count = exerciseLayout.stepsEditText.text.toString()
+                if (count.isNotEmpty()) viewModel.addCount(count.toInt())
             }
 
             buttonSkip.setOnClickListener {
