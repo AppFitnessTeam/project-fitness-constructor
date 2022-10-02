@@ -13,6 +13,7 @@ import com.example.fitnessconstructor.domain.entities.Rest
 import com.example.fitnessconstructor.domain.entities.StepWorkout
 import com.example.fitnessconstructor.ui.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
+import pl.droidsonroids.gif.GifDrawable
 
 @AndroidEntryPoint
 class ExerciseFragment : BaseFragment<FragmentExerciseBinding, ExerciseViewModel>(
@@ -74,6 +75,7 @@ class ExerciseFragment : BaseFragment<FragmentExerciseBinding, ExerciseViewModel
             restLayout.root.visibility = View.INVISIBLE
             exerciseLayout.exerciseTypeTextView.text = stepWorkout.type.name
             exerciseLayout.exerciseNameTextView.text = stepWorkout.name
+            exerciseLayout.exerciseImage.setImageDrawable(GifDrawable(context.assets))
         }
         when (stepWorkout.type) {
             ExerciseType.STEP -> setViewStep(stepWorkout)
