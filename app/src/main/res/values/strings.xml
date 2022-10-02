@@ -61,4 +61,12 @@
     <!--    Dialog add exercise text-->
     <string name="add_dialog_title">ADD EXERCISE TO WORKOUT</string>
 
+    <!--    Screen names-->
+    <string name="screen_start">Fitness constructor</string>
+    <string name="screen_all_workouts">Workouts</string>
+    <string name="screen_settings_workout">Workout settings</string>
+    <string name="screen_edit_workout">Edit workout</string>
+    <string name="screen_exercise">Exercise</string>
+    <string name="screen_workout">Workout</string>
+
 </resources>

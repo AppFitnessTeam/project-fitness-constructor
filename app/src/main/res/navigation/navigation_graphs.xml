@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/workoutListFragment"
         android:name="com.example.fitnessconstructor.ui.workoutlist.WorkoutListFragment"
-        android:label="fragment_workout_list"
+        android:label="@string/screen_start"
         tools:layout="@layout/fragment_workout_list">
         <action
             android:id="@+id/action_workoutListFragment_to_workoutFragment"
@@ -23,7 +23,7 @@
     <fragment
         android:id="@+id/workoutFragment"
         android:name="com.example.fitnessconstructor.ui.workout.WorkoutFragment"
-        android:label="fragment_workout"
+        android:label="@string/screen_workout"
         tools:layout="@layout/fragment_workout">
         <argument
             android:name="workoutId"
@@ -39,7 +39,7 @@
     <fragment
         android:id="@+id/exerciseFragment"
         android:name="com.example.fitnessconstructor.ui.exercise.ExerciseFragment"
-        android:label="fragment_exercise"
+        android:label="@string/screen_exercise"
         tools:layout="@layout/fragment_exercise">
         <argument
             android:name="stepsWorkout"
@@ -52,7 +52,7 @@
     <fragment
         android:id="@+id/workoutSettingsFragment"
         android:name="com.example.fitnessconstructor.ui.workoutsettings.WorkoutSettingsFragment"
-        android:label="fragment_workout_settings"
+        android:label="@string/screen_settings_workout"
         tools:layout="@layout/fragment_workout_settings">
         <argument
             android:name="workoutId"
@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/addWorkoutFragment"
         android:name="com.example.fitnessconstructor.ui.workoutlist.AddWorkoutFragment"
-        android:label="fragment_add_workout"
+        android:label="@string/screen_all_workouts"
         tools:layout="@layout/fragment_add_workout">
         <action
             android:id="@+id/action_addWorkoutFragment_to_exerciseFragment"
@@ -80,7 +80,7 @@
     <fragment
         android:id="@+id/editWorkoutFragment"
         android:name="com.example.fitnessconstructor.ui.workoutsettings.EditWorkoutFragment"
-        android:label="fragment_edit_workout"
+        android:label="@string/screen_edit_workout"
         tools:layout="@layout/fragment_edit_workout">
         <argument
             android:name="workoutId"
