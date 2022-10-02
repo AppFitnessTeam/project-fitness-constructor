@@ -1,5 +1,6 @@
 package com.example.fitnessconstructor.data
 
+import android.util.Log
 import com.example.fitnessconstructor.database.CreateWorkoutDao
 import com.example.fitnessconstructor.database.entities.WorkoutEntity
 import com.example.fitnessconstructor.database.entities.WorkoutExercisesEntity
@@ -86,10 +87,7 @@ private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao:
     }
 
     fun updateExercisesByDay(day: Int, exercises: List<Exercise>) {
-        mapExercises[day]?.apply {
-            clear()
-            addAll(exercises)
-        }
+        Log.d("TAG", mapExercises[day].toString())
     }
 
     suspend fun saveMapExercisesToDatabase() {

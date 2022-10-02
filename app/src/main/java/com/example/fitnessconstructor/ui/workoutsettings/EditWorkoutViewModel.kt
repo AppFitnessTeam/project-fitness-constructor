@@ -36,15 +36,17 @@ class EditWorkoutViewModel @Inject constructor(
         getAllExercises()
     }
 
-    fun previousDay() {
+    fun previousDay(exercisesList: List<Exercise>) {
         _day.value?.let {
+            updateExercisesByDay(day.value!!, exercisesList)
             if (it > 1) _day.value = it - 1
             getWorkoutExercises()
         }
     }
 
-    fun nextDay() {
+    fun nextDay(exercisesList: List<Exercise>) {
         _day.value?.let {
+            updateExercisesByDay(day.value!!, exercisesList)
             _day.value = it + 1
             getWorkoutExercises()
         }

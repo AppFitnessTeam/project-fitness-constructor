@@ -17,6 +17,8 @@ class EditWorkoutAdapter : RecyclerView.Adapter<EditWorkoutAdapter.WorkoutListHo
         notifyDataSetChanged()
     }
 
+    fun getData():List<Exercise> = data
+
     class WorkoutListHolder(item: View) : RecyclerView.ViewHolder(item) {
         val binding = ItemEditExerciseListBinding.bind(item)
 
@@ -26,6 +28,10 @@ class EditWorkoutAdapter : RecyclerView.Adapter<EditWorkoutAdapter.WorkoutListHo
                 exerciseCountEditText.setText(exercise.count.toString())
                 typeTextView.text = exercise.type.name
             }
+        }
+
+        fun updateDataItem(exercise: Exercise) = with(binding) {
+            exercise.count = exerciseCountEditText.text.toString().toInt()
         }
     }
 

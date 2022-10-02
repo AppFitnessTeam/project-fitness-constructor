@@ -43,12 +43,21 @@ class EditWorkoutFragment :
     private fun initViews() {
         with(binding) {
             recyclerWorkoutList.adapter = adapter
-            leftImageView.setOnClickListener { viewModel.previousDay() }
-            rightImageView.setOnClickListener { viewModel.nextDay() }
+            leftImageView.setOnClickListener { viewModel.previousDay(updateList()) }
+            rightImageView.setOnClickListener { viewModel.nextDay(updateList()) }
             addExerciseButton.setOnClickListener { showDialogAddWorkout() }
             saveButton.setOnClickListener { toastBlock() } //TODO("add function")
             cancelButton.setOnClickListener { viewModel.navigateBack() }
         }
+    }
+
+    private fun updateList(): List<Exercise> {
+        val exerciseList = adapter.getData()
+        for (i in exerciseList.indices) {
+            (binding.recyclerWorkoutList.findViewHolderForLayoutPosition(i)!!
+                    as EditWorkoutAdapter.WorkoutListHolder).updateDataItem(exerciseList[i])
+        }
+        return exerciseList
     }
 
     private fun showDialogAddWorkout() {
