@@ -28,7 +28,7 @@
     <string name="level_text">Your fitness level:</string>
     <string name="stress_button_text">Test your level</string>
     <string name="custom_workout_button_text">Create custom workout</string>
-    <!--    Dialog stress test dialog-->
+    <!--    Dialog stress test text-->
     <string name="stress_test">STRESS TEST</string>
     <string name="stress_test_description">The stress test is a special test that will determine the level of your physical fitness.
         \n
@@ -58,5 +58,7 @@
     <string name="text_save_button">Save</string>
     <string name="text_cancel_button">Cancel</string>
     <string name="text_add_button">Exercise</string>
+    <!--    Dialog add exercise text-->
+    <string name="add_dialog_title">ADD EXERCISE TO WORKOUT</string>
 
 </resources>

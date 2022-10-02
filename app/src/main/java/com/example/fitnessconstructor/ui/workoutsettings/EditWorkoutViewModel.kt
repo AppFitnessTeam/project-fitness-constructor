@@ -28,15 +28,12 @@ class EditWorkoutViewModel @Inject constructor(
     private val _exerciseList = MutableLiveData<List<Exercise>>()
     val exerciseList: LiveData<List<Exercise>> = _exerciseList
 
+    lateinit var allExercisesList: List<Exercise>
+
     init {
         _day.value = 1
         getWorkoutExercises()
-    }
-
-    fun getWorkoutExercises() {
-        viewModelScope.launch {
-            _exerciseList.postValue(createWorkoutUseCase.getExercisesByDay(workoutId, day.value!!))
-        }
+        getAllExercises()
     }
 
     fun previousDay() {
@@ -50,6 +47,29 @@ class EditWorkoutViewModel @Inject constructor(
         _day.value?.let {
             _day.value = it + 1
             getWorkoutExercises()
+        }
+    }
+
+    fun addExercise(exercise: Exercise) {
+        createWorkoutUseCase.addExerciseToWorkout(workoutId, day.value!!, exercise)
+        getWorkoutExercises()
+    }
+
+    private fun getWorkoutExercises() {
+        viewModelScope.launch {
+            _exerciseList.postValue(createWorkoutUseCase.getExercisesByDay(workoutId, day.value!!))
+        }
+    }
+
+    private fun getAllExercises() {
+        viewModelScope.launch {
+            allExercisesList = createWorkoutUseCase.getAllExercises()
+        }
+    }
+
+    private fun updateExercisesByDay(day: Int, exercises: List<Exercise>) {
+        viewModelScope.launch {
+            createWorkoutUseCase.updateExercisesByDay(day, exercises)
         }
     }
 }

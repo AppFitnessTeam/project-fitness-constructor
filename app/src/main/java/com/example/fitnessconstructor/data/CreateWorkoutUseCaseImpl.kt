@@ -55,27 +55,22 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
             return@withContext workoutExercises!!.getExercisesByDay(day)
         }
 
+    override suspend fun updateExercisesByDay(day: Int, exercises: List<Exercise>) {
+        workoutExercises?.updateExercisesByDay(day, exercises)
+    }
+
     override suspend fun getAllExercises(): List<Exercise> =
         withContext(Dispatchers.IO) {
             return@withContext createWorkoutDao.getAllExercises().map { it.toExercise() }
         }
 
-    override suspend fun addExerciseToWorkout(
+    override fun addExerciseToWorkout(
         workoutId: Int,
         day: Int,
-        exerciseId: Int,
-        count: Int
-    ) =
-        withContext(Dispatchers.IO) {
-            createWorkoutDao.addExercise(
-                WorkoutExercisesEntity(
-                    workoutId = workoutId,
-                    day = day,
-                    exerciseId = exerciseId,
-                    count = count
-                )
-            )
-        }
+        exercise: Exercise
+    ) {
+        workoutExercises?.addExercise(day, exercise)
+    }
 }
 
 private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao: CreateWorkoutDao) {
@@ -90,6 +85,23 @@ private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao:
         mapExercises[day]?.add(exercise)
     }
 
+    fun updateExercisesByDay(day: Int, exercises: List<Exercise>) {
+        mapExercises[day]?.apply {
+            clear()
+            addAll(exercises)
+        }
+    }
+
+    suspend fun saveMapExercisesToDatabase() {
+        mapExercises.keys.forEach { key ->
+            if (!mapExercises[key].isNullOrEmpty()) {
+                mapExercises[key]?.forEach { exercise ->
+                    createWorkoutDao.addExercise(convertToWorkoutExerciseEntity(key, exercise))
+                }
+            }
+        }
+    }
+
     suspend fun initMapExercises() {
         val exerciseEntityList = createWorkoutDao.getWorkoutExercises(workoutId)
         exerciseEntityList.forEach {
@@ -97,6 +109,18 @@ private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao:
             if (!mapExercises.containsKey(keyMap)) mapExercises[keyMap] = mutableListOf()
             mapExercises[keyMap]!!.add(it.toExercise())
         }
+    }
+
+    private fun convertToWorkoutExerciseEntity(
+        day: Int,
+        exercise: Exercise
+    ): WorkoutExercisesEntity {
+        return WorkoutExercisesEntity(
+            workoutId = workoutId,
+            day = day,
+            exerciseId = exercise.id,
+            count = exercise.count
+        )
     }
 
     companion object {
