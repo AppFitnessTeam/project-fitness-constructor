@@ -74,4 +74,10 @@ class EditWorkoutViewModel @Inject constructor(
             createWorkoutUseCase.updateExercisesByDay(day, exercises)
         }
     }
+
+    fun saveWorkout(){
+        viewModelScope.launch {
+            createWorkoutUseCase.saveWorkout()
+        }
+    }
 }

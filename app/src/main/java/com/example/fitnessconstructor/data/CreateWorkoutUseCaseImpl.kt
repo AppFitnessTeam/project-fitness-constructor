@@ -72,6 +72,10 @@ class CreateWorkoutUseCaseImpl @Inject constructor(
     ) {
         workoutExercises?.addExercise(day, exercise)
     }
+
+    override suspend fun saveWorkout() {
+        workoutExercises?.saveMapExercisesToDatabase()
+    }
 }
 
 private class WorkoutExercises(val workoutId: Int, private val createWorkoutDao: CreateWorkoutDao) {
