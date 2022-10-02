@@ -8,6 +8,7 @@
     tools:context="ui.workoutsettings.EditWorkoutFragment">
 
     <TextView
+        style="@style/item_title_text_style"
         android:id="@+id/title_day_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
         app:layout_constraintTop_toTopOf="@id/day_text_view" />
 
     <TextView
+        style="@style/item_title_text_style"
         android:id="@+id/day_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,6 +49,7 @@
         app:layout_constraintTop_toTopOf="@id/day_text_view" />
 
     <Button
+        style="@style/positive_button_style"
         android:id="@+id/add_exercise_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,6 +59,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        style="@style/positive_button_style"
         android:id="@+id/save_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        style="@style/negative_button_style"
         android:id="@+id/cancel_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -8,6 +8,7 @@
     tools:context="ui.workoutlist.AddWorkoutFragment">
 
     <TextView
+        style="@style/item_title_text_style"
         android:id="@+id/text_fitness_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,6 +18,7 @@
         app:layout_constraintTop_toTopOf="@id/stress_test_button" />
 
     <TextView
+        style="@style/item_title_text_style"
         android:id="@+id/level_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,6 +29,7 @@
         tools:text="lvl" />
 
     <Button
+        style="@style/positive_button_style"
         android:id="@+id/stress_test_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -43,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@id/stress_test_button" />
 
     <Button
+        style="@style/positive_button_style"
         android:id="@+id/crate_workout_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

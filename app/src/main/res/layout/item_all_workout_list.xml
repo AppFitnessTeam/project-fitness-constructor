@@ -13,22 +13,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.5" />
 
     <TextView
         android:id="@+id/workout_name_text_view"
+        style="@style/title_text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Workout name" />
+        tools:text="Name" />
 
     <TextView
         android:id="@+id/workout_level_text_view"
+        style="@style/title_text_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/guideline"
+        app:layout_constraintStart_toEndOf="@id/guideline"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Workout Level" />
+        tools:text="Middle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

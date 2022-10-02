@@ -34,7 +34,7 @@
         <item name="colorAccent">#ef9a9a</item>
         <item name="colorPrimary">@color/colorPrimaryBlue</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkBlue</item>
-        <item name="floatingActionButtonStyle">@style/fab_square</item>
+<!--        <item name="floatingActionButtonStyle">@style/fab_square</item>-->
         <item name="materialCardViewStyle">@style/card_style</item>
 
     </style>
